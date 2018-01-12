@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import plug.bpmn2.semantics.evaluators.SimpleEvaluator;
-//import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 
 import java.io.File;
 import java.net.URL;
