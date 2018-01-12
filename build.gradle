@@ -1,0 +1,29 @@
+repositories {
+	ivy {
+		url = 'https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/modeling/mdt/bpmn2/updates/oxygen/1.4.0/plugins/'
+		layout 'pattern', {
+			artifact '[artifact](_[revision])(.[ext])'
+		}
+	}
+}
+
+dependencies {
+	//emf packages needed for org.eclipse.bpmn2
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', 				version: '2.12.0'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore',				version: '2.12.0'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.xmi', 			version: '2.12.0'
+
+	//bpmn2 packages
+	compile group: 'org.eclipse.bpmn2', name: 'org.eclipse.bpmn2', version: '1.4.0.Final-v20170607-1423', ext: 'jar'
+
+	runtime group: 'fr.ensta-bretagne', name: 'plug-bpmn2-examples', version: '+'
+}
+
+
+
+//To run the Main from gradle do --> ./gradlew :plug-bpmn2-semantics:run
+//To build a distribution of this project --> ./gradlew :plug-bpmn2-semantics:assembleDist
+apply plugin: 'application'
+mainClassName = "plug.bpmn2.semantics.Main"
+
+
