@@ -23,13 +23,9 @@ public class Main {
                 Bpmn2Package.eINSTANCE);
     }
 
-    public List<EObject> loadModel(File modelFile) {
-        return loadModel(modelFile.getAbsolutePath());
-    }
-
     public List<EObject> loadModel(String modelFilePath) {
         ResourceSetImpl rs = new ResourceSetImpl();
-        Resource r = rs.getResource(URI.createFileURI(modelFilePath), true);
+        Resource r = rs.getResource(URI.createURI(modelFilePath), true);
 
         return r.getContents();
     }
@@ -39,7 +35,7 @@ public class Main {
         Main m = new Main();
 
         SimpleEvaluator se = new SimpleEvaluator();
-        for (EObject e : m.loadModel(url.getFile())) {
+        for (EObject e : m.loadModel(url.toExternalForm())) {
             se.evaluate(e);
         }
     }
