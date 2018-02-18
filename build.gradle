@@ -1,6 +1,7 @@
 buildscript {
 	repositories {
-		maven { url "http://mocs-artefacts.ensta-bretagne.fr/plug-repo/" }
+		jcenter()
+		maven { url "https://dl.bintray.com/plug-obp/maven" }
 	}
 	dependencies {
 		classpath group: 'fr.ensta-bretagne', name: 'plug-plugin', version: '+'
