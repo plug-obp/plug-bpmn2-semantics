@@ -1,4 +1,4 @@
-package plug.bpmn2.semantics;
+package plug.bpmn2.examples;
 
 import org.eclipse.bpmn2.Bpmn2Package;
 import org.eclipse.bpmn2.util.Bpmn2ResourceFactoryImpl;
@@ -7,17 +7,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import plug.bpmn2.semantics.evaluators.SimpleEvaluator;
 
-import java.io.File;
 import java.net.URL;
 import java.util.List;
 
 /**
  * Created by ciprian on 12/01/18.
  */
-public class Main {
-    public Main() {
+public class SimpleEvaluatorExample {
+    public SimpleEvaluatorExample() {
         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap( ).put("bpmn", new Bpmn2ResourceFactoryImpl());
         EPackage.Registry.INSTANCE.put(Bpmn2Package.eNS_URI,
                 Bpmn2Package.eINSTANCE);
@@ -31,8 +29,8 @@ public class Main {
     }
 
     public static void main(String args[]) {
-        URL url = Main.class.getClassLoader().getResource("plug/bpmn2/examples/process_1.bpmn");
-        Main m = new Main();
+        URL url = SimpleEvaluatorExample.class.getClassLoader().getResource("plug/bpmn2/examples/process_1.bpmn");
+        SimpleEvaluatorExample m = new SimpleEvaluatorExample();
 
         SimpleEvaluator se = new SimpleEvaluator();
         for (EObject e : m.loadModel(url.toExternalForm())) {

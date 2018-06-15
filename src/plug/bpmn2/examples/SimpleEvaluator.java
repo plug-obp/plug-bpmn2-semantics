@@ -1,4 +1,4 @@
-package plug.bpmn2.semantics.evaluators;
+package plug.bpmn2.examples;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
