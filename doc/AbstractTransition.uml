@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionBase</OriginalElement>
+  <nodes>
+    <node x="186.0" y="240.0">plug.bpmn2.examples.simpleProcessInterpreter.transitions.EndEventTransition</node>
+    <node x="89.75" y="80.0">plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionBase</node>
+    <node x="0.0" y="240.0">plug.bpmn2.examples.simpleProcessInterpreter.transitions.SequenceFlowTransition</node>
+    <node x="93.25" y="0.0">plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition</node>
+    <node x="86.25" y="160.0">plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionSimple</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionSimple" target="plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionBase">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.transitions.SequenceFlowTransition" target="plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionSimple">
+      <point x="0.0" y="-15.0" />
+      <point x="83.0" y="215.0" />
+      <point x="128.25" y="215.0" />
+      <point x="-42.0" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionBase" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.transitions.EndEventTransition" target="plug.bpmn2.examples.simpleProcessInterpreter.transitions.AbstractTransitionSimple">
+      <point x="0.0" y="-15.0" />
+      <point x="257.5" y="215.0" />
+      <point x="212.25" y="215.0" />
+      <point x="42.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="164.5" y="135.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

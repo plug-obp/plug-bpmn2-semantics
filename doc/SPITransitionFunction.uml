@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition</OriginalElement>
+  <nodes>
+    <node x="8.749999999999943" y="240.0">plug.bpmn2.examples.simpleProcessInterpreter.SPIECore2ATS</node>
+    <node x="33.88375000000002" y="80.0">plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition</node>
+    <node x="241.88375" y="360.0">plug.bpmn2.examples.simpleProcessInterpreter.SPITransitionFunction</node>
+    <node x="211.38375" y="80.0">plug.bpmn2.examples.simpleProcessInterpreter.SPIInitialSystemConfigurationsProvider</node>
+    <node x="287.98749999999995" y="0.0">plug.bpmn2.examples.simpleProcessInterpreter.SPISystemConfiguration</node>
+    <node x="10.499999999999943" y="160.0">plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransitionSystem</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPIECore2ATS" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition">
+      <point x="-40.0" y="-15.0" />
+      <point x="28.749999999999943" y="215.0" />
+      <point x="0.0" y="215.0" />
+      <point x="0.0" y="130.0" />
+      <point x="53.13375000000002" y="130.0" />
+      <point x="-57.75" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition" target="plug.bpmn2.examples.simpleProcessInterpreter.SPISystemConfiguration">
+      <point x="0.0" y="-15.0" />
+      <point x="110.88375000000002" y="50.0" />
+      <point x="304.5874999999999" y="50.0" />
+      <point x="-66.40000000000003" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPITransitionFunction" target="plug.bpmn2.examples.simpleProcessInterpreter.SPISystemConfiguration">
+      <point x="48.125" y="-15.0" />
+      <point x="367.00874999999996" y="330.0" />
+      <point x="458.88374999999996" y="330.0" />
+      <point x="458.88374999999996" y="60.0" />
+      <point x="404.18749999999994" y="60.0" />
+      <point x="33.19999999999999" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPIECore2ATS" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransitionSystem">
+      <point x="0.0" y="-15.0" />
+      <point x="68.74999999999994" y="215.0" />
+      <point x="41.99999999999994" y="215.0" />
+      <point x="-63.0" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPITransitionFunction" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransitionSystem">
+      <point x="-28.875" y="-15.0" />
+      <point x="290.00874999999996" y="320.0" />
+      <point x="164.04875" y="320.0" />
+      <point x="164.04875" y="215.0" />
+      <point x="167.99999999999994" y="215.0" />
+      <point x="63.0" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPITransitionFunction" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition">
+      <point x="-9.625" y="-15.0" />
+      <point x="309.25874999999996" y="310.0" />
+      <point x="262.54875000000004" y="310.0" />
+      <point x="262.54875000000004" y="140.0" />
+      <point x="168.63375000000002" y="140.0" />
+      <point x="57.75" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPITransitionFunction" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIInitialSystemConfigurationsProvider">
+      <point x="28.875" y="-15.0" />
+      <point x="347.75874999999996" y="290.0" />
+      <point x="319.10249999999996" y="290.0" />
+      <point x="319.10249999999996" y="140.0" />
+      <point x="389.13374999999996" y="140.0" />
+      <point x="59.25" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPIInitialSystemConfigurationsProvider" target="plug.bpmn2.examples.simpleProcessInterpreter.SPISystemConfiguration">
+      <point x="59.25" y="-15.0" />
+      <point x="389.13374999999996" y="60.0" />
+      <point x="370.98749999999995" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPITransitionFunction" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIECore2ATS">
+      <point x="-67.375" y="-15.0" />
+      <point x="251.50875" y="340.0" />
+      <point x="38.74999999999994" y="340.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransitionSystem" target="plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition">
+      <point x="47.25" y="-15.0" />
+      <point x="152.24999999999994" y="140.0" />
+      <point x="130.13375000000002" y="140.0" />
+      <point x="19.25" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="235.0" y="195.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
