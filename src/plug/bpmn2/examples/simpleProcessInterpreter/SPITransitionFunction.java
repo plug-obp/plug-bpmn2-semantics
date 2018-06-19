@@ -27,6 +27,10 @@ public class SPITransitionFunction {
         transitionSystem = loader.transformECoreModel(modelRoot);
     }
 
+    public Set<SPIAbstractTransition> getAllSystemTransitions() {
+        return transitionSystem.getTransitionSet();
+    }
+
     public Set<SPISystemConfiguration> getInitialConfigurations() {
         return initialConfigurations;
     }

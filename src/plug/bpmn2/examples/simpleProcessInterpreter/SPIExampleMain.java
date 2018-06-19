@@ -57,16 +57,28 @@ public class SPIExampleMain {
 
         SPITransitionFunction transitionFunction = new SPITransitionFunction(modelRoot);
 
+        System.out.println("All transitions :");
+        for (SPIAbstractTransition transition : transitionFunction.getAllSystemTransitions()) {
+            System.out.println("    " + transition);
+        }
+        System.out.println();
+
+        System.out.println("Initial configurations :");
+        for (SPISystemConfiguration initialConfiguration : transitionFunction.getInitialConfigurations()) {
+            System.out.println("    " + initialConfiguration);
+        }
+        System.out.println();
+
         SimpleExecutor executor = new SimpleExecutor(transitionFunction);
         List<SPIAbstractTransition> outgoingTransitions = executor.getOutgoingTransitions();
 
         while (!outgoingTransitions.isEmpty()) {
             System.out.println("Current configuration : " + executor.getCurrentConfiguration());
-            System.out.println("Outgoing transitions :");
+            System.out.println("Fire-able transitions :");
             for (SPIAbstractTransition transition : outgoingTransitions) {
                 System.out.println("    " + transition);
             }
-            System.out.println("Executing first!");
+            System.out.println("Executing first one.");
             if (!executor.fireTransition(outgoingTransitions.get(0))) {
                 System.err.println("Error while executing ...");
                 break;

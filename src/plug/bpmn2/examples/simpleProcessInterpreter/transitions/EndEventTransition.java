@@ -10,6 +10,7 @@ public class EndEventTransition extends AbstractTransitionSimple {
     public EndEventTransition(EndEvent endEvent) {
         super();
         getSourceList().add(endEvent);
+        getMediumList().add(endEvent);
     }
 
 }
