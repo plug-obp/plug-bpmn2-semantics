@@ -15,7 +15,7 @@ public class AbstractTransitionSimple extends AbstractTransitionBase {
     public boolean evaluateGuard(SPISystemConfiguration source) {
         List<EObject> availableTokens = new ArrayList<>();
         availableTokens.addAll(source.getTokens());
-        for (EObject token : getSourceList()) {
+        for (EObject token : getIncommingList()) {
             if (!availableTokens.remove(token)) return false;
         }
         return true;
@@ -25,10 +25,10 @@ public class AbstractTransitionSimple extends AbstractTransitionBase {
     public SPISystemConfiguration executeAction(SPISystemConfiguration source) {
         List<EObject> availableTokens = new ArrayList<>();
         availableTokens.addAll(source.getTokens());
-        for (EObject token : getSourceList()) {
+        for (EObject token : getIncommingList()) {
             if (!availableTokens.remove(token)) return null;
         }
-        availableTokens.addAll(getTargetList());
+        availableTokens.addAll(getOutgoingList());
         return new SPISystemConfiguration(availableTokens);
     }
 

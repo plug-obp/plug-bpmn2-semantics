@@ -13,7 +13,7 @@ public class SPITransitionFunction {
     public final SPIInitialSystemConfigurationsProvider initialConfigurationsProvider
             = new SPIInitialSystemConfigurationsProvider();
 
-    private final SPIECore2ATS loader = new SPIECore2ATS();
+    private final SPIBPMN2ATS loader = new SPIBPMN2ATS();
 
     private Set<SPISystemConfiguration> initialConfigurations;
     private SPIAbstractTransitionSystem transitionSystem;

@@ -4,8 +4,7 @@ import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.examples.simpleProcessInterpreter.transitions.EndEventTransition;
-import plug.bpmn2.examples.simpleProcessInterpreter.transitions.SequenceFlowTransition;
+import plug.bpmn2.examples.simpleProcessInterpreter.transitions.FlowNodeTransition;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -14,7 +13,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class SPIECore2ATS {
+public class SPIBPMN2ATS {
 
     public final Loader loader = new Loader();
 
@@ -22,7 +21,7 @@ public class SPIECore2ATS {
         SPIAbstractTransitionSystem transitionSystem = new SPIAbstractTransitionSystem();
         for (SPIAbstractTransition transition : loader.doSwitch(root)) {
             transitionSystem.getTransitionSet().add(transition);
-            transitionSystem.getInitiatorSet().addAll(transition.getSourceList());
+            transitionSystem.getInitiatorSet().addAll(transition.getIncommingList());
         }
         return transitionSystem;
     }
@@ -54,16 +53,13 @@ public class SPIECore2ATS {
         }
 
         @Override
-        public List<SPIAbstractTransition> caseSequenceFlow(SequenceFlow object) {
-            List<SPIAbstractTransition> result = new LinkedList<>();
-            SPIAbstractTransition transition = new SequenceFlowTransition(object);
-            result.add(transition);
-            return result;
+        public List<SPIAbstractTransition> caseFlowNode(FlowNode object) {
+            return Collections.singletonList(new FlowNodeTransition(object));
         }
 
         @Override
-        public List<SPIAbstractTransition> caseEndEvent(EndEvent object) {
-            return Collections.singletonList(new EndEventTransition((object)));
+        public List<SPIAbstractTransition> caseStartEvent(StartEvent object) {
+            return Collections.emptyList();
         }
 
         @Override

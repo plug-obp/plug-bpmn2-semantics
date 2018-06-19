@@ -11,29 +11,29 @@ import java.util.*;
  */
 public abstract class AbstractTransitionBase implements SPIAbstractTransition {
 
-    private final List<EObject> sourceList;
-    private final List<EObject> mediumList;
-    private final List<EObject> targetList;
+    private final List<EObject> incomingList;
+    private final List<EObject> nodeList;
+    private final List<EObject> outgoingList;
 
     public AbstractTransitionBase() {
-        sourceList = new ArrayList<>();
-        mediumList = new ArrayList<>();
-        targetList = new ArrayList<>();
+        incomingList = new ArrayList<>();
+        nodeList = new ArrayList<>();
+        outgoingList = new ArrayList<>();
     }
 
     @Override
-    public List<EObject> getSourceList() {
-        return sourceList;
+    public List<EObject> getIncommingList() {
+        return incomingList;
     }
 
     @Override
-    public List<EObject> getMediumList() {
-        return mediumList;
+    public List<EObject> getNodeList() {
+        return nodeList;
     }
 
     @Override
-    public List<EObject> getTargetList() {
-        return targetList;
+    public List<EObject> getOutgoingList() {
+        return outgoingList;
     }
 
     static private void appendCollection(StringBuilder builder, Collection<EObject> elements) {
@@ -47,11 +47,11 @@ public abstract class AbstractTransitionBase implements SPIAbstractTransition {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        appendCollection(result, sourceList);
+        appendCollection(result, incomingList);
         result.append(" -- ");
-        appendCollection(result, mediumList);
+        appendCollection(result, nodeList);
         result.append(" -> ");
-        appendCollection(result, targetList);
+        appendCollection(result, outgoingList);
         return result.toString();
     }
 

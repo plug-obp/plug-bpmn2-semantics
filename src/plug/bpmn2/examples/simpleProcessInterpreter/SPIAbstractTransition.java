@@ -16,9 +16,9 @@ import java.util.function.Predicate;
 public interface SPIAbstractTransition {
 
     // Meta information
-    List<EObject> getSourceList();
-    List<EObject> getMediumList();
-    List<EObject> getTargetList();
+    List<EObject> getIncommingList();
+    List<EObject> getNodeList();
+    List<EObject> getOutgoingList();
 
     // Execution
     boolean evaluateGuard(SPISystemConfiguration source);

@@ -1,9 +1,7 @@
 package plug.bpmn2.examples.simpleProcessInterpreter;
 
-import org.eclipse.bpmn2.Definitions;
-import org.eclipse.bpmn2.DocumentRoot;
+import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
-import org.eclipse.bpmn2.StartEvent;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
 
@@ -43,16 +41,16 @@ public class SPIInitialSystemConfigurationsProvider {
         public List<EObject> caseProcess(Process object) {
             List<EObject> result = new LinkedList<>();
             for (EObject flowElement : object.getFlowElements()) {
-                for (EObject initialToken : doSwitch(flowElement)) {
-                    result.add(initialToken);
-                }
+                result.addAll(doSwitch(flowElement));
             }
             return result;
         }
 
         @Override
         public List<EObject> caseStartEvent(StartEvent object) {
-            return Collections.singletonList(object);
+            List<EObject> result = new LinkedList<>();
+            result.addAll(object.getOutgoing());
+            return result;
         }
 
         @Override
