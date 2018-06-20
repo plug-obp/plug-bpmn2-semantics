@@ -51,7 +51,8 @@ public class SPIExampleMain {
 
     static public void main(String[] args) {
         BPMN2Loader loader = new BPMN2Loader();
-        loader.loadModelFromURLString("plug/bpmn2/examples/process_1.bpmn");
+        //loader.loadModelFromURLString("plug/bpmn2/examples/process_1.bpmn");
+        loader.loadModelFromURLString("plug/bpmn2/examples/triso - Order Process for Pizza V4.bpmn".replaceAll("\\_", "%20"));
 
         EObject modelRoot = loader.getModelObjectList().get(0);
 
@@ -72,7 +73,9 @@ public class SPIExampleMain {
         SimpleExecutor executor = new SimpleExecutor(transitionFunction);
         List<SPIAbstractTransition> outgoingTransitions = executor.getOutgoingTransitions();
 
-        while (!outgoingTransitions.isEmpty()) {
+        int max = 5;
+
+        while (max >= 0 && !outgoingTransitions.isEmpty()) {
             System.out.println("Current configuration : " + executor.getCurrentConfiguration());
             System.out.println("Fire-able transitions :");
             for (SPIAbstractTransition transition : outgoingTransitions) {
@@ -85,6 +88,7 @@ public class SPIExampleMain {
             }
             outgoingTransitions = executor.getOutgoingTransitions();
             System.out.println();
+            max -= 1;
         }
 
         System.out.println("Final configuration : " + executor.getCurrentConfiguration());

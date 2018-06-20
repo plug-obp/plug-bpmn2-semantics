@@ -2,15 +2,15 @@ package plug.bpmn2.examples.simpleProcessInterpreter;
 
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.tools.BPMN2PrinterShort;
+import plug.core.IConfiguration;
+import plug.core.defaults.DefaultConfiguration;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class SPISystemConfiguration {
+public class SPISystemConfiguration extends DefaultConfiguration<SPISystemConfiguration> {
 
     private final List<EObject> tokens;
 
@@ -21,6 +21,17 @@ public class SPISystemConfiguration {
 
     public List<EObject> getTokens() {
         return tokens;
+    }
+
+    public void canonize() {
+        Collections.sort(tokens, Comparator.comparingInt(Object::hashCode));
+    }
+
+    @Override
+    public SPISystemConfiguration createCopy() {
+        SPISystemConfiguration result =  new SPISystemConfiguration(new ArrayList<>());
+        result.getTokens().addAll(this.getTokens());
+        return result;
     }
 
     @Override

@@ -17,6 +17,7 @@ public class SPIInitialSystemConfigurationsProvider {
     public Set<SPISystemConfiguration> getInitialSystemConfigurations(EObject root) {
         List<EObject> initialTokens = bpmn2switch.doSwitch(root);
         SPISystemConfiguration result = new SPISystemConfiguration(initialTokens);
+        result.canonize();
         return Collections.singleton(result);
     }
 

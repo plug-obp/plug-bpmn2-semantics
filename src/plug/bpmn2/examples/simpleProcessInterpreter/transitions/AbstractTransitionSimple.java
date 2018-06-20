@@ -29,7 +29,9 @@ public class AbstractTransitionSimple extends AbstractTransitionBase {
             if (!availableTokens.remove(token)) return null;
         }
         availableTokens.addAll(getOutgoingList());
-        return new SPISystemConfiguration(availableTokens);
+        SPISystemConfiguration result = new SPISystemConfiguration(availableTokens);
+        result.canonize();
+        return result;
     }
 
 }

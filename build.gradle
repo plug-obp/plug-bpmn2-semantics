@@ -29,6 +29,8 @@ dependencies {
 	compile group: 'org.eclipse.bpmn2', name: 'org.eclipse.bpmn2', version: '1.4.0.Final-v20170607-1423', ext: 'jar'
 
 	runtime group: 'fr.ensta-bretagne', name: 'plug-bpmn2-examples', version: '+'
+
+	compile group: 'fr.ensta-bretagne', name: 'plug-core', version: '+'
 }
 
 
