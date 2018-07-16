@@ -1,7 +1,6 @@
-package plug.bpmn2.examples.simpleProcessInterpreter.transitions;
+package plug.bpmn2.semantics.transition;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.examples.simpleProcessInterpreter.SPIAbstractTransition;
 import plug.bpmn2.tools.BPMN2PrinterShort;
 
 import java.util.*;
@@ -9,7 +8,7 @@ import java.util.*;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public abstract class AbstractTransitionBase implements SPIAbstractTransition {
+public abstract class AbstractTransitionBase implements BPMN2AbstractTransition {
 
     private final List<EObject> incomingList;
     private final List<EObject> nodeList;
@@ -22,7 +21,7 @@ public abstract class AbstractTransitionBase implements SPIAbstractTransition {
     }
 
     @Override
-    public List<EObject> getIncommingList() {
+    public List<EObject> getIncomingList() {
         return incomingList;
     }
 

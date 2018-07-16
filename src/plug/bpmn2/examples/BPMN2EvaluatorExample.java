@@ -1,23 +1,26 @@
-package plug.bpmn2.examples.simpleProcessInterpreter;
+package plug.bpmn2.examples;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.BPMN2Loader;
+import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
+import plug.bpmn2.semantics.BPMN2SystemConfiguration;
+import plug.bpmn2.semantics.BPMN2TransitionFunction;
+import plug.bpmn2.module.BPMN2Loader;
 
 import java.util.List;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class SPIExampleMain {
+public class BPMN2EvaluatorExample {
 
     static public class SimpleExecutor {
 
-        private final SPITransitionFunction transitionFunction;
-        private SPISystemConfiguration currentConfiguration = null;
+        private final BPMN2TransitionFunction transitionFunction;
+        private BPMN2SystemConfiguration currentConfiguration = null;
 
-        public SimpleExecutor(SPITransitionFunction transitionFunction) {
+        public SimpleExecutor(BPMN2TransitionFunction transitionFunction) {
             this.transitionFunction = transitionFunction;
-            for (SPISystemConfiguration initialConfiguration : transitionFunction.getInitialConfigurations()) {
+            for (BPMN2SystemConfiguration initialConfiguration : transitionFunction.getInitialConfigurations()) {
                 if (currentConfiguration != null) {
                     System.err.println("Simple executor : multiple initial configurations detected.");
                 }
@@ -25,17 +28,17 @@ public class SPIExampleMain {
             }
         }
 
-        public SPISystemConfiguration getCurrentConfiguration() {
+        public BPMN2SystemConfiguration getCurrentConfiguration() {
             return currentConfiguration;
         }
 
-        public List<SPIAbstractTransition> getOutgoingTransitions() {
+        public List<BPMN2AbstractTransition> getOutgoingTransitions() {
             return transitionFunction.getTransitionsFrom(currentConfiguration);
         }
 
-        public boolean fireTransition(SPIAbstractTransition transition) {
+        public boolean fireTransition(BPMN2AbstractTransition transition) {
             if (transition.evaluateGuard(currentConfiguration)) {
-                SPISystemConfiguration target = transition.executeAction(currentConfiguration);
+                BPMN2SystemConfiguration target = transition.executeAction(currentConfiguration);
                 if (target == null) {
                     System.err.println("Simple executor : could not execute transition ("
                             + transition + ") from given configuration (" + currentConfiguration + ")");
@@ -56,29 +59,29 @@ public class SPIExampleMain {
 
         EObject modelRoot = loader.getModelObjectList().get(0);
 
-        SPITransitionFunction transitionFunction = new SPITransitionFunction(modelRoot);
+        BPMN2TransitionFunction transitionFunction = new BPMN2TransitionFunction(modelRoot);
 
         System.out.println("All transitions :");
-        for (SPIAbstractTransition transition : transitionFunction.getAllSystemTransitions()) {
+        for (BPMN2AbstractTransition transition : transitionFunction.getAllSystemTransitions()) {
             System.out.println("    " + transition);
         }
         System.out.println();
 
         System.out.println("Initial configurations :");
-        for (SPISystemConfiguration initialConfiguration : transitionFunction.getInitialConfigurations()) {
+        for (BPMN2SystemConfiguration initialConfiguration : transitionFunction.getInitialConfigurations()) {
             System.out.println("    " + initialConfiguration);
         }
         System.out.println();
 
         SimpleExecutor executor = new SimpleExecutor(transitionFunction);
-        List<SPIAbstractTransition> outgoingTransitions = executor.getOutgoingTransitions();
+        List<BPMN2AbstractTransition> outgoingTransitions = executor.getOutgoingTransitions();
 
         int max = 5;
 
         while (max >= 0 && !outgoingTransitions.isEmpty()) {
             System.out.println("Current configuration : " + executor.getCurrentConfiguration());
             System.out.println("Fire-able transitions :");
-            for (SPIAbstractTransition transition : outgoingTransitions) {
+            for (BPMN2AbstractTransition transition : outgoingTransitions) {
                 System.out.println("    " + transition);
             }
             System.out.println("Executing first one.");

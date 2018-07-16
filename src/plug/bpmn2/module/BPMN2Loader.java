@@ -1,4 +1,4 @@
-package plug.bpmn2.tools;
+package plug.bpmn2.module;
 
 import org.eclipse.bpmn2.Bpmn2Package;
 import org.eclipse.bpmn2.util.Bpmn2ResourceFactoryImpl;
@@ -7,14 +7,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import plug.bpmn2.semantics.BPMN2TransitionFunction;
+import plug.core.ILanguageLoader;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class BPMN2Loader {
+public class BPMN2Loader implements ILanguageLoader<BPMN2TransitionRelation> {
 
     static private boolean setupNeeded = true;
 
@@ -54,6 +57,13 @@ public class BPMN2Loader {
 
     public List<EObject> getModelObjectList() {
         return modelResource.getContents();
+    }
+
+    @Override
+    public BPMN2TransitionRelation getRuntime(java.net.URI uri, Map<String, Object> map) throws Exception {
+        loadModelFromURL(uri.toURL());
+        BPMN2TransitionFunction modelTransitionRelation = new BPMN2TransitionFunction(getModelObjectList().get(0));
+        return new BPMN2TransitionRelation(modelTransitionRelation);
     }
 
 }

@@ -1,7 +1,7 @@
 package plug.bpmn2.examples;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.BPMN2Loader;
+import plug.bpmn2.module.BPMN2Loader;
 import plug.bpmn2.tools.BPMN2PrinterShort;
 
 /**

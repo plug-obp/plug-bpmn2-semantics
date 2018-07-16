@@ -1,4 +1,4 @@
-package plug.bpmn2.examples.simpleProcessInterpreter;
+package plug.bpmn2.semantics;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
@@ -10,13 +10,13 @@ import java.util.*;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class SPIInitialSystemConfigurationsProvider {
+public class BPMN2InitialSystemConfigurationsProvider {
 
     public final Switch bpmn2switch = new Switch();
 
-    public Set<SPISystemConfiguration> getInitialSystemConfigurations(EObject root) {
+    public Set<BPMN2SystemConfiguration> getInitialSystemConfigurations(EObject root) {
         List<EObject> initialTokens = bpmn2switch.doSwitch(root);
-        SPISystemConfiguration result = new SPISystemConfiguration(initialTokens);
+        BPMN2SystemConfiguration result = new BPMN2SystemConfiguration(initialTokens);
         result.canonize();
         return Collections.singleton(result);
     }

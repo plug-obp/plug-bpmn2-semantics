@@ -1,7 +1,7 @@
-package plug.bpmn2.examples.simpleProcessInterpreter.transitions;
+package plug.bpmn2.semantics.transition;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.examples.simpleProcessInterpreter.SPISystemConfiguration;
+import plug.bpmn2.semantics.BPMN2SystemConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,24 +12,24 @@ import java.util.List;
 public class AbstractTransitionSimple extends AbstractTransitionBase {
 
     @Override
-    public boolean evaluateGuard(SPISystemConfiguration source) {
+    public boolean evaluateGuard(BPMN2SystemConfiguration source) {
         List<EObject> availableTokens = new ArrayList<>();
         availableTokens.addAll(source.getTokens());
-        for (EObject token : getIncommingList()) {
+        for (EObject token : getIncomingList()) {
             if (!availableTokens.remove(token)) return false;
         }
         return true;
     }
 
     @Override
-    public SPISystemConfiguration executeAction(SPISystemConfiguration source) {
+    public BPMN2SystemConfiguration executeAction(BPMN2SystemConfiguration source) {
         List<EObject> availableTokens = new ArrayList<>();
         availableTokens.addAll(source.getTokens());
-        for (EObject token : getIncommingList()) {
+        for (EObject token : getIncomingList()) {
             if (!availableTokens.remove(token)) return null;
         }
         availableTokens.addAll(getOutgoingList());
-        SPISystemConfiguration result = new SPISystemConfiguration(availableTokens);
+        BPMN2SystemConfiguration result = new BPMN2SystemConfiguration(availableTokens);
         result.canonize();
         return result;
     }

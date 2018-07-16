@@ -1,4 +1,4 @@
-package plug.bpmn2.examples.simpleProcessInterpreter.transitions;
+package plug.bpmn2.semantics.transition;
 
 import org.eclipse.bpmn2.FlowNode;
 
@@ -9,7 +9,7 @@ public class FlowNodeTransition extends AbstractTransitionSimple {
 
     public FlowNodeTransition(FlowNode node) {
         super();
-        getIncommingList().addAll(node.getIncoming());
+        getIncomingList().addAll(node.getIncoming());
         getNodeList().add(node);
         getOutgoingList().addAll(node.getOutgoing());
     }

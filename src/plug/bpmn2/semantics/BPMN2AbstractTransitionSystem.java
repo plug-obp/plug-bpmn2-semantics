@@ -1,6 +1,7 @@
-package plug.bpmn2.examples.simpleProcessInterpreter;
+package plug.bpmn2.semantics;
 
 import org.eclipse.emf.ecore.EObject;
+import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,12 +9,12 @@ import java.util.Set;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class SPIAbstractTransitionSystem {
+public class BPMN2AbstractTransitionSystem {
 
     private final Set<EObject> initiatorSet;
-    private final Set<SPIAbstractTransition> transitionSet;
+    private final Set<BPMN2AbstractTransition> transitionSet;
 
-    public SPIAbstractTransitionSystem() {
+    public BPMN2AbstractTransitionSystem() {
         initiatorSet = new HashSet<>();
         transitionSet = new HashSet<>();
     }
@@ -22,7 +23,7 @@ public class SPIAbstractTransitionSystem {
         return initiatorSet;
     }
 
-    public Set<SPIAbstractTransition> getTransitionSet() {
+    public Set<BPMN2AbstractTransition> getTransitionSet() {
         return transitionSet;
     }
 

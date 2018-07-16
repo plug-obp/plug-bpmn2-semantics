@@ -1,8 +1,7 @@
-package plug.bpmn2.examples.simpleProcessInterpreter;
+package plug.bpmn2.semantics;
 
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.tools.BPMN2PrinterShort;
-import plug.core.IConfiguration;
 import plug.core.defaults.DefaultConfiguration;
 
 import java.util.*;
@@ -10,11 +9,11 @@ import java.util.*;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class SPISystemConfiguration extends DefaultConfiguration<SPISystemConfiguration> {
+public class BPMN2SystemConfiguration extends DefaultConfiguration<BPMN2SystemConfiguration> {
 
     private final List<EObject> tokens;
 
-    public SPISystemConfiguration(List<EObject> tokens) {
+    public BPMN2SystemConfiguration(List<EObject> tokens) {
         this.tokens = new ArrayList<>();
         this.tokens.addAll(tokens);
     }
@@ -24,12 +23,12 @@ public class SPISystemConfiguration extends DefaultConfiguration<SPISystemConfig
     }
 
     public void canonize() {
-        Collections.sort(tokens, Comparator.comparingInt(Object::hashCode));
+        tokens.sort(Comparator.comparingInt(Object::hashCode));
     }
 
     @Override
-    public SPISystemConfiguration createCopy() {
-        SPISystemConfiguration result =  new SPISystemConfiguration(new ArrayList<>());
+    public BPMN2SystemConfiguration createCopy() {
+        BPMN2SystemConfiguration result =  new BPMN2SystemConfiguration(new ArrayList<>());
         result.getTokens().addAll(this.getTokens());
         return result;
     }
@@ -43,7 +42,7 @@ public class SPISystemConfiguration extends DefaultConfiguration<SPISystemConfig
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SPISystemConfiguration that = (SPISystemConfiguration) o;
+        BPMN2SystemConfiguration that = (BPMN2SystemConfiguration) o;
         return Objects.equals(getTokens(), that.getTokens());
     }
 
