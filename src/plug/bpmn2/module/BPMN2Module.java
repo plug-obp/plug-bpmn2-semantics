@@ -23,10 +23,4 @@ public class BPMN2Module implements ILanguagePlugin<BPMN2TransitionRelation> {
     public ILanguageLoader<BPMN2TransitionRelation> getLoader() {
         return new BPMN2Loader();
     }
-
-    @Override
-    public IRuntimeView getRuntimeView(BPMN2TransitionRelation bpmn2TransitionRelation) {
-        return null;
-    }
-
 }
