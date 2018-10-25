@@ -24,6 +24,7 @@ public class BPMN2Loader implements ILanguageLoader<BPMN2TransitionRelation> {
     public static void setupIfNeeded() {
         if (setupNeeded) {
             Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("bpmn", new Bpmn2ResourceFactoryImpl());
+            Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("bpmn2", new Bpmn2ResourceFactoryImpl());
             EPackage.Registry.INSTANCE.put(Bpmn2Package.eNS_URI, Bpmn2Package.eINSTANCE);
             setupNeeded = false;
         }
