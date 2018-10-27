@@ -46,7 +46,7 @@ public class ProcessInstance extends RootElementInstance {
         List<Object> steps = new ArrayList<>();
 
         for (Token token : tokens) {
-            steps.addAll(token.getExecutableSteps());
+            //steps.addAll(token.getExecutableSteps());
         }
 
         return steps;
