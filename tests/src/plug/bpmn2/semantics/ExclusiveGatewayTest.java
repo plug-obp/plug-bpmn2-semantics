@@ -11,7 +11,7 @@ public class ExclusiveGatewayTest extends BPMN2AbstractTest {
 
 	@Override
 	public String getFilePath() {
-		return "resources/test/simple_exclusive_gateway.bpmn";
+		return "resources/tests/simple_exclusive_gateway.bpmn";
 	}
 
 	@Test

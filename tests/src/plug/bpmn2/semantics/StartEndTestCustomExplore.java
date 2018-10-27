@@ -7,11 +7,21 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 
-public class StartEndTest extends BPMN2AbstractTest {
+import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
+
+public class StartEndTestCustomExplore extends BPMN2AbstractTest {
+
+	@Override
+	public void explore() {
+		knownList.addAll(transitionFunction.getInitialConfigurations());
+		BPMN2SystemConfiguration initialConfiguration = knownList.get(0);
+		BPMN2AbstractTransition transition = transitionFunction.getTransitionsFrom(initialConfiguration).get(0);
+		knownList.add(transition.executeAction(initialConfiguration));
+	}
 
 	@Override
 	public String getFilePath() {
-		return "resources/test/process_1.bpmn";
+		return "resources/tests/process_1.bpmn";
 	}
 
 	@Test
@@ -34,4 +44,5 @@ public class StartEndTest extends BPMN2AbstractTest {
 		List<EObject> tokens = configuration.getTokens();
 		assertEquals(0, tokens.size());
 	}
+
 }
