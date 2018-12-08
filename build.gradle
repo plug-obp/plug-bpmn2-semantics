@@ -4,7 +4,7 @@ buildscript {
 		maven { url "https://dl.bintray.com/plug-obp/maven" }
 	}
 	dependencies {
-		classpath group: 'fr.ensta-bretagne', name: 'plug-plugin', version: '+'
+		classpath group: 'fr.ensta-bretagne', name: 'plug-plugin', version: '0.6'
 	}
 }
 
@@ -39,5 +39,3 @@ dependencies {
 //To build a distribution of this project --> ./gradlew :plug-bpmn2-semantics:assembleDist
 apply plugin: 'application'
 mainClassName = "plug.bpmn2.semantics.Main"
-
-
