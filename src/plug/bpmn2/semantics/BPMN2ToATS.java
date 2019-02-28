@@ -5,20 +5,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.bpmn2.Definitions;
-import org.eclipse.bpmn2.DocumentRoot;
-import org.eclipse.bpmn2.EventBasedGateway;
-import org.eclipse.bpmn2.ExclusiveGateway;
-import org.eclipse.bpmn2.FlowElement;
-import org.eclipse.bpmn2.FlowNode;
-import org.eclipse.bpmn2.InclusiveGateway;
-import org.eclipse.bpmn2.IntermediateCatchEvent;
-import org.eclipse.bpmn2.IntermediateThrowEvent;
-import org.eclipse.bpmn2.ParallelGateway;
+import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
-import org.eclipse.bpmn2.RootElement;
-import org.eclipse.bpmn2.SequenceFlow;
-import org.eclipse.bpmn2.Task;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
 
@@ -126,6 +114,14 @@ public class BPMN2ToATS {
 			}
 
 			return transitionList;
+		}
+
+
+
+		@Override
+		public List<BPMN2AbstractTransition> caseServiceTask(ServiceTask object) {
+			object.getOperationRef();
+			return super.caseServiceTask(object);
 		}
 
 		public List<List<SequenceFlow>> combi(List<SequenceFlow> list, int k) {

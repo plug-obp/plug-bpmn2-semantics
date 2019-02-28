@@ -44,5 +44,6 @@ public class SimpleEvaluator {
             System.out.println(object.eClass().getName());
             return super.defaultCase(object);
         }
+
     }
 }
