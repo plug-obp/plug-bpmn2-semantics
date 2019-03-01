@@ -2,7 +2,6 @@ package plug.bpmn2.interpretation.model.instance.impl;
 
 import org.eclipse.bpmn2.Activity;
 import plug.bpmn2.interpretation.model.instance.ActivityState;
-import plug.bpmn2.interpretation.model.instance.InstanceVisitor;
 import plug.bpmn2.interpretation.model.instance.ActivityInstance;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 

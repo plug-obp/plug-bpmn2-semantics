@@ -2,7 +2,7 @@ package plug.bpmn2.interpretation.model;
 
 import org.eclipse.bpmn2.SequenceFlow;
 
-public class BPMNRuntimeToken implements BPMNRuntimeBaseElement {
+public class BPMNRuntimeToken implements BPMNRuntimeBaseElement<SequenceFlow> {
 
     private final SequenceFlow baseElement;
 
@@ -14,5 +14,6 @@ public class BPMNRuntimeToken implements BPMNRuntimeBaseElement {
     public SequenceFlow baseElement() {
         return baseElement;
     }
+
 
 }
