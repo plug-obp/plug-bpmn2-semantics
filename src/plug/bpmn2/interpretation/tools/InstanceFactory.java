@@ -3,8 +3,8 @@ package plug.bpmn2.interpretation.tools;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
-import plug.bpmn2.interpretation.model.instance.ActivityState;
-import plug.bpmn2.interpretation.model.instance.BPMNRuntimeInstance;
+import plug.bpmn2.interpretation.model.instance.data.ActivityState;
+import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.*;
 import plug.bpmn2.interpretation.model.instance.impl.*;
 
@@ -12,11 +12,13 @@ import java.util.LinkedList;
 
 public class InstanceFactory {
 
+    private final BPMNRuntimeToolKit toolKit;
     private final InternalSwitch internalSwitch;
     private final TokensInitializer tokensInitializer;
 
-    public InstanceFactory(TokensInitializer tokensInitializer) {
-        this.tokensInitializer = tokensInitializer;
+    public InstanceFactory(BPMNRuntimeToolKit toolKit) {
+        this.toolKit = toolKit;
+        this.tokensInitializer = toolKit.getTokensInitializer();
         internalSwitch = new InternalSwitch();
     }
 
@@ -25,6 +27,7 @@ public class InstanceFactory {
     }
 
     public BPMNRuntimeInstance instantiate(BPMNRuntimeInstance parent, BaseElement baseElement) {
+        toolKit.println(this.getClass().toString(), baseElement.toString(), "Recursive instantiations");
         internalSwitch.getParentStack().clear();
         internalSwitch.getParentStack().push(parent);
         return internalSwitch.doSwitch(baseElement);
@@ -45,7 +48,7 @@ public class InstanceFactory {
         private BPMNRuntimeInstance getParent() {
             if (parentStack.isEmpty()) {
                 throw new IllegalStateException(
-                        "Empty parent stack"
+                        "Empty getParent stack"
                 );
             }
             return parentStack.getLast();
@@ -55,7 +58,7 @@ public class InstanceFactory {
             BPMNRuntimeInstance parent = getParent();
             if (parent == null) {
                 throw new IllegalArgumentException(
-                        "Expected a non null parent (not a legal model root element)"
+                        "Expected a non null getParent (not a legal model root element)"
                 );
             }
             return parent;
@@ -65,7 +68,7 @@ public class InstanceFactory {
             BPMNRuntimeInstance parent = getNonNullParent();
             if (!(parent instanceof FlowElementsContainerInstance)) {
                 throw new IllegalArgumentException(
-                        "The parent of an ActivityInstance has to be a FlowElementsContainerInstance"
+                        "The getParent of an ActivityInstance has to be a FlowElementsContainerInstance"
                 );
             }
             return (FlowElementsContainerInstance) parent;
@@ -73,6 +76,7 @@ public class InstanceFactory {
 
         @Override
         public CollaborationInstance caseCollaboration(Collaboration object) {
+            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating collaboration");
             CollaborationInstance result = new CollaborationInstanceImpl(getParent(), object);
             parentStack.push(result);
             for (Participant participant : object.getParticipants()) {
@@ -87,6 +91,7 @@ public class InstanceFactory {
 
         @Override
         public ChoreographyInstance caseChoreography(Choreography object) {
+            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating choreography");
             ChoreographyInstance result = new ChoreographyInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
             return result;
@@ -94,6 +99,7 @@ public class InstanceFactory {
 
         @Override
         public ProcessInstance caseProcess(Process object) {
+            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating process");
             ProcessInstance result = new ProcessInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
             return result;
@@ -101,6 +107,7 @@ public class InstanceFactory {
 
         @Override
         public SubProcessInstance caseSubProcess(SubProcess object) {
+            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating subProcess");
             SubProcessInstance result = new SubProcessInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
             tokensInitializer.initialize(result);
             return result;
@@ -108,6 +115,7 @@ public class InstanceFactory {
 
         @Override
         public TaskInstance caseTask(Task object) {
+            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating task");
             return new TaskInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
         }
 

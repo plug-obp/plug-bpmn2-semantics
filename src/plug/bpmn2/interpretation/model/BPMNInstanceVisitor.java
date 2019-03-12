@@ -1,6 +1,8 @@
-package plug.bpmn2.interpretation.model.instance;
+package plug.bpmn2.interpretation.model;
 
-public interface InstanceVisitor {
+import plug.bpmn2.interpretation.model.instance.*;
+
+public interface BPMNInstanceVisitor {
     default void visitChoreographyInstance(ChoreographyInstance instance) {}
     default void visitCollaborationInstance(CollaborationInstance instance) {}
     default void visitProcessInstance(ProcessInstance instance) {}

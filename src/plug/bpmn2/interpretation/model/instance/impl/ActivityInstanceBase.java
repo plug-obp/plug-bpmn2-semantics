@@ -1,9 +1,9 @@
 package plug.bpmn2.interpretation.model.instance.impl;
 
 import org.eclipse.bpmn2.Activity;
-import plug.bpmn2.interpretation.model.instance.ActivityState;
 import plug.bpmn2.interpretation.model.instance.ActivityInstance;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
+import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 
 abstract class ActivityInstanceBase<T extends Activity>
         extends InstanceBase<FlowElementsContainerInstance, T>
@@ -20,7 +20,7 @@ abstract class ActivityInstanceBase<T extends Activity>
     }
 
     @Override
-    public ActivityState activityState() {
+    public ActivityState getActivityState() {
         return state;
     }
 

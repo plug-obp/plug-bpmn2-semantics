@@ -2,8 +2,8 @@ package plug.bpmn2.interpretation.model;
 
 import org.eclipse.bpmn2.BaseElement;
 
-public interface BPMNRuntimeBaseElement<T extends BaseElement> {
+public interface BPMNRuntimeBaseElement {
 
-    T baseElement();
+    BaseElement getBaseElement();
 
 }

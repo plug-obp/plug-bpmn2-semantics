@@ -5,6 +5,6 @@ import org.eclipse.bpmn2.Choreography;
 public interface ChoreographyInstance extends CollaborationInstance, FlowElementsContainerInstance {
 
     @Override
-    Choreography baseElement();
+    Choreography getBaseElement();
 
 }

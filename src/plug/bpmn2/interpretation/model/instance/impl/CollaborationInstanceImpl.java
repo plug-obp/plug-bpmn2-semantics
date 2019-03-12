@@ -1,8 +1,8 @@
 package plug.bpmn2.interpretation.model.instance.impl;
 
 import org.eclipse.bpmn2.Collaboration;
-import plug.bpmn2.interpretation.model.instance.BPMNRuntimeInstance;
-import plug.bpmn2.interpretation.model.instance.InstanceVisitor;
+import plug.bpmn2.interpretation.model.BPMNInstanceVisitor;
+import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.CollaborationInstance;
 
 public class CollaborationInstanceImpl
@@ -14,7 +14,7 @@ public class CollaborationInstanceImpl
     }
 
     @Override
-    public void acceptInstanceVisitor(InstanceVisitor visitor) {
+    public void acceptInstanceVisitor(BPMNInstanceVisitor visitor) {
         visitor.visitCollaborationInstance(this);
     }
 

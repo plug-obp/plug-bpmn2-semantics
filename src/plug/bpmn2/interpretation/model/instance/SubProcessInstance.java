@@ -4,10 +4,9 @@ import org.eclipse.bpmn2.SubProcess;
 
 public interface SubProcessInstance extends
         ActivityInstance,
-        FlowElementsContainerInstance,
-        InteractionNodeInstance {
+        FlowElementsContainerInstance {
 
     @Override
-    SubProcess baseElement();
+    SubProcess getBaseElement();
 
 }

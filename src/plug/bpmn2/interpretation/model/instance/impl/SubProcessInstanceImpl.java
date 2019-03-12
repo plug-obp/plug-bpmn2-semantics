@@ -1,11 +1,11 @@
 package plug.bpmn2.interpretation.model.instance.impl;
 
 import org.eclipse.bpmn2.SubProcess;
-import plug.bpmn2.interpretation.model.BPMNRuntimeToken;
-import plug.bpmn2.interpretation.model.instance.ActivityState;
-import plug.bpmn2.interpretation.model.instance.InstanceVisitor;
+import plug.bpmn2.interpretation.model.BPMNInstanceVisitor;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 import plug.bpmn2.interpretation.model.instance.SubProcessInstance;
+import plug.bpmn2.interpretation.model.instance.data.ActivityState;
+import plug.bpmn2.interpretation.model.instance.data.Token;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +14,7 @@ public class SubProcessInstanceImpl
         extends ActivityInstanceBase<SubProcess>
         implements SubProcessInstance {
 
-    private final Set<BPMNRuntimeToken> tokenSet;
+    private final Set<Token> tokenSet;
 
     public SubProcessInstanceImpl(
             FlowElementsContainerInstance parent,
@@ -25,12 +25,12 @@ public class SubProcessInstanceImpl
     }
 
     @Override
-    public Set<BPMNRuntimeToken> tokenSet() {
+    public Set<Token> getTokenSet() {
         return tokenSet;
     }
 
     @Override
-    public void acceptInstanceVisitor(InstanceVisitor visitor) {
+    public void acceptInstanceVisitor(BPMNInstanceVisitor visitor) {
         visitor.visitSubProcessInstance(this);
     }
 

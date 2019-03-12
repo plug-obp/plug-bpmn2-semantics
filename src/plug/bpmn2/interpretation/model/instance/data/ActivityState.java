@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.model.instance;
+package plug.bpmn2.interpretation.model.instance.data;
 
 public enum ActivityState {
     INACTIVE,

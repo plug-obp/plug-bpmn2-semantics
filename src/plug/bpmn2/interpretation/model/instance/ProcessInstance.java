@@ -5,6 +5,6 @@ import org.eclipse.bpmn2.Process;
 public interface ProcessInstance extends FlowElementsContainerInstance {
 
     @Override
-    Process baseElement();
+    Process getBaseElement();
 
 }

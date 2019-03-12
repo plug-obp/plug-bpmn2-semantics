@@ -294,7 +294,7 @@ public class BPMN2PrinterShort extends Bpmn2Switch<String> {
 
     @Override
     public String caseDataState(DataState object) {
-        return "Data activityState"
+        return "Data getActivityState"
                 + " " + attributeString("name", object.getName())
                 + " " + attributeString("id", object.getId());
     }
