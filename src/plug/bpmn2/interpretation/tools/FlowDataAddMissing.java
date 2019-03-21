@@ -3,6 +3,7 @@ package plug.bpmn2.interpretation.tools;
 import org.eclipse.bpmn2.MessageFlow;
 import plug.bpmn2.interpretation.model.BPMNInstanceVisitor;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
+import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.*;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
 import plug.bpmn2.interpretation.tools.walker.BPMNInstanceAspectHandler;
@@ -22,18 +23,20 @@ public class FlowDataAddMissing {
     }
 
     public void initializeFlowData(BPMNModelRuntimeState runtimeState) {
-        toolKit.println(this.getClass().toString(), runtimeState.toString(), "Starting");
+        toolKit.println(this, "", "Starting");
         this.runtimeState = runtimeState;
-        walker.walkInstanceTree(runtimeState.getRoot());
+        for (BPMNRuntimeInstance rootInstance : runtimeState.getRootInstances()) {
+            walker.walkInstanceTree(rootInstance);
+        }
     }
 
     private class InternalHandler implements BPMNInstanceAspectHandler {
 
         @Override
         public void handleCollaborationAspect(CollaborationInstance instance) {
-            toolKit.println(this.getClass().toString(), instance.toString(), "Entering Collaboration");
+            toolKit.println(this, instance.getBaseElement(), "Entering Collaboration");
             for (MessageFlow messageFlow : instance.getBaseElement().getMessageFlows()) {
-                toolKit.println(this.getClass().toString(), messageFlow.toString(), "Adding MessageFlow");
+                toolKit.println(this, messageFlow, "Adding MessageFlow");
                 MessageFlowData messageFlowData = new MessageFlowData(
                         messageFlow,
                         null,

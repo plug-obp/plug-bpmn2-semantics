@@ -8,18 +8,18 @@ import java.util.Set;
 
 public class BPMNModelRuntimeState {
 
-    private final BPMNRuntimeInstance root;
+    private final Set<BPMNRuntimeInstance> rootInstances;
     private final Set<MessageFlowData> messageFlowDataSet;
     private final Set<EventFlowData> eventFlowDataSet;
 
-    public BPMNModelRuntimeState(BPMNRuntimeInstance root) {
-        this.root = root;
+    public BPMNModelRuntimeState() {
+        rootInstances = new HashSet<>();
         messageFlowDataSet = new HashSet<>();
         eventFlowDataSet = new HashSet<>();
     }
 
-    public BPMNRuntimeInstance getRoot() {
-        return root;
+    public Set<BPMNRuntimeInstance> getRootInstances() {
+        return rootInstances;
     }
 
     public Set<MessageFlowData> getMessageFlowDataSet() {

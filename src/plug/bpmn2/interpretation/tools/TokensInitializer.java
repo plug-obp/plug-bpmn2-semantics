@@ -22,7 +22,7 @@ public class TokensInitializer {
     }
 
     public void initialize(FlowElementsContainerInstance instance) {
-        toolKit.println(this.getClass().toString(), instance.toString(), "Starting");
+        toolKit.println(this, instance.getBaseElement(), "Starting");
         this.instance = instance;
         for (FlowElement flowElement : instance.getBaseElement().getFlowElements()) {
             internalSwitch.doSwitch(flowElement);
@@ -36,13 +36,13 @@ public class TokensInitializer {
         @Override
         public Object caseStartEvent(StartEvent startEvent) {
             if (!startEvent.getIncoming().isEmpty()) {
-                toolKit.println(this.getClass().toString(), startEvent.toString(), "Has Incoming Sequence Flow");
+                toolKit.println(this, startEvent, "Has Incoming Sequence Flow");
             } else if (!startEvent.getIncomingConversationLinks().isEmpty()) {
-                toolKit.println(this.getClass().toString(), startEvent.toString(), "Has Incoming Conversation Link");
+                toolKit.println(this, startEvent, "Has Incoming Conversation Link");
             } else {
-                toolKit.println(this.getClass().toString(), startEvent.toString(), "Is a valid initial start event");
+                toolKit.println(this, startEvent, "Is a valid initial start event");
                 for (SequenceFlow initialSequenceFlow : startEvent.getOutgoing()) {
-                    toolKit.println(this.getClass().toString(), initialSequenceFlow.toString(), "Adding Token");
+                    toolKit.println(this, initialSequenceFlow, "Adding Token");
                     instance.getTokenSet().add(tokenPool.getToken(initialSequenceFlow));
                 }
             }

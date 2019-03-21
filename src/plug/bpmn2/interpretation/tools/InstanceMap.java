@@ -29,8 +29,10 @@ public class InstanceMap {
 
     public void load(BPMNModelRuntimeState modelRuntimeState) {
         instanceMap.clear();
-        toolKit.println(this.getClass().toString(), modelRuntimeState.toString(), "Computing instance map");
-        walker.walkInstanceTree(modelRuntimeState.getRoot());
+        toolKit.println(this, "", "Computing instance map");
+        for (BPMNRuntimeInstance rootInstance : modelRuntimeState.getRootInstances()) {
+            walker.walkInstanceTree(rootInstance);
+        }
     }
 
     public Set<BPMNRuntimeInstance> getInstances(BaseElement baseElement) {

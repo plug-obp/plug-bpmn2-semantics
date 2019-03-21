@@ -1,22 +1,25 @@
 package plug.bpmn2.interpretation.tools;
 
 import org.eclipse.bpmn2.DocumentRoot;
+import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
+import plug.bpmn2.tools.BPMN2PrinterShort;
 
 import java.util.function.Consumer;
 
 public class BPMNRuntimeToolKit {
 
+    private BPMN2PrinterShort shortPrinter;
     private Consumer<String> logOutput;
-    private DocumentRoot model;
+    private DocumentRoot documentRoot;
     private TokenPool tokenPool;
     private TokensInitializer tokensInitializer;
     private InstanceFactory instanceFactory;
     private InstanceMap instanceMap;
     private FlowDataAddMissing flowDataInitializer;
 
-    public BPMNRuntimeToolKit(DocumentRoot model) {
+    public BPMNRuntimeToolKit() {
         logOutput = s -> {};
     }
 
@@ -28,12 +31,27 @@ public class BPMNRuntimeToolKit {
         logOutput.accept(log);
     }
 
-    public void println(String phase, String subject, String log) {
-        println("[" + phase + "] <" + subject + "> " + log);
+    private String getString(Object object) {
+        if (object instanceof String) {
+            return (String) object;
+        }
+        if (object instanceof EObject) {
+            return shortPrinter.getShortString((EObject) object);
+        }
+        String className = object.getClass().getTypeName();
+        String[] classNames = className.split("\\.");
+        return classNames[classNames.length - 1];
     }
 
-    public void setModel(DocumentRoot model) {
-        this.model = model;
+    public void println(Object phase, Object subject, String log) {
+        String phaseString = getString(phase);
+        String subjectString = getString(subject);
+        println("[" + phaseString + "] " + log + " <" + subjectString + ">");
+    }
+
+    public void setDocumentRoot(DocumentRoot documentRoot) {
+        this.documentRoot = documentRoot;
+        shortPrinter = new BPMN2PrinterShort();
         tokenPool = new TokenPool();
         tokensInitializer = new TokensInitializer(this);
         instanceFactory = new InstanceFactory(this);
@@ -41,8 +59,8 @@ public class BPMNRuntimeToolKit {
         flowDataInitializer = new FlowDataAddMissing(this);
     }
 
-    public DocumentRoot getModel() {
-        return model;
+    public DocumentRoot getDocumentRoot() {
+        return documentRoot;
     }
 
     public TokenPool getTokenPool() {
@@ -66,9 +84,9 @@ public class BPMNRuntimeToolKit {
     }
 
     public BPMNModelRuntimeState getInitialState() {
-        println(this.getClass().toString(), "Initial State", "Building");
-        BPMNRuntimeInstance root = instanceFactory.instantiate(model);
-        BPMNModelRuntimeState initialState = new BPMNModelRuntimeState(root);
+        println(this, "Initial State", "Building");
+        BPMNModelRuntimeState initialState = instanceFactory.instantiate(documentRoot);
+
         instanceMap.load(initialState);
         flowDataInitializer.initializeFlowData(initialState);
         return initialState;

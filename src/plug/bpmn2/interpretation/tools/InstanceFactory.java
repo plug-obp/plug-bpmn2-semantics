@@ -3,6 +3,7 @@ package plug.bpmn2.interpretation.tools;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
+import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.*;
@@ -22,12 +23,19 @@ public class InstanceFactory {
         internalSwitch = new InternalSwitch();
     }
 
-    public BPMNRuntimeInstance instantiate(DocumentRoot model) {
-        return instantiate(null, model.getRootElement());
+    public BPMNModelRuntimeState instantiate(DocumentRoot model) {
+        BPMNModelRuntimeState initialState = new BPMNModelRuntimeState();
+        Definitions definitions = model.getDefinitions();
+        for (RootElement rootElement : definitions.getRootElements()) {
+            BPMNRuntimeInstance instance = instantiate(null, rootElement);
+            if (instance != null) {
+                initialState.getRootInstances().add(instance);
+            }
+        }
+        return initialState;
     }
 
     public BPMNRuntimeInstance instantiate(BPMNRuntimeInstance parent, BaseElement baseElement) {
-        toolKit.println(this.getClass().toString(), baseElement.toString(), "Recursive instantiations");
         internalSwitch.getParentStack().clear();
         internalSwitch.getParentStack().push(parent);
         return internalSwitch.doSwitch(baseElement);
@@ -76,12 +84,18 @@ public class InstanceFactory {
 
         @Override
         public CollaborationInstance caseCollaboration(Collaboration object) {
-            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating collaboration");
+            toolKit.println(this, object, "Instantiating collaboration");
             CollaborationInstance result = new CollaborationInstanceImpl(getParent(), object);
             parentStack.push(result);
             for (Participant participant : object.getParticipants()) {
                 Process process = participant.getProcessRef();
-                for (int i = 0; i < participant.getParticipantMultiplicity().getMinimum(); i++) {
+                int min;
+                if (participant.getParticipantMultiplicity() == null) {
+                    min = 1;
+                } else {
+                    min = participant.getParticipantMultiplicity().getMinimum();
+                }
+                for (int i = 0; i < min; i++) {
                     doSwitch(process);
                 }
             }
@@ -91,7 +105,7 @@ public class InstanceFactory {
 
         @Override
         public ChoreographyInstance caseChoreography(Choreography object) {
-            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating choreography");
+            toolKit.println(this, object, "Instantiating choreography");
             ChoreographyInstance result = new ChoreographyInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
             return result;
@@ -99,7 +113,7 @@ public class InstanceFactory {
 
         @Override
         public ProcessInstance caseProcess(Process object) {
-            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating process");
+            toolKit.println(this, object, "Instantiating process");
             ProcessInstance result = new ProcessInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
             return result;
@@ -107,7 +121,7 @@ public class InstanceFactory {
 
         @Override
         public SubProcessInstance caseSubProcess(SubProcess object) {
-            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating subProcess");
+            toolKit.println(this, object, "Instantiating subProcess");
             SubProcessInstance result = new SubProcessInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
             tokensInitializer.initialize(result);
             return result;
@@ -115,7 +129,7 @@ public class InstanceFactory {
 
         @Override
         public TaskInstance caseTask(Task object) {
-            toolKit.println(this.getClass().toString(), object.toString(), "Instantiating task");
+            toolKit.println(this, object, "Instantiating task");
             return new TaskInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
         }
 
