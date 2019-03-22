@@ -3,17 +3,22 @@ package plug.bpmn2.interpretation.tools;
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
-import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
-import plug.bpmn2.tools.BPMN2PrinterShort;
+import plug.bpmn2.interpretation.tools.base.ParentMap;
+import plug.bpmn2.interpretation.tools.base.TokenPool;
+import plug.bpmn2.interpretation.tools.base.BPMN2PrinterShort;
 
 import java.util.function.Consumer;
 
 public class BPMNRuntimeToolKit {
 
-    private BPMN2PrinterShort shortPrinter;
     private Consumer<String> logOutput;
+
     private DocumentRoot documentRoot;
+
+    private BPMN2PrinterShort shortPrinter;
     private TokenPool tokenPool;
+    private ParentMap parentMap;
+
     private TokensInitializer tokensInitializer;
     private InstanceFactory instanceFactory;
     private InstanceMap instanceMap;
@@ -51,8 +56,11 @@ public class BPMNRuntimeToolKit {
 
     public void setDocumentRoot(DocumentRoot documentRoot) {
         this.documentRoot = documentRoot;
+
         shortPrinter = new BPMN2PrinterShort();
         tokenPool = new TokenPool();
+        parentMap = new ParentMap(documentRoot);
+
         tokensInitializer = new TokensInitializer(this);
         instanceFactory = new InstanceFactory(this);
         instanceMap = new InstanceMap(this);
@@ -69,6 +77,10 @@ public class BPMNRuntimeToolKit {
 
     public TokensInitializer getTokensInitializer() {
         return tokensInitializer;
+    }
+
+    public ParentMap getParentMap() {
+        return parentMap;
     }
 
     public InstanceFactory getInstanceFactory() {

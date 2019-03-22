@@ -27,9 +27,11 @@ public class InstanceFactory {
         BPMNModelRuntimeState initialState = new BPMNModelRuntimeState();
         Definitions definitions = model.getDefinitions();
         for (RootElement rootElement : definitions.getRootElements()) {
-            BPMNRuntimeInstance instance = instantiate(null, rootElement);
-            if (instance != null) {
-                initialState.getRootInstances().add(instance);
+            if (toolKit.getParentMap().isRoot(rootElement)) {
+                BPMNRuntimeInstance instance = instantiate(null, rootElement);
+                if (instance != null) {
+                    initialState.getRootInstances().add(instance);
+                }
             }
         }
         return initialState;
@@ -96,7 +98,8 @@ public class InstanceFactory {
                     min = participant.getParticipantMultiplicity().getMinimum();
                 }
                 for (int i = 0; i < min; i++) {
-                    doSwitch(process);
+                    BPMNRuntimeInstance instance = doSwitch(process);
+                    result.getChildInstanceSet().add(instance);
                 }
             }
             parentStack.removeLast();
