@@ -1,4 +1,4 @@
-package plug.bpmn2.tools;
+package plug.bpmn2.interpretation.tools.base;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Error;

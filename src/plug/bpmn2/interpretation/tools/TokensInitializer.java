@@ -5,6 +5,7 @@ import org.eclipse.bpmn2.SequenceFlow;
 import org.eclipse.bpmn2.StartEvent;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
+import plug.bpmn2.interpretation.tools.base.TokenPool;
 
 
 public class TokensInitializer {

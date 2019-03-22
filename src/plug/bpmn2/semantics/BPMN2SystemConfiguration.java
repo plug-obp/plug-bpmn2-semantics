@@ -1,7 +1,7 @@
 package plug.bpmn2.semantics;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.BPMN2PrinterShort;
+import plug.bpmn2.interpretation.tools.base.BPMN2PrinterShort;
 import plug.core.defaults.DefaultConfiguration;
 
 import java.util.*;

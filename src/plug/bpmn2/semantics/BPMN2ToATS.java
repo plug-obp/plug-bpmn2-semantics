@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import plug.bpmn2.semantics.transition.AbstractTransitionSimple;
 import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
-import plug.bpmn2.tools.BPMN2PrinterShort;
+import plug.bpmn2.interpretation.tools.base.BPMN2PrinterShort;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>

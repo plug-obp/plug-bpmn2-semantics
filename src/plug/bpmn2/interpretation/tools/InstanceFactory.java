@@ -27,9 +27,13 @@ public class InstanceFactory {
         BPMNModelRuntimeState initialState = new BPMNModelRuntimeState();
         Definitions definitions = model.getDefinitions();
         for (RootElement rootElement : definitions.getRootElements()) {
-            BPMNRuntimeInstance instance = instantiate(null, rootElement);
-            if (instance != null) {
-                initialState.getRootInstances().add(instance);
+            if (toolKit.getParentMap().isRoot(rootElement)) {
+                BPMNRuntimeInstance instance = instantiate(null, rootElement);
+                if (instance != null) {
+                    initialState.getRootInstances().add(instance);
+                }
+            } else {
+                toolKit.println(this, rootElement, "Referenced in another root element");
             }
         }
         return initialState;
@@ -85,6 +89,8 @@ public class InstanceFactory {
         @Override
         public CollaborationInstance caseCollaboration(Collaboration object) {
             toolKit.println(this, object, "Instantiating collaboration");
+            toolKit.increaseLogDepth();
+
             CollaborationInstance result = new CollaborationInstanceImpl(getParent(), object);
             parentStack.push(result);
             for (Participant participant : object.getParticipants()) {
@@ -96,41 +102,60 @@ public class InstanceFactory {
                     min = participant.getParticipantMultiplicity().getMinimum();
                 }
                 for (int i = 0; i < min; i++) {
-                    doSwitch(process);
+                    BPMNRuntimeInstance instance = doSwitch(process);
+                    result.getChildInstanceSet().add(instance);
                 }
             }
             parentStack.removeLast();
+            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public ChoreographyInstance caseChoreography(Choreography object) {
             toolKit.println(this, object, "Instantiating choreography");
+            toolKit.increaseLogDepth();
+
             ChoreographyInstance result = new ChoreographyInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
+
+            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public ProcessInstance caseProcess(Process object) {
             toolKit.println(this, object, "Instantiating process");
+            toolKit.increaseLogDepth();
+
             ProcessInstance result = new ProcessInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
+
+            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public SubProcessInstance caseSubProcess(SubProcess object) {
             toolKit.println(this, object, "Instantiating subProcess");
+            toolKit.increaseLogDepth();
+
             SubProcessInstance result = new SubProcessInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
             tokensInitializer.initialize(result);
+
+            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public TaskInstance caseTask(Task object) {
             toolKit.println(this, object, "Instantiating task");
-            return new TaskInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
+            toolKit.increaseLogDepth();
+
+            TaskInstance result = new TaskInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
+
+            toolKit.decreaseLogDepth();
+            return result;
         }
 
     }

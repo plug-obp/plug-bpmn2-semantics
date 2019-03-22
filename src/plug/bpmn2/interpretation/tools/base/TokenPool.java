@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools;
+package plug.bpmn2.interpretation.tools.base;
 
 import org.eclipse.bpmn2.SequenceFlow;
 import plug.bpmn2.interpretation.model.instance.data.Token;
@@ -6,15 +6,15 @@ import plug.bpmn2.interpretation.model.instance.data.Token;
 import java.util.HashMap;
 import java.util.Map;
 
-class TokenPool {
+public class TokenPool {
 
     private final Map<SequenceFlow, Token> sequenceFlowTokenMap;
 
-    TokenPool() {
+    public TokenPool() {
         sequenceFlowTokenMap = new HashMap<>();
     }
 
-    Token getToken(SequenceFlow sequenceFlow) {
+    public Token getToken(SequenceFlow sequenceFlow) {
         Token result = sequenceFlowTokenMap.get(sequenceFlow);
         if (result == null) {
             result = new Token(sequenceFlow);

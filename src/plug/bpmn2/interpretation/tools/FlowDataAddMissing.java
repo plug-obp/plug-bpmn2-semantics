@@ -24,10 +24,14 @@ public class FlowDataAddMissing {
 
     public void initializeFlowData(BPMNModelRuntimeState runtimeState) {
         toolKit.println(this, "", "Starting");
+        toolKit.increaseLogDepth();
+
         this.runtimeState = runtimeState;
         for (BPMNRuntimeInstance rootInstance : runtimeState.getRootInstances()) {
             walker.walkInstanceTree(rootInstance);
         }
+
+        toolKit.decreaseLogDepth();
     }
 
     private class InternalHandler implements BPMNInstanceAspectHandler {

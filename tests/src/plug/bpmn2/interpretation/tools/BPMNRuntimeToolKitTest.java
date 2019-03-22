@@ -14,6 +14,7 @@ public class BPMNRuntimeToolKitTest {
     public void getInitialState() {
         // String urlString = "plug/bpmn2/examples/process_1.bpmn";
         String urlString = "plug/bpmn2/examples/triso - Order Process for Pizza V4.bpmn".replaceAll("\\_", "%20");
+        // String urlString = "plug/bpmn2/examples/spray.bpmn2";
 
         BPMN2Loader loader = new BPMN2Loader();
         loader.loadModelFromURLString(urlString);
