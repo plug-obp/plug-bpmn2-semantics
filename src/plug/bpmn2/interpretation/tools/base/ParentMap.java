@@ -10,11 +10,49 @@ public class ParentMap {
 
     private final Map<BaseElement, Set<BaseElement>> childrenMap;
     private final Map<BaseElement, Set<BaseElement>> parentsMap;
+    private final List<Set<BaseElement>> hierarchyList;
+    private final Map<BaseElement, Integer> levelMap;
 
     public ParentMap(DocumentRoot documentRoot) {
         childrenMap = new HashMap<>();
         parentsMap = new HashMap<>();
         new InternalSwitch().doSwitch(documentRoot);
+        hierarchyList = computeHierarchyList();
+        levelMap = computeLevelMap();
+    }
+
+    private List<Set<BaseElement>> computeHierarchyList() {
+        LinkedList<Set<BaseElement>> result = new LinkedList<>();
+        Set<BaseElement> remainingElements = new HashSet<>(parentsMap.keySet());
+        Set<BaseElement> pastElements = new HashSet<>();
+        while (!remainingElements.isEmpty()) {
+            Set<BaseElement> currentElements = new HashSet<>();
+            for (BaseElement baseElement : remainingElements) {
+                Set<BaseElement> parents = parentsMap.get(baseElement);
+                if (pastElements.containsAll(parents)) {
+                    currentElements.add(baseElement);
+                }
+            }
+            if (currentElements.isEmpty()) {
+                break;
+            }
+            remainingElements.removeAll(currentElements);
+            pastElements.addAll(currentElements);
+            result.add(currentElements);
+        }
+        return result;
+    }
+
+    private Map<BaseElement, Integer> computeLevelMap() {
+        Map<BaseElement, Integer> result = new HashMap<>();
+        int level = 0;
+        for (Set<BaseElement> baseElementSet : hierarchyList) {
+            for (BaseElement baseElement : baseElementSet) {
+                result.put(baseElement, level);
+            }
+            level += 1;
+        }
+        return result;
     }
 
     public Set<BaseElement> getParents(BaseElement baseElement) {
@@ -37,23 +75,26 @@ public class ParentMap {
 
     private class InternalSwitch extends Bpmn2Switch<Object> {
 
-        private final Queue<BaseElement> parentStack;
+        private final LinkedList<BaseElement> parentStack;
 
         public InternalSwitch() {
             parentStack = new LinkedList<>();
         }
 
         private void before(BaseElement baseElement) {
-            BaseElement parent = parentStack.peek();
-            if (parent != null) {
+            if (!parentStack.isEmpty()) {
+                BaseElement parent = parentStack.getLast();
                 getChildren(parent).add(baseElement);
                 getParents(baseElement).add(parent);
+            } else {
+                getChildren(baseElement);
+                getParents(baseElement);
             }
             parentStack.add(baseElement);
         }
 
         private void after() {
-            parentStack.remove();
+            parentStack.removeLast();
         }
 
         @Override
@@ -105,6 +146,20 @@ public class ParentMap {
         public Object caseChoreography(Choreography object) {
             caseCollaboration(object);
             caseFlowElementsContainer(object);
+            return 0;
+        }
+
+        @Override
+        public Object caseMessageFlow(MessageFlow object) {
+            before(object);
+            after();
+            return 0;
+        }
+
+        @Override
+        public Object caseBaseElement(BaseElement object) {
+            before(object);
+            after();
             return 0;
         }
 
