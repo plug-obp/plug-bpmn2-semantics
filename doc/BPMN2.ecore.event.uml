@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="486.0" y="449.0">org.eclipse.bpmn2.StartEvent</node>
+    <node x="318.75" y="0.0">org.eclipse.bpmn2.InteractionNode</node>
+    <node x="345.0" y="808.0">org.eclipse.bpmn2.OutputSet</node>
+    <node x="940.0" y="557.0">org.eclipse.bpmn2.EventDefinition</node>
+    <node x="674.0" y="438.0">org.eclipse.bpmn2.BoundaryEvent</node>
+    <node x="1201.0" y="689.0">org.eclipse.bpmn2.ErrorEventDefinition</node>
+    <node x="865.0" y="460.0">org.eclipse.bpmn2.IntermediateCatchEvent</node>
+    <node x="1020.0" y="689.0">org.eclipse.bpmn2.SignalEventDefinition</node>
+    <node x="1574.0" y="678.0">org.eclipse.bpmn2.MessageEventDefinition</node>
+    <node x="315.0" y="460.0">org.eclipse.bpmn2.ImplicitThrowEvent</node>
+    <node x="58.591666666666754" y="237.0">org.eclipse.bpmn2.ThrowEvent</node>
+    <node x="0.0" y="808.0">org.eclipse.bpmn2.DataOutput</node>
+    <node x="0.0" y="460.0">org.eclipse.bpmn2.EndEvent</node>
+    <node x="0.0" y="689.0">org.eclipse.bpmn2.ConditionalEventDefinition</node>
+    <node x="396.0" y="689.0">org.eclipse.bpmn2.EscalationEventDefinition</node>
+    <node x="598.0" y="678.0">org.eclipse.bpmn2.CompensateEventDefinition</node>
+    <node x="389.75" y="124.0">org.eclipse.bpmn2.Event</node>
+    <node x="1375.0" y="667.0">org.eclipse.bpmn2.TimerEventDefinition</node>
+    <node x="1769.0" y="667.0">org.eclipse.bpmn2.LinkEventDefinition</node>
+    <node x="117.0" y="460.0">org.eclipse.bpmn2.IntermediateThrowEvent</node>
+    <node x="679.0" y="808.0">org.eclipse.bpmn2.InputSet</node>
+    <node x="590.3416666666667" y="226.0">org.eclipse.bpmn2.CatchEvent</node>
+    <node x="817.0" y="700.0">org.eclipse.bpmn2.TerminateEventDefinition</node>
+    <node x="993.0" y="808.0">org.eclipse.bpmn2.ConversationLink</node>
+    <node x="211.0" y="700.0">org.eclipse.bpmn2.CancelEventDefinition</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.eclipse.bpmn2.MessageEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-37.0" />
+      <point x="1661.5" y="617.0" />
+      <point x="1049.65" y="617.0" />
+      <point x="45.15000000000009" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.CatchEvent" target="org.eclipse.bpmn2.Event">
+      <point x="0.0" y="-81.0" />
+      <point x="756.8416666666667" y="201.0" />
+      <point x="529.25" y="201.0" />
+      <point x="46.5" y="26.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.ImplicitThrowEvent" target="org.eclipse.bpmn2.ThrowEvent">
+      <point x="0.0" y="-15.0" />
+      <point x="390.5" y="413.0" />
+      <point x="319.425" y="413.0" />
+      <point x="104.33333333333326" y="70.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.ConditionalEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-26.0" />
+      <point x="95.5" y="607.0" />
+      <point x="946.45" y="607.0" />
+      <point x="-58.049999999999955" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.SignalEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-26.0" />
+      <point x="1100.5" y="647.0" />
+      <point x="1010.95" y="647.0" />
+      <point x="6.4500000000000455" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.EndEvent" target="org.eclipse.bpmn2.ThrowEvent">
+      <point x="0.0" y="-15.0" />
+      <point x="48.5" y="413.0" />
+      <point x="110.75833333333338" y="413.0" />
+      <point x="-104.33333333333337" y="70.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.EscalationEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-26.0" />
+      <point x="487.0" y="627.0" />
+      <point x="972.25" y="627.0" />
+      <point x="-32.25" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.BoundaryEvent" target="org.eclipse.bpmn2.CatchEvent">
+      <point x="0.0" y="-37.0" />
+      <point x="759.5" y="413.0" />
+      <point x="756.8416666666667" y="413.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.TimerEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-48.0" />
+      <point x="1464.5" y="627.0" />
+      <point x="1036.75" y="627.0" />
+      <point x="32.25" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.IntermediateThrowEvent" target="org.eclipse.bpmn2.ThrowEvent">
+      <point x="0.0" y="-15.0" />
+      <point x="206.0" y="413.0" />
+      <point x="215.09166666666675" y="413.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Event" target="org.eclipse.bpmn2.InteractionNode">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.IntermediateCatchEvent" target="org.eclipse.bpmn2.CatchEvent">
+      <point x="0.0" y="-15.0" />
+      <point x="952.5" y="413.0" />
+      <point x="867.8416666666667" y="413.0" />
+      <point x="111.0" y="81.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.TerminateEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-15.0" />
+      <point x="908.5" y="647.0" />
+      <point x="998.05" y="647.0" />
+      <point x="-6.4500000000000455" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.ThrowEvent" target="org.eclipse.bpmn2.Event">
+      <point x="0.0" y="-70.0" />
+      <point x="215.09166666666675" y="201.0" />
+      <point x="436.25" y="201.0" />
+      <point x="-46.5" y="26.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.LinkEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-48.0" />
+      <point x="1882.0" y="607.0" />
+      <point x="1062.55" y="607.0" />
+      <point x="58.049999999999955" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.CancelEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-15.0" />
+      <point x="293.5" y="617.0" />
+      <point x="959.3500000000001" y="617.0" />
+      <point x="-45.14999999999998" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.ErrorEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-26.0" />
+      <point x="1278.0" y="637.0" />
+      <point x="1023.8500000000001" y="637.0" />
+      <point x="19.350000000000023" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.StartEvent" target="org.eclipse.bpmn2.CatchEvent">
+      <point x="0.0" y="-26.0" />
+      <point x="570.0" y="413.0" />
+      <point x="645.8416666666667" y="413.0" />
+      <point x="-111.0" y="81.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.CompensateEventDefinition" target="org.eclipse.bpmn2.EventDefinition">
+      <point x="0.0" y="-37.0" />
+      <point x="697.5" y="637.0" />
+      <point x="985.1500000000001" y="637.0" />
+      <point x="-19.350000000000023" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="481.0" y="375.0" />
+  <SelectedNodes>
+    <node>org.eclipse.bpmn2.ConversationLink</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="306.12500000000006" y="80.0">org.eclipse.bpmn2.SequenceFlow</node>
+    <node x="80.92500000000001" y="160.0">org.eclipse.bpmn2.Event</node>
+    <node x="184.12500000000006" y="80.0">org.eclipse.bpmn2.FlowNode</node>
+    <node x="259.0" y="240.0">org.eclipse.bpmn2.SubProcess</node>
+    <node x="387.0" y="240.0">org.eclipse.bpmn2.Task</node>
+    <node x="324.0" y="160.0">org.eclipse.bpmn2.Activity</node>
+    <node x="187.8" y="160.0">org.eclipse.bpmn2.Gateway</node>
+    <node x="0.0" y="240.0">org.eclipse.bpmn2.ThrowEvent</node>
+    <node x="131.00000000000003" y="240.0">org.eclipse.bpmn2.CatchEvent</node>
+    <node x="243.62500000000006" y="0.0">org.eclipse.bpmn2.FlowElement</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.eclipse.bpmn2.CatchEvent" target="org.eclipse.bpmn2.Event">
+      <point x="0.0" y="-15.0" />
+      <point x="185.00000000000003" y="215.0" />
+      <point x="138.675" y="215.0" />
+      <point x="19.25" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Task" target="org.eclipse.bpmn2.Activity">
+      <point x="0.0" y="-15.0" />
+      <point x="423.0" y="215.0" />
+      <point x="390.0" y="215.0" />
+      <point x="22.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Gateway" target="org.eclipse.bpmn2.FlowNode">
+      <point x="2.8421709430404007E-14" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.FlowNode" target="org.eclipse.bpmn2.FlowElement">
+      <point x="0.0" y="-15.0" />
+      <point x="235.12500000000006" y="55.0" />
+      <point x="272.62500000000006" y="55.0" />
+      <point x="-29.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.SubProcess" target="org.eclipse.bpmn2.Activity">
+      <point x="0.0" y="-15.0" />
+      <point x="313.0" y="215.0" />
+      <point x="346.0" y="215.0" />
+      <point x="-22.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Event" target="org.eclipse.bpmn2.FlowNode">
+      <point x="0.0" y="-15.0" />
+      <point x="119.42500000000001" y="135.0" />
+      <point x="201.12500000000006" y="135.0" />
+      <point x="-34.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Activity" target="org.eclipse.bpmn2.FlowNode">
+      <point x="0.0" y="-15.0" />
+      <point x="368.0" y="135.0" />
+      <point x="269.12500000000006" y="135.0" />
+      <point x="34.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.ThrowEvent" target="org.eclipse.bpmn2.Event">
+      <point x="0.0" y="-15.0" />
+      <point x="55.5" y="215.0" />
+      <point x="100.17500000000001" y="215.0" />
+      <point x="-19.25" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.SequenceFlow" target="org.eclipse.bpmn2.FlowElement">
+      <point x="0.0" y="-15.0" />
+      <point x="368.12500000000006" y="55.0" />
+      <point x="330.62500000000006" y="55.0" />
+      <point x="29.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="191.0" y="145.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

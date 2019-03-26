@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="66.0" y="0.0">org.eclipse.bpmn2.RootElement</node>
+    <node x="0.0" y="160.0">org.eclipse.bpmn2.Choreography</node>
+    <node x="142.0" y="80.0">org.eclipse.bpmn2.Process</node>
+    <node x="-243.0" y="-12.0">org.eclipse.bpmn2.DocumentRoot</node>
+    <node x="2.0" y="80.0">org.eclipse.bpmn2.Collaboration</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.eclipse.bpmn2.Process" target="org.eclipse.bpmn2.RootElement">
+      <point x="0.0" y="-15.0" />
+      <point x="186.0" y="55.0" />
+      <point x="153.0" y="55.0" />
+      <point x="29.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Choreography" target="org.eclipse.bpmn2.Collaboration">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Collaboration" target="org.eclipse.bpmn2.RootElement">
+      <point x="0.0" y="-15.0" />
+      <point x="62.0" y="55.0" />
+      <point x="95.0" y="55.0" />
+      <point x="-29.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="37.5" />
+  <SelectedNodes>
+    <node>org.eclipse.bpmn2.DocumentRoot</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
