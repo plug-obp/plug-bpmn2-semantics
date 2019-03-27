@@ -27,9 +27,10 @@ public class BPMNRuntimeToolKitTest {
 
         toolKit = new BPMNRuntimeToolKit();
         toolKit.setLogOutput(logOutput);
-        toolKit.setDocumentRoot(documentRoot);
 
         toolKit.println(this, urlString, "Test run");
+
+        toolKit.setDocumentRoot(documentRoot);
     }
 
     @Test

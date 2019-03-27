@@ -9,7 +9,7 @@ abstract class FlowDataBase implements FlowData {
     private final BPMNRuntimeInstance sourceParent;
     private final BPMNRuntimeInstance targetParent;
 
-    public FlowDataBase(BPMNRuntimeInstance sourceParent,
+    FlowDataBase(BPMNRuntimeInstance sourceParent,
                         BPMNRuntimeInstance targetParent) {
         this.sourceParent = sourceParent;
         this.targetParent = targetParent;
@@ -30,10 +30,9 @@ abstract class FlowDataBase implements FlowData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FlowDataBase that = (FlowDataBase) o;
-        return Objects.equals(sourceParent, that.sourceParent) &&
-                Objects.equals(targetParent, that.targetParent) &&
-                Objects.equals(getBaseElement(), that.getBaseElement()) &&
-                Objects.equals(getData(), that.getData());
+        return Objects.equals(getBaseElement(), that.getBaseElement()) &&
+                Objects.equals(sourceParent, that.sourceParent) &&
+                Objects.equals(targetParent, that.targetParent);
     }
 
     @Override
