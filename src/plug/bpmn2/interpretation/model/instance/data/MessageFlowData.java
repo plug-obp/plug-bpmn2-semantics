@@ -19,7 +19,6 @@ public class MessageFlowData extends FlowDataBase {
         this.isPresent = isPresent;
     }
 
-
     @Override
     public MessageFlow getBaseElement() {
         return messageFlow;

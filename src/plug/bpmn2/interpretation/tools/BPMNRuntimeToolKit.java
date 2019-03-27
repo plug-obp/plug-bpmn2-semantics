@@ -3,15 +3,20 @@ package plug.bpmn2.interpretation.tools;
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
+import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.tools.analysis.instance.InstanceMap;
 import plug.bpmn2.interpretation.tools.analysis.resource.BPMN2PrinterShort;
 import plug.bpmn2.interpretation.tools.analysis.resource.ParentMap;
+import plug.bpmn2.interpretation.tools.execute.ActionSetSupplier;
 import plug.bpmn2.interpretation.tools.instantiate.FlowDataAddMissing;
 import plug.bpmn2.interpretation.tools.instantiate.InstanceFactory;
 import plug.bpmn2.interpretation.tools.instantiate.TokenPool;
 import plug.bpmn2.interpretation.tools.instantiate.TokensInitializer;
+import plug.bpmn2.interpretation.transition.ActionSet;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Consumer;
 
 public class BPMNRuntimeToolKit {
@@ -30,6 +35,9 @@ public class BPMNRuntimeToolKit {
     private InstanceFactory instanceFactory;
     private InstanceMap instanceMap;
     private FlowDataAddMissing flowDataInitializer;
+
+    // Execution tools
+    private ActionSetSupplier actionSetSupplier;
 
     private int logDepth = 0;
 
@@ -85,6 +93,8 @@ public class BPMNRuntimeToolKit {
         instanceFactory = new InstanceFactory(this);
         instanceMap = new InstanceMap(this);
         flowDataInitializer = new FlowDataAddMissing(this);
+
+        actionSetSupplier = new ActionSetSupplier(this);
     }
 
     public DocumentRoot getDocumentRoot() {
@@ -125,6 +135,13 @@ public class BPMNRuntimeToolKit {
 
         decreaseLogDepth();
         return initialState;
+    }
+
+    public BPMNModelRuntimeState fireTransition(
+        BPMNModelRuntimeState source,
+        ActionSet action
+    ) {
+        return null;
     }
 
 }

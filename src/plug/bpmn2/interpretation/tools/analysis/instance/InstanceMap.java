@@ -16,6 +16,7 @@ public class InstanceMap {
 
     private final BPMNRuntimeInstanceWalker instanceFetcher;
     private final Map<BaseElement, Set<BPMNRuntimeInstance>> instanceMap;
+    private BPMNModelRuntimeState lastState;
 
     public InstanceMap(BPMNRuntimeToolKit toolKit) {
         this.toolKit = toolKit;
@@ -24,10 +25,12 @@ public class InstanceMap {
     }
 
     public void load(BPMNModelRuntimeState modelRuntimeState) {
-        instanceMap.clear();
-        toolKit.println(this, "", "Computing instance map");
-        for (BPMNRuntimeInstance rootInstance : modelRuntimeState.getRootInstances()) {
-            instanceFetcher.walkInstanceTree(rootInstance);
+        if (!Objects.equals(modelRuntimeState, lastState)) {
+            instanceMap.clear();
+            toolKit.println(this, "", "Computing instance map");
+            for (BPMNRuntimeInstance rootInstance : modelRuntimeState.getRootInstances()) {
+                instanceFetcher.walkInstanceTree(rootInstance);
+            }
         }
     }
 

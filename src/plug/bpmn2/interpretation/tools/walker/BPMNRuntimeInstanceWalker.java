@@ -6,6 +6,7 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class BPMNRuntimeInstanceWalker {
 
@@ -31,6 +32,10 @@ public class BPMNRuntimeInstanceWalker {
 
     public BPMNRuntimeInstanceWalker(BPMNInstanceVisitor leafVisitor) {
         this(new BPMNInstanceAspectHandler() {}, leafVisitor);
+    }
+
+    public BPMNRuntimeInstanceWalker(Consumer<BPMNRuntimeInstance> doEach) {
+        this(new SimpleInstanceAspectHandler(doEach));
     }
 
     public void walkInstanceTree(BPMNRuntimeInstance instance) {
