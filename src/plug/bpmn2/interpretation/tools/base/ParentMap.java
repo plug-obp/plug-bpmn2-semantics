@@ -96,6 +96,14 @@ public class ParentMap {
         return getParents(baseElement).isEmpty();
     }
 
+    public List<Set<BaseElement>> getHierarchyList() {
+        return hierarchyList;
+    }
+
+    public Map<BaseElement, Integer> getLevelMap() {
+        return levelMap;
+    }
+
     private class InternalSwitch extends Bpmn2Switch<Object> {
 
         private final LinkedList<BaseElement> parentStack;

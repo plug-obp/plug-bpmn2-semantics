@@ -45,10 +45,10 @@ public class FlowDataAddMissing {
                 toolKit.println(this, messageFlow, "Adding MessageFlow");
                 Set<BPMNRuntimeInstance> sourceSet = toolKit
                         .getInstanceMap()
-                        .getInstances(messageFlow.getSourceRef());
+                        .getEnclosingInstances(messageFlow.getSourceRef());
                 Set<BPMNRuntimeInstance> targetSet = toolKit
                         .getInstanceMap()
-                        .getInstances(messageFlow.getTargetRef());
+                        .getEnclosingInstances(messageFlow.getTargetRef());
                 // TODO Check which are actually missing and needed
                 for (BPMNRuntimeInstance sourceRef : sourceSet) {
                     for (BPMNRuntimeInstance targetRef : targetSet) {

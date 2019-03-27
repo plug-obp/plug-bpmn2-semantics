@@ -25,6 +25,14 @@ public class BPMNRuntimeInstanceWalker {
         this.toWalkInstanceList = new LinkedList<>();
     }
 
+    public BPMNRuntimeInstanceWalker(BPMNInstanceAspectHandler aspectHandler) {
+        this(aspectHandler, new BPMNInstanceVisitor() {});
+    }
+
+    public BPMNRuntimeInstanceWalker(BPMNInstanceVisitor leafVisitor) {
+        this(new BPMNInstanceAspectHandler() {}, leafVisitor);
+    }
+
     public void walkInstanceTree(BPMNRuntimeInstance instance) {
         walkedInstanceSet.clear();
         toWalkInstanceList.clear();

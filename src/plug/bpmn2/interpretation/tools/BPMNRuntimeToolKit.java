@@ -17,10 +17,12 @@ public class BPMNRuntimeToolKit {
 
     private DocumentRoot documentRoot;
 
+    // Model tools
     private BPMN2PrinterShort shortPrinter;
     private TokenPool tokenPool;
     private ParentMap parentMap;
 
+    // System state tools
     private TokensInitializer tokensInitializer;
     private InstanceFactory instanceFactory;
     private InstanceMap instanceMap;
@@ -74,8 +76,8 @@ public class BPMNRuntimeToolKit {
 
         shortPrinter = new BPMN2PrinterShort();
         tokenPool = new TokenPool();
-
         parentMap = new ParentMap(this);
+
         tokensInitializer = new TokensInitializer(this);
         instanceFactory = new InstanceFactory(this);
         instanceMap = new InstanceMap(this);
