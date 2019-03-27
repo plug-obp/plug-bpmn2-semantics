@@ -1,16 +1,14 @@
 package plug.bpmn2.interpretation.tools;
 
 import org.eclipse.bpmn2.BaseElement;
+import org.eclipse.bpmn2.InteractionNode;
 import plug.bpmn2.interpretation.model.BPMNInstanceVisitor;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.tools.walker.BPMNInstanceAspectHandler;
 import plug.bpmn2.interpretation.tools.walker.BPMNRuntimeInstanceWalker;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class InstanceMap {
 
@@ -38,6 +36,14 @@ public class InstanceMap {
     public Set<BPMNRuntimeInstance> getInstances(BaseElement baseElement) {
         Set<BPMNRuntimeInstance> instanceSet = instanceMap.computeIfAbsent(baseElement, k -> new HashSet<>());
         return instanceSet;
+    }
+
+    public Set<BPMNRuntimeInstance> getInstances(InteractionNode interactionNode) {
+        if (!(interactionNode instanceof BaseElement)) {
+            toolKit.println(this, interactionNode, "Unexpected instance of interactionNode, not a BaseElement");
+            return Collections.emptySet();
+        }
+        return getInstances((BaseElement) interactionNode);
     }
 
     private class InternalHandler implements BPMNInstanceAspectHandler {
