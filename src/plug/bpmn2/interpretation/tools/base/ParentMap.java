@@ -3,22 +3,29 @@ package plug.bpmn2.interpretation.tools.base;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
+import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
 
 import java.util.*;
 
 public class ParentMap {
 
+    private final BPMNRuntimeToolKit toolKit;
     private final Map<BaseElement, Set<BaseElement>> childrenMap;
     private final Map<BaseElement, Set<BaseElement>> parentsMap;
     private final List<Set<BaseElement>> hierarchyList;
     private final Map<BaseElement, Integer> levelMap;
 
-    public ParentMap(DocumentRoot documentRoot) {
+    public ParentMap(BPMNRuntimeToolKit toolKit) {
+        this.toolKit = toolKit;
         childrenMap = new HashMap<>();
         parentsMap = new HashMap<>();
-        new InternalSwitch().doSwitch(documentRoot);
+        toolKit.println(this, "", "Computing model hierarchy");
+        toolKit.increaseLogDepth();
+        new InternalSwitch().doSwitch(toolKit.getDocumentRoot());
         hierarchyList = computeHierarchyList();
         levelMap = computeLevelMap();
+        lookForAnomalies();
+        toolKit.decreaseLogDepth();
     }
 
     private List<Set<BaseElement>> computeHierarchyList() {
@@ -55,6 +62,22 @@ public class ParentMap {
         return result;
     }
 
+    private void lookForAnomalies() {
+        if (hierarchyList.isEmpty()) {
+            toolKit.println(this, "", "Empty hierarchy");
+        } else {
+            Set<BaseElement> rootElementSet = hierarchyList.get(0);
+            for (BaseElement rootElement : rootElementSet) {
+                if ((!(rootElement instanceof FlowElementsContainer)) &&
+                        (!(rootElement instanceof Collaboration)) &&
+                        (!(rootElement instanceof Activity))
+                ) {
+                    toolKit.println(this, rootElement, "Unexpected parent-less element");
+                }
+            }
+        }
+    }
+
     public Set<BaseElement> getParents(BaseElement baseElement) {
         return parentsMap.computeIfAbsent(
                 baseElement,
@@ -84,6 +107,9 @@ public class ParentMap {
         private void before(BaseElement baseElement) {
             if (!parentStack.isEmpty()) {
                 BaseElement parent = parentStack.getLast();
+                if (baseElement.eContainer() != parent) {
+                    toolKit.println(this, baseElement, "Different parent than the provided eContainer");
+                }
                 getChildren(parent).add(baseElement);
                 getParents(baseElement).add(parent);
             } else {
@@ -109,10 +135,13 @@ public class ParentMap {
         public Object caseCollaboration(Collaboration object) {
             before(object);
             for (Participant participant : object.getParticipants()) {
-                Process process = participant.getProcessRef();
-                if (process != null) {
-                    doSwitch(process);
-                }
+                doSwitch(participant);
+            }
+            for (MessageFlow messageFlow : object.getMessageFlows()) {
+                doSwitch(messageFlow);
+            }
+            for (MessageFlowAssociation messageFlowAssociation : object.getMessageFlowAssociations()) {
+                doSwitch(messageFlowAssociation);
             }
             after();
             return 0;
@@ -150,8 +179,44 @@ public class ParentMap {
         }
 
         @Override
+        public Object caseParticipant(Participant object) {
+            Process process = object.getProcessRef();
+            if (process != null) {
+                doSwitch(object.getProcessRef());
+            } else {
+                toolKit.println(this, object, "Participant with null process reference");
+            }
+            return 0;
+        }
+
+        @Override
         public Object caseMessageFlow(MessageFlow object) {
             before(object);
+            Message message = object.getMessageRef();
+            if (message != null) {
+                doSwitch(object.getMessageRef());
+            } else {
+                toolKit.println(this, object, "MessageFlow with null Message reference");
+            }
+            after();
+            return 0;
+        }
+
+        @Override
+        public Object caseMessageFlowAssociation(MessageFlowAssociation object) {
+            before(object);
+            MessageFlow messageFlow = object.getInnerMessageFlowRef();
+            if (messageFlow != null) {
+                doSwitch(messageFlow);
+            } else {
+                toolKit.println(this, object, "MessageFlowAssociation with null MessageFlow reference");
+            }
+            messageFlow = object.getOuterMessageFlowRef();
+            if (messageFlow != null) {
+                doSwitch(messageFlow);
+            } else {
+                toolKit.println(this, object, "MessageFlowAssociation with null MessageFlow reference");
+            }
             after();
             return 0;
         }

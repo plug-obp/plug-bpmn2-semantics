@@ -73,8 +73,8 @@ public class BPMNRuntimeToolKit {
 
         shortPrinter = new BPMN2PrinterShort();
         tokenPool = new TokenPool();
-        parentMap = new ParentMap(documentRoot);
 
+        parentMap = new ParentMap(this);
         tokensInitializer = new TokensInitializer(this);
         instanceFactory = new InstanceFactory(this);
         instanceMap = new InstanceMap(this);

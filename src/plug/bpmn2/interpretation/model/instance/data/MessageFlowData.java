@@ -10,11 +10,11 @@ public class MessageFlowData extends FlowDataBase {
 
     public MessageFlowData(
             MessageFlow messageFlow,
-            BPMNRuntimeInstance sourceParent,
-            BPMNRuntimeInstance targetParent,
+            BPMNRuntimeInstance sourceRef,
+            BPMNRuntimeInstance targetRef,
             boolean isPresent
     ) {
-        super(sourceParent, targetParent);
+        super(sourceRef, targetRef);
         this.messageFlow = messageFlow;
         this.isPresent = isPresent;
     }
