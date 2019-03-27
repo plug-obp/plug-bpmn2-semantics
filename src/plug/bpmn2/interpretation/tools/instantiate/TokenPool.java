@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools.base;
+package plug.bpmn2.interpretation.tools.instantiate;
 
 import org.eclipse.bpmn2.SequenceFlow;
 import plug.bpmn2.interpretation.model.instance.data.Token;

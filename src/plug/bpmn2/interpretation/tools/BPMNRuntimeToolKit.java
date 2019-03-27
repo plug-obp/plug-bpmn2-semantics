@@ -3,10 +3,13 @@ package plug.bpmn2.interpretation.tools;
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
-import plug.bpmn2.interpretation.tools.base.InstanceMap;
-import plug.bpmn2.interpretation.tools.base.ParentMap;
-import plug.bpmn2.interpretation.tools.base.TokenPool;
-import plug.bpmn2.interpretation.tools.base.BPMN2PrinterShort;
+import plug.bpmn2.interpretation.tools.analysis.instance.InstanceMap;
+import plug.bpmn2.interpretation.tools.analysis.resource.ParentMap;
+import plug.bpmn2.interpretation.tools.instantiate.TokenPool;
+import plug.bpmn2.interpretation.tools.analysis.resource.BPMN2PrinterShort;
+import plug.bpmn2.interpretation.tools.instantiate.FlowDataAddMissing;
+import plug.bpmn2.interpretation.tools.instantiate.InstanceFactory;
+import plug.bpmn2.interpretation.tools.instantiate.TokensInitializer;
 
 import java.util.Arrays;
 import java.util.function.Consumer;

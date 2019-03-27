@@ -1,11 +1,11 @@
-package plug.bpmn2.interpretation.tools;
+package plug.bpmn2.interpretation.tools.instantiate;
 
 import org.eclipse.bpmn2.FlowElement;
 import org.eclipse.bpmn2.SequenceFlow;
 import org.eclipse.bpmn2.StartEvent;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
-import plug.bpmn2.interpretation.tools.base.TokenPool;
+import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
 
 
 public class TokensInitializer {

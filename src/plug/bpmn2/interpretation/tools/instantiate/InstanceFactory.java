@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools;
+package plug.bpmn2.interpretation.tools.instantiate;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
@@ -8,6 +8,7 @@ import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.*;
 import plug.bpmn2.interpretation.model.instance.impl.*;
+import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
 
 import java.util.LinkedList;
 
@@ -16,6 +17,7 @@ public class InstanceFactory {
     private final BPMNRuntimeToolKit toolKit;
     private final InternalSwitch internalSwitch;
     private final TokensInitializer tokensInitializer;
+
 
     public InstanceFactory(BPMNRuntimeToolKit toolKit) {
         this.toolKit = toolKit;
@@ -140,7 +142,7 @@ public class InstanceFactory {
             toolKit.println(this, object, "Instantiating subProcess");
             toolKit.increaseLogDepth();
 
-            SubProcessInstance result = new SubProcessInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
+            SubProcessInstance result = new SubProcessInstanceImpl(getActivityParent(), object, ActivityState.READY);
             tokensInitializer.initialize(result);
 
             toolKit.decreaseLogDepth();
@@ -152,7 +154,7 @@ public class InstanceFactory {
             toolKit.println(this, object, "Instantiating task");
             toolKit.increaseLogDepth();
 
-            TaskInstance result = new TaskInstanceImpl(getActivityParent(), object, ActivityState.ACTIVE);
+            TaskInstance result = new TaskInstanceImpl(getActivityParent(), object, ActivityState.READY);
 
             toolKit.decreaseLogDepth();
             return result;

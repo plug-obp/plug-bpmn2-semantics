@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools.base;
+package plug.bpmn2.interpretation.tools.analysis.resource;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;

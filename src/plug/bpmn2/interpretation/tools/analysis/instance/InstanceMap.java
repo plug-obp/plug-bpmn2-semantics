@@ -1,7 +1,6 @@
-package plug.bpmn2.interpretation.tools.base;
+package plug.bpmn2.interpretation.tools.analysis.instance;
 
 import org.eclipse.bpmn2.*;
-import org.eclipse.bpmn2.util.Bpmn2Switch;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;

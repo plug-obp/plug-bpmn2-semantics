@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools.base;
+package plug.bpmn2.interpretation.tools.analysis.resource;
 
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.bpmn2.util.Bpmn2Switch;

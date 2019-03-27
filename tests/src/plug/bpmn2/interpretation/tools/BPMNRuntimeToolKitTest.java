@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.Test;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
-import plug.bpmn2.interpretation.tools.base.ParentMap;
+import plug.bpmn2.interpretation.tools.analysis.resource.ParentMap;
 import plug.bpmn2.module.BPMN2Loader;
 
 import java.util.function.Consumer;

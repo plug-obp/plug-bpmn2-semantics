@@ -1,7 +1,7 @@
 package plug.bpmn2.semantics.transition;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.interpretation.tools.base.BPMN2PrinterShort;
+import plug.bpmn2.interpretation.tools.analysis.resource.BPMN2PrinterShort;
 
 import java.util.*;
 
