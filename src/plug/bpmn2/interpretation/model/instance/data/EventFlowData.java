@@ -10,11 +10,11 @@ public class EventFlowData extends FlowDataBase {
 
     public EventFlowData(
             Event event,
-            BPMNRuntimeInstance sourceRef,
-            BPMNRuntimeInstance targetRef,
+            BPMNRuntimeInstance sourceParent,
+            BPMNRuntimeInstance targetParent,
             boolean isPresent
     ) {
-        super(sourceRef, targetRef);
+        super(sourceParent, targetParent);
         this.event = event;
         this.isPresent = isPresent;
     }

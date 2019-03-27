@@ -5,8 +5,8 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 
 public interface FlowData extends BPMNRuntimeBaseElement {
 
-    BPMNRuntimeInstance getSourceRef();
-    BPMNRuntimeInstance getTargetRef();
+    BPMNRuntimeInstance getSourceParent();
+    BPMNRuntimeInstance getTargetParent();
 
     Object getData();
 

@@ -56,28 +56,6 @@ public class BPMNRuntimeToolKitTest {
         assertEquals("Message Flows", 6, initialState.getMessageFlowDataSet().size());
     }
 
-    @Test
-    public void getInitialState() {
-        // String urlString = "plug/bpmn2/examples/process_1.bpmn";
-        // String urlString = "plug/bpmn2/examples/omg.pizzaDelivery.bpmn".replaceAll("\\_", "%20");
-        // String urlString = "plug/bpmn2/examples/enstab.spray.bpmn2";
-        //String urlString = "omg.pizzaDelivery.bpmn".replaceAll("\\_", "%20");
-        String urlString = "enstab.spray.bpmn2";
-
-        BPMN2Loader loader = new BPMN2Loader();
-        loader.loadModelFromURLString(urlString);
-        Resource modelResource = loader.getModelResource();
-
-        DocumentRootFetcher fetcher = new DocumentRootFetcher();
-        DocumentRoot documentRoot = fetcher.getRoot(modelResource);
-
-        BPMNRuntimeToolKit toolKit = new BPMNRuntimeToolKit();
-        toolKit.setLogOutput(System.out::println);
-        toolKit.setDocumentRoot(documentRoot);
-
-        BPMNModelRuntimeState initialState = toolKit.getInitialState();
-    }
-
     private class DocumentRootFetcher extends Bpmn2Switch<DocumentRoot> {
 
         public DocumentRoot getRoot(Resource resource) {

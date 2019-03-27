@@ -6,22 +6,22 @@ import java.util.Objects;
 
 abstract class FlowDataBase implements FlowData {
 
-    private final BPMNRuntimeInstance parentRef;
+    private final BPMNRuntimeInstance sourceParent;
     private final BPMNRuntimeInstance targetParent;
 
-    public FlowDataBase(BPMNRuntimeInstance parentRef,
-                        BPMNRuntimeInstance targetRef) {
-        this.parentRef = parentRef;
-        this.targetParent = targetRef;
+    public FlowDataBase(BPMNRuntimeInstance sourceParent,
+                        BPMNRuntimeInstance targetParent) {
+        this.sourceParent = sourceParent;
+        this.targetParent = targetParent;
     }
 
     @Override
-    public BPMNRuntimeInstance getSourceRef() {
-        return parentRef;
+    public BPMNRuntimeInstance getSourceParent() {
+        return sourceParent;
     }
 
     @Override
-    public BPMNRuntimeInstance getTargetRef() {
+    public BPMNRuntimeInstance getTargetParent() {
         return targetParent;
     }
 
@@ -30,7 +30,7 @@ abstract class FlowDataBase implements FlowData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FlowDataBase that = (FlowDataBase) o;
-        return Objects.equals(parentRef, that.parentRef) &&
+        return Objects.equals(sourceParent, that.sourceParent) &&
                 Objects.equals(targetParent, that.targetParent) &&
                 Objects.equals(getBaseElement(), that.getBaseElement()) &&
                 Objects.equals(getData(), that.getData());
@@ -38,7 +38,7 @@ abstract class FlowDataBase implements FlowData {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getBaseElement(), parentRef, targetParent, getData());
+        return Objects.hash(getBaseElement(), sourceParent, targetParent, getData());
     }
 
 }
