@@ -3,6 +3,7 @@ package plug.bpmn2.interpretation.tools;
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
+import plug.bpmn2.interpretation.tools.base.InstanceMap;
 import plug.bpmn2.interpretation.tools.base.ParentMap;
 import plug.bpmn2.interpretation.tools.base.TokenPool;
 import plug.bpmn2.interpretation.tools.base.BPMN2PrinterShort;

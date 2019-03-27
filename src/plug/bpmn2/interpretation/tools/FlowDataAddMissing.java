@@ -1,6 +1,5 @@
 package plug.bpmn2.interpretation.tools;
 
-import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.bpmn2.MessageFlow;
 import plug.bpmn2.interpretation.model.BPMNInstanceVisitor;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;

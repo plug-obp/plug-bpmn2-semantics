@@ -23,7 +23,7 @@ public class TokensInitializer {
     }
 
     public void initialize(FlowElementsContainerInstance instance) {
-        toolKit.println(this, instance.getBaseElement(), "Starting");
+        toolKit.println(this, instance.getBaseElement(), "Entering");
         this.instance = instance;
         for (FlowElement flowElement : instance.getBaseElement().getFlowElements()) {
             internalSwitch.doSwitch(flowElement);
@@ -38,14 +38,21 @@ public class TokensInitializer {
         public Object caseStartEvent(StartEvent startEvent) {
             if (!startEvent.getIncoming().isEmpty()) {
                 toolKit.println(this, startEvent, "Has Incoming Sequence Flow");
+                return NON_NULL;
             } else if (!startEvent.getIncomingConversationLinks().isEmpty()) {
                 toolKit.println(this, startEvent, "Has Incoming Conversation Link");
-            } else {
-                toolKit.println(this, startEvent, "Is a valid initial start event");
-                for (SequenceFlow initialSequenceFlow : startEvent.getOutgoing()) {
-                    toolKit.println(this, initialSequenceFlow, "Adding Token");
-                    instance.getTokenSet().add(tokenPool.getToken(initialSequenceFlow));
-                }
+                return NON_NULL;
+            } else if (!startEvent.getEventDefinitions().isEmpty()) {
+                toolKit.println(this, startEvent, "Is awaiting event(s)");
+                return NON_NULL;
+            } else if (!startEvent.getEventDefinitionRefs().isEmpty()) {
+                toolKit.println(this, startEvent, "Is awaiting event(s) ref(s)");
+                return NON_NULL;
+            }
+            toolKit.println(this, startEvent, "Is a valid initial start event");
+            for (SequenceFlow initialSequenceFlow : startEvent.getOutgoing()) {
+                toolKit.println(this, initialSequenceFlow, "Adding Token");
+                instance.getTokenSet().add(tokenPool.getToken(initialSequenceFlow));
             }
             return NON_NULL;
         }
