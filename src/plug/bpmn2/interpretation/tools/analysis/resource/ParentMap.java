@@ -1,7 +1,7 @@
 package plug.bpmn2.interpretation.tools.analysis.resource;
 
-import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
+import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
 
