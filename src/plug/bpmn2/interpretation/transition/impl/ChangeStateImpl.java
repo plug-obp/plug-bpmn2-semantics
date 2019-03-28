@@ -12,7 +12,7 @@ public class ChangeStateImpl implements ActivityAction.ChangeState {
     }
 
     @Override
-    public ActivityState targetActivityState() {
+    public ActivityState getTargetActivityState() {
         return null;
     }
 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="237.0">plug.bpmn2.interpretation.model.instance.CollaborationInstance</node>
+    <node x="293.25" y="0.0">plug.bpmn2.interpretation.model.BPMNRuntimeBaseElement</node>
+    <node x="595.9791666666666" y="496.0">plug.bpmn2.interpretation.model.instance.TaskInstance</node>
+    <node x="475.72916666666663" y="350.0">plug.bpmn2.interpretation.model.instance.ActivityInstance</node>
+    <node x="264.25" y="372.0">plug.bpmn2.interpretation.model.instance.ProcessInstance</node>
+    <node x="156.0625" y="113.0">plug.bpmn2.interpretation.model.instance.data.Token</node>
+    <node x="47.25" y="372.0">plug.bpmn2.interpretation.model.instance.ChoreographyInstance</node>
+    <node x="373.0625" y="102.0">plug.bpmn2.interpretation.model.BPMNRuntimeInstance</node>
+    <node x="390.5" y="496.0">plug.bpmn2.interpretation.model.instance.SubProcessInstance</node>
+    <node x="267.25" y="226.0">plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="plug.bpmn2.interpretation.model.instance.SubProcessInstance" target="plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance">
+      <point x="-45.25" y="-26.0" />
+      <point x="435.75" y="325.0" />
+      <point x="421.0" y="325.0" />
+      <point x="30.75" y="37.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.data.Token" target="plug.bpmn2.interpretation.model.BPMNRuntimeBaseElement">
+      <point x="0.0" y="-26.0" />
+      <point x="254.5625" y="77.0" />
+      <point x="341.75" y="77.0" />
+      <point x="-48.5" y="26.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.ChoreographyInstance" target="plug.bpmn2.interpretation.model.instance.CollaborationInstance">
+      <point x="-49.25" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance" target="plug.bpmn2.interpretation.model.BPMNRuntimeInstance">
+      <point x="61.5" y="-37.0" />
+      <point x="451.75" y="206.0" />
+      <point x="520.5625" y="206.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.ActivityInstance" target="plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance">
+      <point x="-64.25" y="-48.0" />
+      <point x="539.9791666666666" y="325.0" />
+      <point x="482.5" y="325.0" />
+      <point x="92.25" y="37.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.CollaborationInstance" target="plug.bpmn2.interpretation.model.BPMNRuntimeInstance">
+      <point x="0.0" y="-26.0" />
+      <point x="96.5" y="206.0" />
+      <point x="422.22916666666663" y="206.0" />
+      <point x="-98.33333333333331" y="37.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.SubProcessInstance" target="plug.bpmn2.interpretation.model.instance.ActivityInstance">
+      <point x="45.25" y="-26.0" />
+      <point x="526.25" y="471.0" />
+      <point x="539.9791666666666" y="471.0" />
+      <point x="-64.25" y="48.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.ProcessInstance" target="plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance">
+      <point x="0.0" y="-26.0" />
+      <point x="344.75" y="325.0" />
+      <point x="359.5" y="325.0" />
+      <point x="-30.75" y="37.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.ActivityInstance" target="plug.bpmn2.interpretation.model.BPMNRuntimeInstance">
+      <point x="64.25" y="-48.0" />
+      <point x="668.4791666666666" y="206.0" />
+      <point x="618.8958333333333" y="206.0" />
+      <point x="98.33333333333331" y="37.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.ChoreographyInstance" target="plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance">
+      <point x="49.25" y="-26.0" />
+      <point x="195.0" y="325.0" />
+      <point x="298.0" y="325.0" />
+      <point x="-92.25" y="37.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.BPMNRuntimeInstance" target="plug.bpmn2.interpretation.model.BPMNRuntimeBaseElement">
+      <point x="0.0" y="-37.0" />
+      <point x="520.5625" y="77.0" />
+      <point x="438.75" y="77.0" />
+      <point x="48.5" y="26.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance" target="plug.bpmn2.interpretation.model.instance.data.Token">
+      <point x="-61.5" y="-37.0" />
+      <point x="328.75" y="196.0" />
+      <point x="254.5625" y="196.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="plug.bpmn2.interpretation.model.instance.TaskInstance" target="plug.bpmn2.interpretation.model.instance.ActivityInstance">
+      <point x="0.0" y="-26.0" />
+      <point x="64.25" y="48.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="493.0" y="249.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

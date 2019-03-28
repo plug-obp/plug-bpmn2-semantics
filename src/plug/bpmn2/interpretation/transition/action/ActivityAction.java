@@ -7,7 +7,7 @@ public interface ActivityAction extends ActionDefinition {
 
     interface ChangeState extends ActivityAction {
 
-        ActivityState targetActivityState();
+        ActivityState getTargetActivityState();
 
         @Override
         default void accept(Visitor visitor) {
