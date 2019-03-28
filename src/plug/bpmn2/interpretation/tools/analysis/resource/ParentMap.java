@@ -3,19 +3,19 @@ package plug.bpmn2.interpretation.tools.analysis.resource;
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
-import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
+import plug.bpmn2.interpretation.tools.BPMNToolKit;
 
 import java.util.*;
 
 public class ParentMap {
 
-    private final BPMNRuntimeToolKit toolKit;
+    private final BPMNToolKit toolKit;
     private final Map<BaseElement, Set<BaseElement>> childrenMap;
     private final Map<BaseElement, Set<BaseElement>> parentsMap;
     private final List<Set<BaseElement>> hierarchyList;
     private final Map<BaseElement, Integer> levelMap;
 
-    public ParentMap(BPMNRuntimeToolKit toolKit) {
+    public ParentMap(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
         childrenMap = new HashMap<>();
         parentsMap = new HashMap<>();

@@ -15,13 +15,11 @@ import plug.bpmn2.interpretation.tools.instantiate.TokensInitializer;
 import plug.bpmn2.interpretation.transition.ActionSet;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.function.Consumer;
 
-public class BPMNRuntimeToolKit {
+public class BPMNToolKit {
 
-    private Consumer<String> logOutput;
+    private BPMNLogger logger;
 
     private DocumentRoot documentRoot;
 
@@ -41,45 +39,32 @@ public class BPMNRuntimeToolKit {
 
     private int logDepth = 0;
 
-    public BPMNRuntimeToolKit() {
-        logOutput = s -> {};
+    public BPMNToolKit() {
+        logger = new BPMNLogger();
+    }
+
+    public BPMNLogger getLogger() {
+        return logger;
     }
 
     public void setLogOutput(Consumer<String> logOutput) {
-        this.logOutput = logOutput;
+        logger.setAllOutput(logOutput);
     }
 
     public void increaseLogDepth() {
-        logDepth += 1;
+        logger.increaseLogDepth();
     }
 
     public void decreaseLogDepth() {
-        logDepth -= 1;
+        logger.decreaseLogDepth();
     }
 
     public void println(String log) {
-        char[] tabs = new char[logDepth * 4];
-        Arrays.fill(tabs, ' ');
-        String tab = new String(tabs);
-        logOutput.accept(tab + log);
-    }
-
-    private String getString(Object object) {
-        if (object instanceof String) {
-            return (String) object;
-        }
-        if (object instanceof EObject) {
-            return shortPrinter.getShortString((EObject) object);
-        }
-        String className = object.getClass().getTypeName();
-        String[] classNames = className.split("\\.");
-        return classNames[classNames.length - 1];
+        logger.log(log);
     }
 
     public void println(Object phase, Object subject, String log) {
-        String phaseString = getString(phase);
-        String subjectString = getString(subject);
-        println("[" + phaseString + "] " + log + " <" + subjectString + ">");
+        logger.log(phase, subject, log);
     }
 
     public void setDocumentRoot(DocumentRoot documentRoot) {

@@ -6,7 +6,7 @@ import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.CollaborationInstance;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
-import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
+import plug.bpmn2.interpretation.tools.BPMNToolKit;
 import plug.bpmn2.interpretation.tools.walker.BPMNInstanceAspectHandler;
 import plug.bpmn2.interpretation.tools.walker.BPMNRuntimeInstanceWalker;
 
@@ -14,13 +14,13 @@ import java.util.Set;
 
 public class FlowDataAddMissing {
 
-    private final BPMNRuntimeToolKit toolKit;
+    private final BPMNToolKit toolKit;
 
     private final BPMNRuntimeInstanceWalker walker;
 
     private BPMNModelRuntimeState runtimeState;
 
-    public FlowDataAddMissing(BPMNRuntimeToolKit toolKit) {
+    public FlowDataAddMissing(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
         walker = new BPMNRuntimeInstanceWalker(new InternalHandler(), new InternalVisitor());
     }

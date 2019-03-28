@@ -8,18 +8,18 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.*;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 import plug.bpmn2.interpretation.model.instance.impl.*;
-import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
+import plug.bpmn2.interpretation.tools.BPMNToolKit;
 
 import java.util.LinkedList;
 
 public class InstanceFactory {
 
-    private final BPMNRuntimeToolKit toolKit;
+    private final BPMNToolKit toolKit;
     private final InternalSwitch internalSwitch;
     private final TokensInitializer tokensInitializer;
 
 
-    public InstanceFactory(BPMNRuntimeToolKit toolKit) {
+    public InstanceFactory(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
         this.tokensInitializer = toolKit.getTokensInitializer();
         internalSwitch = new InternalSwitch();

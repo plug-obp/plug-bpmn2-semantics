@@ -3,7 +3,7 @@ package plug.bpmn2.interpretation.tools.execute;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
-import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
+import plug.bpmn2.interpretation.tools.BPMNToolKit;
 import plug.bpmn2.interpretation.transition.ActionSet;
 import plug.bpmn2.interpretation.transition.action.ActionDefinition;
 import plug.bpmn2.interpretation.transition.action.ActivityAction;
@@ -12,16 +12,15 @@ import plug.bpmn2.interpretation.transition.impl.ChangeStateImpl;
 import plug.bpmn2.interpretation.transition.impl.CloseInstanceImpl;
 import plug.bpmn2.interpretation.transition.impl.OpenInstanceImpl;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ActionSetSupplier {
 
-    private final BPMNRuntimeToolKit toolKit;
+    private final BPMNToolKit toolKit;
     private final Map<BaseElement, ActionSet> actionSetMap;
 
-    public ActionSetSupplier(BPMNRuntimeToolKit toolKit) {
+    public ActionSetSupplier(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
         actionSetMap = new HashMap<>();
         DocumentRoot model = toolKit.getDocumentRoot();

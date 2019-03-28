@@ -13,9 +13,9 @@ import java.util.function.Consumer;
 
 import static org.junit.Assert.assertEquals;
 
-public class BPMNRuntimeToolKitTest {
+public class BPMNToolKitTest {
 
-    private BPMNRuntimeToolKit toolKit;
+    private BPMNToolKit toolKit;
 
     private void load(String urlString, Consumer<String> logOutput) {
         BPMN2Loader loader = new BPMN2Loader();
@@ -25,7 +25,7 @@ public class BPMNRuntimeToolKitTest {
         DocumentRootFetcher fetcher = new DocumentRootFetcher();
         DocumentRoot documentRoot = fetcher.getRoot(modelResource);
 
-        toolKit = new BPMNRuntimeToolKit();
+        toolKit = new BPMNToolKit();
         toolKit.setLogOutput(logOutput);
 
         toolKit.println(this, urlString, "Test run");
@@ -46,7 +46,7 @@ public class BPMNRuntimeToolKitTest {
     }
 
     @Test
-    public void enstabSprayBpmn2() {
+    public void enstabSpray() {
         load("enstab.spray.bpmn2", System.out::println);
 
         BPMNModelRuntimeState initialState = toolKit.getInitialState();

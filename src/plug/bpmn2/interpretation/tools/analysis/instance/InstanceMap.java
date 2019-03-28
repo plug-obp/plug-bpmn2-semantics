@@ -4,7 +4,7 @@ import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.bpmn2.InteractionNode;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
-import plug.bpmn2.interpretation.tools.BPMNRuntimeToolKit;
+import plug.bpmn2.interpretation.tools.BPMNToolKit;
 import plug.bpmn2.interpretation.tools.walker.BPMNInstanceAspectHandler;
 import plug.bpmn2.interpretation.tools.walker.BPMNRuntimeInstanceWalker;
 
@@ -12,13 +12,13 @@ import java.util.*;
 
 public class InstanceMap {
 
-    private final BPMNRuntimeToolKit toolKit;
+    private final BPMNToolKit toolKit;
 
     private final BPMNRuntimeInstanceWalker instanceFetcher;
     private final Map<BaseElement, Set<BPMNRuntimeInstance>> instanceMap;
     private BPMNModelRuntimeState lastState;
 
-    public InstanceMap(BPMNRuntimeToolKit toolKit) {
+    public InstanceMap(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
         instanceFetcher = new BPMNRuntimeInstanceWalker(new InstanceFetcher());
         instanceMap = new HashMap<>();
