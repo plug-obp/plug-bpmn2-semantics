@@ -3,100 +3,95 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="1146.0" y="236.0">plug.bpmn2.interpretation.transition.action.MessageAction.Receive</node>
-    <node x="642.0" y="225.0">plug.bpmn2.interpretation.transition.action.ActivityAction.ChangeState</node>
-    <node x="879.0" y="236.0">plug.bpmn2.interpretation.transition.action.FlowAction.RemoveToken</node>
-    <node x="689.0" y="112.0">plug.bpmn2.interpretation.transition.action.ActivityAction</node>
-    <node x="1144.25" y="101.0">plug.bpmn2.interpretation.transition.action.MessageAction</node>
-    <node x="14.5" y="90.0">plug.bpmn2.interpretation.transition.ActionSet</node>
-    <node x="437.25" y="112.0">plug.bpmn2.interpretation.transition.action.InstanceAction</node>
-    <node x="1254.0" y="236.0">plug.bpmn2.interpretation.transition.action.MessageAction.Send</node>
-    <node x="545.0" y="236.0">plug.bpmn2.interpretation.transition.action.InstanceAction.Close</node>
-    <node x="271.0" y="225.0">plug.bpmn2.interpretation.transition.action.InstanceAction.Open</node>
-    <node x="558.1875" y="0.0">plug.bpmn2.interpretation.transition.action.ActionDefinition</node>
-    <node x="1023.0" y="236.0">plug.bpmn2.interpretation.transition.action.FlowAction.AddToken</node>
-    <node x="948.4598214285714" y="101.0">plug.bpmn2.interpretation.transition.action.FlowAction</node>
-    <node x="0.0" y="214.0">plug.bpmn2.interpretation.transition.RuntimeTransition</node>
+    <node x="969.0" y="193.0">plug.bpmn2.interpretation.transition.action.MessageAction.Receive</node>
+    <node x="0.0" y="182.0">plug.bpmn2.interpretation.transition.action.ActivityAction.ChangeState</node>
+    <node x="360.0" y="193.0">plug.bpmn2.interpretation.transition.action.FlowAction.RemoveToken</node>
+    <node x="47.0" y="91.0">plug.bpmn2.interpretation.transition.action.ActivityAction</node>
+    <node x="862.75" y="80.0">plug.bpmn2.interpretation.transition.action.MessageAction</node>
+    <node x="296.0" y="279.0">plug.bpmn2.interpretation.transition.ActionSet</node>
+    <node x="555.7135416666666" y="91.0">plug.bpmn2.interpretation.transition.action.InstanceAction</node>
+    <node x="875.0" y="193.0">plug.bpmn2.interpretation.transition.action.MessageAction.Send</node>
+    <node x="504.0" y="193.0">plug.bpmn2.interpretation.transition.action.InstanceAction.Close</node>
+    <node x="601.0" y="182.0">plug.bpmn2.interpretation.transition.action.InstanceAction.Open</node>
+    <node x="421.25" y="0.0">plug.bpmn2.interpretation.transition.action.ActionDefinition</node>
+    <node x="237.0" y="193.0">plug.bpmn2.interpretation.transition.action.FlowAction.AddToken</node>
+    <node x="293.74479166666663" y="80.0">plug.bpmn2.interpretation.transition.action.FlowAction</node>
+    <node x="563.0" y="279.0">plug.bpmn2.interpretation.model.instance.data.Token</node>
+    <node x="0.0" y="279.0">plug.bpmn2.interpretation.transition.RuntimeTransition</node>
   </nodes>
   <notes />
   <edges>
     <edge source="plug.bpmn2.interpretation.transition.action.FlowAction.AddToken" target="plug.bpmn2.interpretation.transition.action.FlowAction">
       <point x="25.75" y="-15.0" />
-      <point x="1100.25" y="184.0" />
-      <point x="1050.8348214285716" y="184.0" />
-      <point x="43.875" y="26.0" />
-    </edge>
-    <edge source="plug.bpmn2.interpretation.transition.ActionSet" target="plug.bpmn2.interpretation.transition.action.ActionDefinition">
-      <point x="-55.5" y="-37.0" />
-      <point x="70.0" y="50.0" />
-      <point x="569.4375" y="50.0" />
-      <point x="-56.25" y="15.0" />
+      <point x="314.25" y="162.0" />
+      <point x="337.61979166666663" y="162.0" />
+      <point x="-14.625" y="26.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.InstanceAction.Open" target="plug.bpmn2.interpretation.transition.action.InstanceAction">
       <point x="63.5" y="-26.0" />
-      <point x="461.5" y="194.0" />
-      <point x="484.875" y="194.0" />
-      <point x="-15.875" y="15.0" />
+      <point x="791.5" y="152.0" />
+      <point x="666.8385416666666" y="152.0" />
+      <point x="47.625" y="15.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.InstanceAction.Close" target="plug.bpmn2.interpretation.transition.action.InstanceAction">
       <point x="19.25" y="-15.0" />
-      <point x="602.75" y="184.0" />
-      <point x="548.375" y="184.0" />
-      <point x="47.625" y="15.0" />
+      <point x="561.75" y="162.0" />
+      <point x="603.3385416666666" y="162.0" />
+      <point x="-15.875" y="15.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.MessageAction" target="plug.bpmn2.interpretation.transition.action.ActionDefinition">
       <point x="0.0" y="-26.0" />
-      <point x="1242.25" y="50.0" />
-      <point x="681.9375" y="50.0" />
-      <point x="56.25" y="15.0" />
-    </edge>
-    <edge source="plug.bpmn2.interpretation.transition.RuntimeTransition" target="plug.bpmn2.interpretation.transition.ActionSet">
-      <point x="0.0" y="-37.0" />
-      <point x="0.0" y="37.0" />
+      <point x="960.75" y="50.0" />
+      <point x="539.375" y="50.0" />
+      <point x="50.625" y="15.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.MessageAction.Receive" target="plug.bpmn2.interpretation.transition.action.MessageAction">
       <point x="-22.0" y="-15.0" />
-      <point x="-73.5" y="26.0" />
+      <point x="991.0" y="162.0" />
+      <point x="985.25" y="162.0" />
+      <point x="24.5" y="26.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.FlowAction.RemoveToken" target="plug.bpmn2.interpretation.transition.action.FlowAction">
-      <point x="30.999999999999943" y="-15.0" />
-      <point x="972.0" y="194.0" />
-      <point x="992.3348214285714" y="194.0" />
-      <point x="-14.625" y="26.0" />
+      <point x="31.0" y="-15.0" />
+      <point x="453.0" y="162.0" />
+      <point x="396.11979166666663" y="162.0" />
+      <point x="43.875" y="26.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.MessageAction.Send" target="plug.bpmn2.interpretation.transition.action.MessageAction">
       <point x="18.5" y="-15.0" />
-      <point x="1309.5" y="194.0" />
-      <point x="1315.75" y="194.0" />
-      <point x="73.5" y="26.0" />
+      <point x="930.5" y="162.0" />
+      <point x="936.25" y="162.0" />
+      <point x="-24.5" y="26.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.ActivityAction.ChangeState" target="plug.bpmn2.interpretation.transition.action.ActivityAction">
       <point x="54.25" y="-26.0" />
-      <point x="804.75" y="194.0" />
-      <point x="781.25" y="194.0" />
+      <point x="162.75" y="162.0" />
+      <point x="139.25" y="162.0" />
       <point x="30.75" y="15.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.ActivityAction" target="plug.bpmn2.interpretation.transition.action.ActionDefinition">
       <point x="0.0" y="-15.0" />
-      <point x="750.5" y="70.0" />
-      <point x="636.9375" y="70.0" />
-      <point x="11.25" y="15.0" />
+      <point x="108.5" y="50.0" />
+      <point x="438.125" y="50.0" />
+      <point x="-50.625" y="15.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.InstanceAction" target="plug.bpmn2.interpretation.transition.action.ActionDefinition">
       <point x="0.0" y="-15.0" />
-      <point x="500.75" y="70.0" />
-      <point x="614.4375" y="70.0" />
-      <point x="-11.25" y="15.0" />
+      <point x="619.2135416666666" y="60.0" />
+      <point x="505.625" y="60.0" />
+      <point x="16.875" y="15.0" />
     </edge>
     <edge source="plug.bpmn2.interpretation.transition.action.FlowAction" target="plug.bpmn2.interpretation.transition.action.ActionDefinition">
       <point x="0.0" y="-26.0" />
-      <point x="1006.9598214285714" y="60.0" />
-      <point x="659.4375" y="60.0" />
-      <point x="33.75" y="15.0" />
+      <point x="352.24479166666663" y="60.0" />
+      <point x="471.875" y="60.0" />
+      <point x="-16.875" y="15.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="666.0" y="225.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="1.0" x="448.0" y="370.5" />
+  <SelectedNodes>
+    <node>plug.bpmn2.interpretation.model.instance.data.Token</node>
+  </SelectedNodes>
   <Categories>
     <Category>Properties</Category>
     <Category>Inner Classes</Category>
