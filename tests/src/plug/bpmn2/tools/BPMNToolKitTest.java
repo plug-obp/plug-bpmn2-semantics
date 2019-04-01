@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools;
+package plug.bpmn2.tools;
 
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.Test;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
-import plug.bpmn2.interpretation.tools.analysis.resource.ParentMap;
 import plug.bpmn2.module.BPMN2Loader;
+import plug.bpmn2.tools.model.ParentMap;
 
 import java.util.function.Consumer;
 
@@ -28,7 +28,7 @@ public class BPMNToolKitTest {
         toolKit = new BPMNToolKit();
         toolKit.setLogOutput(logOutput);
 
-        toolKit.println(this, urlString, "Test run");
+        toolKit.log(this, urlString, "Test run");
 
         toolKit.setDocumentRoot(documentRoot);
     }

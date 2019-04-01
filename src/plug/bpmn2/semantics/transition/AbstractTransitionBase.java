@@ -1,9 +1,11 @@
 package plug.bpmn2.semantics.transition;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.interpretation.tools.analysis.resource.BPMN2PrinterShort;
+import plug.bpmn2.tools.model.BPMN2PrinterShort;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>

@@ -1,8 +1,8 @@
 package plug.bpmn2.semantics;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ParrallelGatewayTest extends BPMN2AbstractTest {
 

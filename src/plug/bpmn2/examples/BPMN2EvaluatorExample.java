@@ -1,10 +1,10 @@
 package plug.bpmn2.examples;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
+import plug.bpmn2.module.BPMN2Loader;
 import plug.bpmn2.semantics.BPMN2SystemConfiguration;
 import plug.bpmn2.semantics.BPMN2TransitionFunction;
-import plug.bpmn2.module.BPMN2Loader;
+import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class BPMN2EvaluatorExample {
             if (transition.evaluateGuard(currentConfiguration)) {
                 BPMN2SystemConfiguration target = transition.executeAction(currentConfiguration);
                 if (target == null) {
-                    System.err.println("Simple executor : could not execute transition ("
+                    System.err.println("Simple executor : could not interpretation transition ("
                             + transition + ") from given configuration (" + currentConfiguration + ")");
                     return false;
                 }

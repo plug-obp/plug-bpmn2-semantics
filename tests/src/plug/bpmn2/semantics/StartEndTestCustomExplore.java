@@ -1,13 +1,12 @@
 package plug.bpmn2.semantics;
 
-import static org.junit.Assert.assertEquals;
+import org.eclipse.emf.ecore.EObject;
+import org.junit.Test;
+import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
 
 import java.util.List;
 
-import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
-
-import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
+import static org.junit.Assert.assertEquals;
 
 public class StartEndTestCustomExplore extends BPMN2AbstractTest {
 

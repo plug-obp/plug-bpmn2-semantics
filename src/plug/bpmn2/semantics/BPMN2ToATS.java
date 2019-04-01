@@ -1,18 +1,17 @@
 package plug.bpmn2.semantics;
 
+import org.eclipse.bpmn2.Process;
+import org.eclipse.bpmn2.*;
+import org.eclipse.bpmn2.util.Bpmn2Switch;
+import org.eclipse.emf.ecore.EObject;
+import plug.bpmn2.semantics.transition.AbstractTransitionSimple;
+import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
+import plug.bpmn2.tools.model.BPMN2PrinterShort;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.eclipse.bpmn2.*;
-import org.eclipse.bpmn2.Process;
-import org.eclipse.bpmn2.util.Bpmn2Switch;
-import org.eclipse.emf.ecore.EObject;
-
-import plug.bpmn2.semantics.transition.AbstractTransitionSimple;
-import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
-import plug.bpmn2.interpretation.tools.analysis.resource.BPMN2PrinterShort;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>

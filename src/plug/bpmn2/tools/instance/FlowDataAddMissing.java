@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools.instantiate;
+package plug.bpmn2.tools.instance;
 
 import org.eclipse.bpmn2.MessageFlow;
 import plug.bpmn2.interpretation.model.BPMNInstanceVisitor;
@@ -6,9 +6,9 @@ import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.CollaborationInstance;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
-import plug.bpmn2.interpretation.tools.BPMNToolKit;
-import plug.bpmn2.interpretation.tools.walker.BPMNInstanceAspectHandler;
-import plug.bpmn2.interpretation.tools.walker.BPMNRuntimeInstanceWalker;
+import plug.bpmn2.tools.BPMNToolKit;
+import plug.bpmn2.tools.walker.BPMNInstanceAspectHandler;
+import plug.bpmn2.tools.walker.BPMNRuntimeInstanceWalker;
 
 import java.util.Set;
 
@@ -26,24 +26,21 @@ public class FlowDataAddMissing {
     }
 
     public void initializeFlowData(BPMNModelRuntimeState runtimeState) {
-        toolKit.println(this, "", "Starting");
-        toolKit.increaseLogDepth();
+        toolKit.log(this, "", "Starting");
 
         this.runtimeState = runtimeState;
         for (BPMNRuntimeInstance rootInstance : runtimeState.getRootInstances()) {
             walker.walkInstanceTree(rootInstance);
         }
-
-        toolKit.decreaseLogDepth();
     }
 
     private class InternalHandler implements BPMNInstanceAspectHandler {
 
         @Override
         public void handleCollaborationAspect(CollaborationInstance instance) {
-            toolKit.println(this, instance.getBaseElement(), "Entering Collaboration");
+            toolKit.log(this, instance.getBaseElement(), "Entering Collaboration");
             for (MessageFlow messageFlow : instance.getBaseElement().getMessageFlows()) {
-                toolKit.println(this, messageFlow, "Adding MessageFlow");
+                toolKit.log(this, messageFlow, "Adding MessageFlow");
                 Set<BPMNRuntimeInstance> sourceSet = toolKit
                         .getInstanceMap()
                         .getEnclosingInstances(messageFlow.getSourceRef());

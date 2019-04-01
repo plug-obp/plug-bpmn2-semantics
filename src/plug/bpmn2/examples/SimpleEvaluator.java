@@ -1,7 +1,7 @@
 package plug.bpmn2.examples;
 
-import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
+import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
 

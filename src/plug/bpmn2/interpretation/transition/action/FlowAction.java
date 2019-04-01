@@ -1,6 +1,5 @@
 package plug.bpmn2.interpretation.transition.action;
 
-import org.eclipse.bpmn2.FlowElementsContainer;
 import plug.bpmn2.interpretation.model.instance.data.Token;
 
 public interface FlowAction extends ActionDefinition {

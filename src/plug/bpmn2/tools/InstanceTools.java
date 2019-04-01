@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools;
+package plug.bpmn2.tools;
 
 public class InstanceTools {
 

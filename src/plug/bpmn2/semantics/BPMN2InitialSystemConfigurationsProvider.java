@@ -1,11 +1,16 @@
 package plug.bpmn2.semantics;
 
-import org.eclipse.bpmn2.*;
+import org.eclipse.bpmn2.Definitions;
+import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.bpmn2.Process;
+import org.eclipse.bpmn2.StartEvent;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>

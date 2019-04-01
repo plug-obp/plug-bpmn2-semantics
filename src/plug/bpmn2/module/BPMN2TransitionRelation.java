@@ -1,8 +1,8 @@
 package plug.bpmn2.module;
 
-import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
 import plug.bpmn2.semantics.BPMN2SystemConfiguration;
 import plug.bpmn2.semantics.BPMN2TransitionFunction;
+import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
 import plug.core.IFiredTransition;
 import plug.core.ITransitionRelation;
 import plug.statespace.transitions.FiredTransition;

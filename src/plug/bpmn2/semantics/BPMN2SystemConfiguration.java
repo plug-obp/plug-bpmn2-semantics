@@ -1,10 +1,13 @@
 package plug.bpmn2.semantics;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.interpretation.tools.analysis.resource.BPMN2PrinterShort;
+import plug.bpmn2.tools.model.BPMN2PrinterShort;
 import plug.core.defaults.DefaultConfiguration;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>

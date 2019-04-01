@@ -1,11 +1,11 @@
 package plug.bpmn2.semantics;
 
-import static org.junit.Assert.assertEquals;
+import org.eclipse.emf.ecore.EObject;
+import org.junit.Test;
 
 import java.util.List;
 
-import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class ExclusiveGatewayTest extends BPMN2AbstractTest {
 

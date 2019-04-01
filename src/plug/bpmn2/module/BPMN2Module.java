@@ -2,7 +2,6 @@ package plug.bpmn2.module;
 
 import plug.core.ILanguageLoader;
 import plug.core.ILanguagePlugin;
-import plug.core.IRuntimeView;
 
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>

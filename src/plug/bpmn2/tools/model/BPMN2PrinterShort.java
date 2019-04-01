@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools.analysis.resource;
+package plug.bpmn2.tools.model;
 
 import org.eclipse.bpmn2.Error;
 import org.eclipse.bpmn2.Process;

@@ -1,18 +1,17 @@
 package plug.bpmn2.semantics;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import java.util.LinkedList;
-import java.util.List;
-
 import org.eclipse.bpmn2.SequenceFlow;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.After;
 import org.junit.Before;
-
 import plug.bpmn2.module.BPMN2Loader;
 import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public abstract class BPMN2AbstractTest {
 

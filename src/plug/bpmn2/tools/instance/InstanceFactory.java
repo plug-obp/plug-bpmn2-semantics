@@ -1,4 +1,4 @@
-package plug.bpmn2.interpretation.tools.instantiate;
+package plug.bpmn2.tools.instance;
 
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.*;
@@ -8,7 +8,7 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.*;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 import plug.bpmn2.interpretation.model.instance.impl.*;
-import plug.bpmn2.interpretation.tools.BPMNToolKit;
+import plug.bpmn2.tools.BPMNToolKit;
 
 import java.util.LinkedList;
 
@@ -35,7 +35,7 @@ public class InstanceFactory {
                     initialState.getRootInstances().add(instance);
                 }
             } else {
-                toolKit.println(this, rootElement, "Referenced in another root element");
+                toolKit.log(this, rootElement, "Referenced in another root element");
             }
         }
         return initialState;
@@ -90,9 +90,7 @@ public class InstanceFactory {
 
         @Override
         public CollaborationInstance caseCollaboration(Collaboration object) {
-            toolKit.println(this, object, "Instantiating collaboration");
-            toolKit.increaseLogDepth();
-
+            toolKit.log(this, object, "Instantiating collaboration");
             CollaborationInstance result = new CollaborationInstanceImpl(getParent(), object);
             parentStack.push(result);
             for (Participant participant : object.getParticipants()) {
@@ -109,54 +107,37 @@ public class InstanceFactory {
                 }
             }
             parentStack.removeLast();
-            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public ChoreographyInstance caseChoreography(Choreography object) {
-            toolKit.println(this, object, "Instantiating choreography");
-            toolKit.increaseLogDepth();
-
+            toolKit.log(this, object, "Instantiating choreography");
             ChoreographyInstance result = new ChoreographyInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
-
-            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public ProcessInstance caseProcess(Process object) {
-            toolKit.println(this, object, "Instantiating process");
-            toolKit.increaseLogDepth();
-
+            toolKit.log(this, object, "Instantiating process");
             ProcessInstance result = new ProcessInstanceImpl(getParent(), object);
             tokensInitializer.initialize(result);
-
-            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public SubProcessInstance caseSubProcess(SubProcess object) {
-            toolKit.println(this, object, "Instantiating subProcess");
-            toolKit.increaseLogDepth();
-
+            toolKit.log(this, object, "Instantiating subProcess");
             SubProcessInstance result = new SubProcessInstanceImpl(getActivityParent(), object, ActivityState.READY);
             tokensInitializer.initialize(result);
-
-            toolKit.decreaseLogDepth();
             return result;
         }
 
         @Override
         public TaskInstance caseTask(Task object) {
-            toolKit.println(this, object, "Instantiating task");
-            toolKit.increaseLogDepth();
-
+            toolKit.log(this, object, "Instantiating task");
             TaskInstance result = new TaskInstanceImpl(getActivityParent(), object, ActivityState.READY);
-
-            toolKit.decreaseLogDepth();
             return result;
         }
 

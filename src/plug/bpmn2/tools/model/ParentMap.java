@@ -1,9 +1,9 @@
-package plug.bpmn2.interpretation.tools.analysis.resource;
+package plug.bpmn2.tools.model;
 
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
-import plug.bpmn2.interpretation.tools.BPMNToolKit;
+import plug.bpmn2.tools.BPMNToolKit;
 
 import java.util.*;
 
@@ -19,13 +19,11 @@ public class ParentMap {
         this.toolKit = toolKit;
         childrenMap = new HashMap<>();
         parentsMap = new HashMap<>();
-        toolKit.println(this, "", "Computing model hierarchy");
-        toolKit.increaseLogDepth();
+        toolKit.log(this, "", "Computing model hierarchy");
         new InternalSwitch().doSwitch(toolKit.getDocumentRoot());
         hierarchyList = computeHierarchyList();
         levelMap = computeLevelMap();
         lookForAnomalies();
-        toolKit.decreaseLogDepth();
     }
 
     private List<Set<BaseElement>> computeHierarchyList() {
@@ -64,7 +62,7 @@ public class ParentMap {
 
     private void lookForAnomalies() {
         if (hierarchyList.isEmpty()) {
-            toolKit.println(this, "", "Empty hierarchy");
+            toolKit.warning(this, "", "Empty hierarchy");
         } else {
             Set<BaseElement> rootElementSet = hierarchyList.get(0);
             for (BaseElement rootElement : rootElementSet) {
@@ -72,7 +70,7 @@ public class ParentMap {
                         (!(rootElement instanceof Collaboration)) &&
                         (!(rootElement instanceof Activity))
                 ) {
-                    toolKit.println(this, rootElement, "Unexpected parent-less element");
+                    toolKit.warning(this, rootElement, "Unexpected parent-less element");
                 }
             }
         }
@@ -116,7 +114,7 @@ public class ParentMap {
             if (!parentStack.isEmpty()) {
                 BaseElement parent = parentStack.getLast();
                 if (baseElement.eContainer() != parent) {
-                    toolKit.println(this, baseElement, "Different parent than the provided eContainer");
+                    toolKit.warning(this, baseElement, "Different parent than the provided eContainer");
                 }
                 getChildren(parent).add(baseElement);
                 getParents(baseElement).add(parent);
@@ -192,7 +190,7 @@ public class ParentMap {
             if (process != null) {
                 doSwitch(object.getProcessRef());
             } else {
-                toolKit.println(this, object, "Participant with null process reference");
+                toolKit.warning(this, object, "Participant with null process reference");
             }
             return 0;
         }
@@ -204,7 +202,7 @@ public class ParentMap {
             if (message != null) {
                 doSwitch(object.getMessageRef());
             } else {
-                toolKit.println(this, object, "MessageFlow with null Message reference");
+                toolKit.warning(this, object, "MessageFlow with null Message reference");
             }
             after();
             return 0;
@@ -217,13 +215,13 @@ public class ParentMap {
             if (messageFlow != null) {
                 doSwitch(messageFlow);
             } else {
-                toolKit.println(this, object, "MessageFlowAssociation with null MessageFlow reference");
+                toolKit.warning(this, object, "MessageFlowAssociation with null MessageFlow reference");
             }
             messageFlow = object.getOuterMessageFlowRef();
             if (messageFlow != null) {
                 doSwitch(messageFlow);
             } else {
-                toolKit.println(this, object, "MessageFlowAssociation with null MessageFlow reference");
+                toolKit.warning(this, object, "MessageFlowAssociation with null MessageFlow reference");
             }
             after();
             return 0;
