@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.model;
+package plug.bpmn2.tools.common;
 
 import org.eclipse.bpmn2.Error;
 import org.eclipse.bpmn2.Process;

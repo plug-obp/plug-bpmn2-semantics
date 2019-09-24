@@ -34,11 +34,13 @@ public class BPMN2Loader implements ILanguageLoader<BPMN2TransitionRelation> {
     private Resource modelResource;
 
     public void loadModelFromURLString(String urlString) {
-        loadModelFromURL(BPMN2Loader.class.getClassLoader().getResource(urlString));
+        URL modelURL = BPMN2Loader.class.getClassLoader().getResource(urlString);
+        loadModelFromURL(modelURL);
     }
 
     public void loadModelFromURL(URL modelURL) {
-        loadModelFromFilePath(modelURL.toExternalForm());
+        String filePath = modelURL.toExternalForm();
+        loadModelFromFilePath(filePath);
     }
 
     public void loadModelFromFilePath(String modelFilePath) {

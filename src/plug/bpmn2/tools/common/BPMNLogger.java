@@ -1,7 +1,6 @@
-package plug.bpmn2.tools;
+package plug.bpmn2.tools.common;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.model.BPMN2PrinterShort;
 
 import java.util.function.Consumer;
 import java.util.logging.Handler;
@@ -18,6 +17,9 @@ public class BPMNLogger extends Handler {
     public BPMNLogger(Consumer<String> logOutput) {
         this.logOutput = logOutput;
         logger = Logger.getLogger("BPMN");
+        while (logger.getHandlers().length > 0) {
+            logger.removeHandler(logger.getHandlers()[logger.getHandlers().length - 1]);
+        }
         logger.setUseParentHandlers(false);
         logger.addHandler(this);
         shortPrinter = new BPMN2PrinterShort();
@@ -73,7 +75,7 @@ public class BPMNLogger extends Handler {
         }
         String subjectString = getString(subject);
         if (subjectString.length() > 0) {
-            builder.append("<")
+            builder.append(" <")
                     .append(subjectString)
                     .append(">");
         }

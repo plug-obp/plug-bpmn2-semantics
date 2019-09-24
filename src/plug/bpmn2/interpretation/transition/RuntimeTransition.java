@@ -5,6 +5,6 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 public interface RuntimeTransition {
 
     BPMNRuntimeInstance getRuntimeScope();
-    ActionSet getActionSet();
+    AbstractTransition getActionSet();
 
 }

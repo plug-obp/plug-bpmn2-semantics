@@ -57,6 +57,18 @@ public class BPMNToolKitTest {
         assertEquals("Message Flows", 6, initialState.getMessageFlowDataSet().size());
     }
 
+    @Test
+    public void mutex() {
+        load("mutexProblemDescription.bpmn", System.out::println);
+
+        BPMNModelRuntimeState initialState = toolKit.getInitialState();
+
+        ParentMap parentMap = toolKit.getParentMap();
+        assertEquals("Hierarchy Depth", 3, parentMap.getHierarchyList().size());
+
+        assertEquals("Message Flows", 6, initialState.getMessageFlowDataSet().size());
+    }
+
     private class DocumentRootFetcher extends Bpmn2Switch<DocumentRoot> {
 
         public DocumentRoot getRoot(Resource resource) {

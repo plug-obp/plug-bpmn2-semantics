@@ -6,7 +6,7 @@ import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.semantics.transition.AbstractTransitionSimple;
 import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
-import plug.bpmn2.tools.model.BPMN2PrinterShort;
+import plug.bpmn2.tools.common.BPMN2PrinterShort;
 
 import java.util.ArrayList;
 import java.util.Collections;

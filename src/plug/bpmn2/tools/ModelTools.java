@@ -1,7 +1,7 @@
 package plug.bpmn2.tools;
 
 import org.eclipse.bpmn2.DocumentRoot;
-import plug.bpmn2.tools.model.BPMN2PrinterShort;
+import plug.bpmn2.tools.common.BPMN2PrinterShort;
 import plug.bpmn2.tools.model.ParentMap;
 
 public class ModelTools {

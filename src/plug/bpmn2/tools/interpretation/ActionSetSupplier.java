@@ -3,7 +3,7 @@ package plug.bpmn2.tools.interpretation;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
-import plug.bpmn2.interpretation.transition.ActionSet;
+import plug.bpmn2.interpretation.transition.AbstractTransition;
 import plug.bpmn2.interpretation.transition.action.ActionDefinition;
 import plug.bpmn2.interpretation.transition.action.ActivityAction;
 import plug.bpmn2.interpretation.transition.action.InstanceAction;
@@ -18,7 +18,7 @@ import java.util.Map;
 public class ActionSetSupplier {
 
     private final BPMNToolKit toolKit;
-    private final Map<BaseElement, ActionSet> actionSetMap;
+    private final Map<BaseElement, AbstractTransition> actionSetMap;
 
     public ActionSetSupplier(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
@@ -28,14 +28,14 @@ public class ActionSetSupplier {
         new ActionSetBuilder().doSwitch(model);
     }
 
-    public ActionSet getActionSet(BaseElement baseElement) {
-        return actionSetMap.computeIfAbsent(baseElement, ActionSet::new);
+    public AbstractTransition getActionSet(BaseElement baseElement) {
+        return actionSetMap.computeIfAbsent(baseElement, AbstractTransition::new);
     }
 
     private class ActionSetBuilder extends Bpmn2Switch<Object> {
 
         private RootElement currentRootElement;
-        private ActionSet currentActionSet;
+        private AbstractTransition currentAbstractTransition;
 
         private final ActivityAction[] nominalActivityActions;
         private final InstanceAction.Close closeAction;
@@ -49,7 +49,7 @@ public class ActionSetSupplier {
         }
 
         private void add(ActionDefinition action) {
-            currentActionSet.getActionSet().add(action);
+            currentAbstractTransition.getActionSet().add(action);
         }
 
         private void addAll(ActionDefinition[] actionDefinitions) {
@@ -67,7 +67,7 @@ public class ActionSetSupplier {
         public Object caseDocumentRoot(DocumentRoot object) {
             for (RootElement rootElement : object.getDefinitions().getRootElements()) {
                 currentRootElement = rootElement;
-                currentActionSet = getActionSet(rootElement);
+                currentAbstractTransition = getActionSet(rootElement);
                 doSwitch(rootElement);
             }
             return 0;

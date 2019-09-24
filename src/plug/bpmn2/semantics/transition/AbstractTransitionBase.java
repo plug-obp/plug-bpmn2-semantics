@@ -1,7 +1,7 @@
 package plug.bpmn2.semantics.transition;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.model.BPMN2PrinterShort;
+import plug.bpmn2.tools.common.BPMN2PrinterShort;
 
 import java.util.ArrayList;
 import java.util.Collection;

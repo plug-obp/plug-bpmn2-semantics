@@ -6,12 +6,12 @@ import plug.bpmn2.interpretation.transition.action.ActionDefinition;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ActionSet {
+public class AbstractTransition {
 
     private final BaseElement scope;
     private final Set<ActionDefinition> actionSet;
 
-    public ActionSet(BaseElement scope) {
+    public AbstractTransition(BaseElement scope) {
         this.scope = scope;
         actionSet = new HashSet<>();
     }
