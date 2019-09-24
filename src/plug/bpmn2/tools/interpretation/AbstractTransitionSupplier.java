@@ -15,21 +15,21 @@ import plug.bpmn2.tools.BPMNToolKit;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ActionSetSupplier {
+public class AbstractTransitionSupplier {
 
     private final BPMNToolKit toolKit;
-    private final Map<BaseElement, AbstractTransition> actionSetMap;
+    private final Map<BaseElement, AbstractTransition> abstractTransitionMap;
 
-    public ActionSetSupplier(BPMNToolKit toolKit) {
+    public AbstractTransitionSupplier(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
-        actionSetMap = new HashMap<>();
+        abstractTransitionMap = new HashMap<>();
         DocumentRoot model = toolKit.getDocumentRoot();
         toolKit.log(this, "", "Building actions");
         new ActionSetBuilder().doSwitch(model);
     }
 
     public AbstractTransition getActionSet(BaseElement baseElement) {
-        return actionSetMap.computeIfAbsent(baseElement, AbstractTransition::new);
+        return abstractTransitionMap.computeIfAbsent(baseElement, AbstractTransition::new);
     }
 
     private class ActionSetBuilder extends Bpmn2Switch<Object> {

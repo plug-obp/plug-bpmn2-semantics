@@ -8,7 +8,7 @@ import plug.bpmn2.tools.instance.FlowDataAddMissing;
 import plug.bpmn2.tools.instance.InstanceFactory;
 import plug.bpmn2.tools.instance.TokenPool;
 import plug.bpmn2.tools.instance.TokensInitializer;
-import plug.bpmn2.tools.interpretation.ActionSetSupplier;
+import plug.bpmn2.tools.interpretation.AbstractTransitionSupplier;
 import plug.bpmn2.tools.model.ParentMap;
 
 import java.util.function.Consumer;
@@ -31,7 +31,7 @@ public class BPMNToolKit {
     private FlowDataAddMissing flowDataInitializer;
 
     // Execution tools
-    private ActionSetSupplier actionSetSupplier;
+    private AbstractTransitionSupplier abstractTransitionSupplier;
 
     public BPMNToolKit() {
         this.logger = new BPMNLogger();
@@ -68,7 +68,7 @@ public class BPMNToolKit {
         instanceMap = new TokenPool.InstanceMap(this);
         flowDataInitializer = new FlowDataAddMissing(this);
 
-        actionSetSupplier = new ActionSetSupplier(this);
+        abstractTransitionSupplier = new AbstractTransitionSupplier(this);
     }
 
     public DocumentRoot getDocumentRoot() {
