@@ -3,7 +3,6 @@ package plug.bpmn2.tools.common;
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.common.BPMN2PrinterShort;
 
 import java.util.ArrayList;
 import java.util.HashSet;
