@@ -37,8 +37,10 @@ public class BPMN2ModelPrinter {
 
         @Override
         public List<String> caseDocumentRoot(DocumentRoot object) {
-            List<String> result = defaultCase(object);
-            addWithTab(result, doSwitch(object.getDefinitions()));
+            List<String> result = new LinkedList();
+            for (RootElement rootElement : object.getDefinitions().getRootElements()) {
+                result.addAll(doSwitch(rootElement));
+            }
             return result;
         }
 

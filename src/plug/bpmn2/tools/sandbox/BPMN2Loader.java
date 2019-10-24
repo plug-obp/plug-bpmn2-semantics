@@ -2,6 +2,7 @@ package plug.bpmn2.tools.sandbox;
 
 import org.eclipse.bpmn2.Bpmn2Package;
 import org.eclipse.bpmn2.DocumentRoot;
+import org.eclipse.bpmn2.RootElement;
 import org.eclipse.bpmn2.util.Bpmn2ResourceFactoryImpl;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.common.util.URI;
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import java.net.URL;
+import java.util.List;
 
 public class BPMN2Loader {
 
@@ -27,6 +29,7 @@ public class BPMN2Loader {
 
     private String modelFilePath;
     private Resource modelResource;
+    private ModelHandler modelHandler;
 
     public void loadModelFromURLString(String urlString) {
         URL modelURL = BPMN2Loader.class.getClassLoader().getResource(urlString);
@@ -43,18 +46,19 @@ public class BPMN2Loader {
         BPMN2Loader.setupIfNeeded();
         ResourceSetImpl rs = new ResourceSetImpl();
         modelResource = rs.getResource(URI.createURI(getModelFilePath()), true);
+        modelHandler = new ModelHandler(getDocumentRoot());
     }
 
     public String getModelFilePath() {
         return modelFilePath;
     }
 
-    public Resource getModelResource() {
-        return modelResource;
-    }
-
     public DocumentRoot getDocumentRoot() {
         return new DocumentRootFetcher().getRoot(modelResource);
+    }
+
+    public ModelHandler getModelHandler() {
+        return modelHandler;
     }
 
     private class DocumentRootFetcher extends Bpmn2Switch<DocumentRoot> {

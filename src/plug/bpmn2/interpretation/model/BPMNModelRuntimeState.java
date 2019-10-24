@@ -29,4 +29,9 @@ public class BPMNModelRuntimeState {
     public Set<EventFlowData> getEventFlowDataSet() {
         return eventFlowDataSet;
     }
+
+    public boolean isEmpty() {
+        return rootInstances.isEmpty() && messageFlowDataSet.isEmpty() && eventFlowDataSet.isEmpty();
+    }
+
 }
