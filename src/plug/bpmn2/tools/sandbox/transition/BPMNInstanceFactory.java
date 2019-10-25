@@ -9,22 +9,21 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.instance.*;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 import plug.bpmn2.interpretation.model.instance.impl.*;
-import plug.bpmn2.tools.sandbox.ModelHandler;
+import plug.bpmn2.tools.sandbox.BPMNModelHandler;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
-public class BPMN2InstanceFactory {
+public class BPMNInstanceFactory {
 
-    private ModelHandler modelHandler;
+    private BPMNModelHandler modelHandler;
     private BPMNModelRuntimeState state;
     private BPMNRuntimeInstance owner;
     private BaseElement parent;
 
     private InternalSwitch internalSwitch = new InternalSwitch();
 
-    private void setArguments(ModelHandler modelHandler,
+    private void setArguments(BPMNModelHandler modelHandler,
                               BPMNModelRuntimeState state,
                               BPMNRuntimeInstance owner,
                               BaseElement parent) {
@@ -34,14 +33,14 @@ public class BPMN2InstanceFactory {
         this.parent = parent;
     }
 
-    public boolean check(ModelHandler modelHandler,
+    public boolean check(BPMNModelHandler modelHandler,
                          BPMNModelRuntimeState state,
                          BPMNRuntimeInstance owner,
                          BaseElement parent) {
         return true;
     }
 
-    public void create(ModelHandler modelHandler,
+    public void create(BPMNModelHandler modelHandler,
                        BPMNModelRuntimeState state,
                        BPMNRuntimeInstance owner,
                        BaseElement parent) {

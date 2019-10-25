@@ -3,7 +3,7 @@ package plug.bpmn2.tools.interpretation;
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.util.Bpmn2Switch;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
-import plug.bpmn2.interpretation.transition.AbstractTransition;
+import plug.bpmn2.interpretation.transition.BPMNAbstractTransition;
 import plug.bpmn2.interpretation.transition.action.ActionDefinition;
 import plug.bpmn2.interpretation.transition.action.ActivityAction;
 import plug.bpmn2.interpretation.transition.action.InstanceAction;
@@ -18,7 +18,7 @@ import java.util.Map;
 public class AbstractTransitionSupplier {
 
     private final BPMNToolKit toolKit;
-    private final Map<BaseElement, AbstractTransition> abstractTransitionMap;
+    private final Map<BaseElement, BPMNAbstractTransition> abstractTransitionMap;
 
     public AbstractTransitionSupplier(BPMNToolKit toolKit) {
         this.toolKit = toolKit;
@@ -28,14 +28,14 @@ public class AbstractTransitionSupplier {
         new ActionSetBuilder().doSwitch(model);
     }
 
-    public AbstractTransition getActionSet(BaseElement baseElement) {
-        return abstractTransitionMap.computeIfAbsent(baseElement, AbstractTransition::new);
+    public BPMNAbstractTransition getActionSet(BaseElement baseElement) {
+        return abstractTransitionMap.computeIfAbsent(baseElement, BPMNAbstractTransition::new);
     }
 
     private class ActionSetBuilder extends Bpmn2Switch<Object> {
 
         private RootElement currentRootElement;
-        private AbstractTransition currentAbstractTransition;
+        private BPMNAbstractTransition currentAbstractTransition;
 
         private final ActivityAction[] nominalActivityActions;
         private final InstanceAction.Close closeAction;

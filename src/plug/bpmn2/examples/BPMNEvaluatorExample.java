@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class BPMN2EvaluatorExample {
+public class BPMNEvaluatorExample {
 
     static public class SimpleExecutor {
 

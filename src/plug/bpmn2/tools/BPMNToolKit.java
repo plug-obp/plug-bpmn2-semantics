@@ -2,7 +2,7 @@ package plug.bpmn2.tools;
 
 import org.eclipse.bpmn2.DocumentRoot;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
-import plug.bpmn2.interpretation.transition.AbstractTransition;
+import plug.bpmn2.interpretation.transition.BPMNAbstractTransition;
 import plug.bpmn2.tools.common.BPMNLogger;
 import plug.bpmn2.tools.instance.FlowDataAddMissing;
 import plug.bpmn2.tools.instance.InstanceFactory;
@@ -111,7 +111,7 @@ public class BPMNToolKit {
 
     public BPMNModelRuntimeState fireTransition(
         BPMNModelRuntimeState source,
-        AbstractTransition action
+        BPMNAbstractTransition action
     ) {
         return null;
     }

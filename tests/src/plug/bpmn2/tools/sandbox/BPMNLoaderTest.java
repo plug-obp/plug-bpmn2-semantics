@@ -3,17 +3,15 @@ package plug.bpmn2.tools.sandbox;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
-import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
-import plug.bpmn2.tools.sandbox.runtime.BPMN2InitialStateSetSupplier;
-import plug.bpmn2.tools.sandbox.transition.BPMN2InstanceFactory;
+import plug.bpmn2.tools.sandbox.runtime.BPMNInitialStateSetSupplier;
 
 import java.util.Set;
 
-public class BPMN2LoaderTest {
+public class BPMNLoaderTest {
 
-    private final BPMN2Loader loader = new BPMN2Loader();
-    private final BPMN2PrinterShort printer = new BPMN2PrinterShort();
-    private final BPMN2ModelPrinter modelPrinter = new BPMN2ModelPrinter();
+    private final BPMNLoader loader = new BPMNLoader();
+    private final BPMNPrinterShort printer = new BPMNPrinterShort();
+    private final BPMNModelPrinter modelPrinter = new BPMNModelPrinter();
 
     private void printIssues(EObject object, int parentCount, String relationName) {
         if (parentCount == 0) {
@@ -26,7 +24,7 @@ public class BPMN2LoaderTest {
     private void load(String urlString) {
         System.out.println("Loading " + urlString);
         loader.loadModelFromURLString(urlString);
-        ModelHandler modelHandler = loader.getModelHandler();
+        BPMNModelHandler modelHandler = loader.getModelHandler();
 
         System.out.println();
         System.out.println("Model Elements:");
@@ -58,7 +56,7 @@ public class BPMN2LoaderTest {
         System.out.println(modelPrinter.getString(loader.getDocumentRoot()));
 
         System.out.println();
-        Set<BPMNModelRuntimeState> initialStateSet = new BPMN2InitialStateSetSupplier().get(modelHandler);
+        Set<BPMNModelRuntimeState> initialStateSet = new BPMNInitialStateSetSupplier().get(modelHandler);
         for (BPMNModelRuntimeState initialState : initialStateSet) {
             System.out.println(initialState);
         }

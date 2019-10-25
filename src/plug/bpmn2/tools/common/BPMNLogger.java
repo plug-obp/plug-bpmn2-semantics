@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class BPMNLogger extends Handler {
 
     private final Logger logger;
-    private final BPMN2PrinterShort shortPrinter;
+    private final BPMNPrinterShort shortPrinter;
     private Consumer<String> logOutput;
 
     public BPMNLogger(Consumer<String> logOutput) {
@@ -22,7 +22,7 @@ public class BPMNLogger extends Handler {
         }
         logger.setUseParentHandlers(false);
         logger.addHandler(this);
-        shortPrinter = new BPMN2PrinterShort();
+        shortPrinter = new BPMNPrinterShort();
     }
 
     public BPMNLogger() {

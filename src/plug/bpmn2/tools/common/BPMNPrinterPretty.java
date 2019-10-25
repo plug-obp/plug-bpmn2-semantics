@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class BPMN2PrinterPretty extends Bpmn2Switch<List<String>> {
+public class BPMNPrinterPretty extends Bpmn2Switch<List<String>> {
 
     static final private String INDENT = "    ";
 
@@ -20,13 +20,13 @@ public class BPMN2PrinterPretty extends Bpmn2Switch<List<String>> {
         stringList.replaceAll(s -> INDENT + s);
     }
 
-    private final BPMN2PrinterShort shortPrinter;
+    private final BPMNPrinterShort shortPrinter;
     int level;
     List<String> result;
     Set<EObject> known;
 
-    public BPMN2PrinterPretty() {
-        shortPrinter = new BPMN2PrinterShort();
+    public BPMNPrinterPretty() {
+        shortPrinter = new BPMNPrinterShort();
     }
 
     public List<String> getPrettyPrint(EObject object) {

@@ -9,9 +9,9 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * @author <a href="mailto:luka.le_roux@ensta-bretagne.fr">Luka Le Roux</a>
  */
-public class BPMN2PrinterShort extends Bpmn2Switch<String> {
+public class BPMNPrinterShort extends Bpmn2Switch<String> {
 
-    public static BPMN2PrinterShort INSTANCE = new BPMN2PrinterShort();
+    public static BPMNPrinterShort INSTANCE = new BPMNPrinterShort();
 
     public String getShortString(EObject object) {
         return doSwitch(object);

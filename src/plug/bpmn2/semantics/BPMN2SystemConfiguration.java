@@ -1,7 +1,7 @@
 package plug.bpmn2.semantics;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.common.BPMN2PrinterShort;
+import plug.bpmn2.tools.common.BPMNPrinterShort;
 import plug.core.defaults.DefaultConfiguration;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class BPMN2SystemConfiguration extends DefaultConfiguration<BPMN2SystemCo
     public String toString() {
         StringBuilder result = new StringBuilder("Tokens [");
         for (EObject token : getTokens()) {
-            result.append(" " + BPMN2PrinterShort.INSTANCE.getShortString(token) + " ");
+            result.append(" " + BPMNPrinterShort.INSTANCE.getShortString(token) + " ");
         }
         result.append("]");
         return result.toString();

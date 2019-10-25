@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.EObject;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BPMN2ModelPrinter {
+public class BPMNModelPrinter {
 
     static private final String TAB = "    ";
-    private final BPMN2PrinterShort printerShort = new BPMN2PrinterShort();
+    private final BPMNPrinterShort printerShort = new BPMNPrinterShort();
     private final InternalSwitch internalSwitch = new InternalSwitch();
 
     public String getString(DocumentRoot root) {

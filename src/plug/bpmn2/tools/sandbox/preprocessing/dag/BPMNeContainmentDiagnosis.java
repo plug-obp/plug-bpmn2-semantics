@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.sandbox.preprocessing;
+package plug.bpmn2.tools.sandbox.preprocessing.dag;
 
 import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.bpmn2.Definitions;
@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import java.util.Set;
 
-public class BPMN2eContainmentDiagnosis extends AbstractDAGDiagnosis<EObject> {
+public class BPMNeContainmentDiagnosis extends AbstractDAGDiagnosis<EObject> {
 
     @Override
     void fillNodeTargetSourceSets(EObject rootObject) {

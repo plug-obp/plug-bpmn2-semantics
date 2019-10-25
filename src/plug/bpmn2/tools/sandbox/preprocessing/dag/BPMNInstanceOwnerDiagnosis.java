@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.sandbox.preprocessing;
+package plug.bpmn2.tools.sandbox.preprocessing.dag;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import java.util.*;
 
-public class BPMN2InstanceOwnerDiagnosis extends AbstractDAGDiagnosis<EObject> {
+public class BPMNInstanceOwnerDiagnosis extends AbstractDAGDiagnosis<EObject> {
 
     @Override
     void fillNodeTargetSourceSets(EObject rootObject) {

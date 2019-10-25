@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.sandbox.preprocessing;
+package plug.bpmn2.tools.sandbox.preprocessing.dag;
 
 import java.util.*;
 

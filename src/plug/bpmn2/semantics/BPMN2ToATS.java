@@ -6,7 +6,7 @@ import org.eclipse.bpmn2.util.Bpmn2Switch;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.semantics.transition.AbstractTransitionSimple;
 import plug.bpmn2.semantics.transition.BPMN2AbstractTransition;
-import plug.bpmn2.tools.common.BPMN2PrinterShort;
+import plug.bpmn2.tools.common.BPMNPrinterShort;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -57,7 +57,7 @@ public class BPMN2ToATS {
 
 		@Override
 		public List<BPMN2AbstractTransition> caseFlowNode(FlowNode object) {
-			System.out.println("Flow node detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+			System.out.println("Flow node detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 
 			List<BPMN2AbstractTransition> transitionList = new LinkedList<>();
 			for (SequenceFlow incomingFlow : object.getIncoming()) {
@@ -73,7 +73,7 @@ public class BPMN2ToATS {
 		@Override
 		public List<BPMN2AbstractTransition> caseTask(Task object) {
 			// TODO Auto-generated method stub
-			System.out.println("Task detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+			System.out.println("Task detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 			List<BPMN2AbstractTransition> transitionList = new LinkedList<>();
 			BPMN2AbstractTransition transition = new AbstractTransitionSimple();
 			transition.getIncomingList().addAll(object.getIncoming());
@@ -85,7 +85,7 @@ public class BPMN2ToATS {
 
 		@Override
 		public List<BPMN2AbstractTransition> caseParallelGateway(ParallelGateway object) {
-			System.out.println("Parallel Gateway detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+			System.out.println("Parallel Gateway detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 			List<BPMN2AbstractTransition> transitionList = new LinkedList<>();
 			BPMN2AbstractTransition transition = new AbstractTransitionSimple();
 			transition.getIncomingList().addAll(object.getIncoming());
@@ -100,7 +100,7 @@ public class BPMN2ToATS {
 		@Override
 		public List<BPMN2AbstractTransition> caseExclusiveGateway(ExclusiveGateway object) {
 			// TODO Auto-generated method stub
-			System.out.println("Exclusive Gateway detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+			System.out.println("Exclusive Gateway detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 			List<BPMN2AbstractTransition> transitionList = new LinkedList<>();
 			for (SequenceFlow incomingFlow : object.getIncoming()) {
 				for (SequenceFlow outgoingFlow : object.getOutgoing()) {
@@ -149,7 +149,7 @@ public class BPMN2ToATS {
 
 		@Override
 		public List<BPMN2AbstractTransition> caseInclusiveGateway(InclusiveGateway object) {
-			System.out.println("Inclusive Gateway detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+			System.out.println("Inclusive Gateway detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 			List<List<SequenceFlow>> listCombinaision = new ArrayList<List<SequenceFlow>>();
 			for (int i = 1; i <= object.getOutgoing().size(); i++)
 				listCombinaision.addAll(combi(object.getOutgoing(), i));
@@ -171,7 +171,7 @@ public class BPMN2ToATS {
 
 		@Override
 		public List<BPMN2AbstractTransition> caseEventBasedGateway(EventBasedGateway object) {
-			System.out.println("EventBased Gateway detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+			System.out.println("EventBased Gateway detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 			List<BPMN2AbstractTransition> transitionList = new LinkedList<>();
 			for (SequenceFlow incomingFlow : object.getIncoming()) {
 				for (SequenceFlow outgoingFlow : object.getOutgoing()) {
@@ -193,7 +193,7 @@ public class BPMN2ToATS {
 		public List<BPMN2AbstractTransition> caseIntermediateCatchEvent(IntermediateCatchEvent object) {
 			// TODO Auto-generated method stub
 			System.out
-					.println("Intermediante Cath Event detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+					.println("Intermediante Cath Event detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 			object.getDataOutputAssociation();
 
 			return super.caseIntermediateCatchEvent(object);
@@ -203,7 +203,7 @@ public class BPMN2ToATS {
 		public List<BPMN2AbstractTransition> caseIntermediateThrowEvent(IntermediateThrowEvent object) {
 			// TODO Auto-generated method stub
 			System.out
-					.println("Intermediate Throw Event detected: " + BPMN2PrinterShort.INSTANCE.getShortString(object));
+					.println("Intermediate Throw Event detected: " + BPMNPrinterShort.INSTANCE.getShortString(object));
 			return null;
 
 		}

@@ -1,7 +1,7 @@
 package plug.bpmn2.semantics.transition;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.common.BPMN2PrinterShort;
+import plug.bpmn2.tools.common.BPMNPrinterShort;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,7 +40,7 @@ public abstract class AbstractTransitionBase implements BPMN2AbstractTransition 
     static private void appendCollection(StringBuilder builder, Collection<EObject> elements) {
         builder.append("[");
         for (EObject element : elements) {
-            builder.append(" " + BPMN2PrinterShort.INSTANCE.getShortString(element) + " ");
+            builder.append(" " + BPMNPrinterShort.INSTANCE.getShortString(element) + " ");
         }
         builder.append("]");
     }
