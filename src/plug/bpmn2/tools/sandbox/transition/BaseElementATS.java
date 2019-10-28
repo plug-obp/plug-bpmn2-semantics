@@ -15,6 +15,7 @@ import java.util.Set;
 public class BaseElementATS {
 
     static private final String DEFAULT_ID = "DEFAULT_ID";
+    static private final String ROOT_ID = "root";
 
     private final BaseElementATS parent;
     private final String localId;
@@ -32,8 +33,8 @@ public class BaseElementATS {
         this.guard = (guard != null ? guard : TransitionGuard.TRUE);
     }
 
-    BaseElementATS(String rootId, BaseElement baseElement) {
-        this(null, rootId, baseElement, null);
+    BaseElementATS(BaseElement baseElement) {
+        this(null, ROOT_ID, baseElement, null);
     }
 
     public BaseElementATS getParent() {
@@ -102,7 +103,10 @@ public class BaseElementATS {
         }
 
         private boolean nextLocalTransition() {
-            if (!transitionIterator.hasNext()) return false;
+            if (!transitionIterator.hasNext()) {
+                nextTransition = null;
+                return false;
+            }
             nextTransition = transitionIterator.next();
             return true;
         }

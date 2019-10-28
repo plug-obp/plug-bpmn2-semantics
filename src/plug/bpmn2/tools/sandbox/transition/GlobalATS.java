@@ -16,7 +16,7 @@ public class GlobalATS {
     public BaseElementATS getRuntimeScopeATS(BaseElement baseElement) {
         return baseElementATSMap.computeIfAbsent(
                 baseElement,
-                (be) -> new BaseElementATS("root", baseElement)
+                (be) -> new BaseElementATS(baseElement)
         );
     }
 
