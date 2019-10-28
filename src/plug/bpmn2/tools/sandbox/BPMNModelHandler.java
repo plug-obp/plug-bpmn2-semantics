@@ -1,9 +1,9 @@
 package plug.bpmn2.tools.sandbox;
 
 import org.eclipse.bpmn2.DocumentRoot;
-import plug.bpmn2.tools.sandbox.preprocessing.dag.BPMNInstanceOwnerDiagnosis;
-import plug.bpmn2.tools.sandbox.preprocessing.dag.BPMNeContainmentDiagnosis;
-import plug.bpmn2.tools.sandbox.transition.BPMNInstanceFactory;
+import plug.bpmn2.tools.sandbox.dag.BPMNInstanceOwnerDiagnosis;
+import plug.bpmn2.tools.sandbox.dag.BPMNeContainmentDiagnosis;
+import plug.bpmn2.tools.sandbox.instance.BPMNInstanceFactory;
 
 public class BPMNModelHandler {
 

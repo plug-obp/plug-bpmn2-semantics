@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.sandbox.preprocessing.dag;
+package plug.bpmn2.tools.sandbox.dag;
 
 import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.bpmn2.Definitions;

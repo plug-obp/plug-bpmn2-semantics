@@ -4,7 +4,7 @@ import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.tools.sandbox.BPMNModelHandler;
-import plug.bpmn2.tools.sandbox.transition.BPMNInstanceFactory;
+import plug.bpmn2.tools.sandbox.instance.BPMNInstanceFactory;
 
 import java.util.Collections;
 import java.util.Set;

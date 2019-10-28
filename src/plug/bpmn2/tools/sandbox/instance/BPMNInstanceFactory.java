@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.sandbox.transition;
+package plug.bpmn2.tools.sandbox.instance;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
