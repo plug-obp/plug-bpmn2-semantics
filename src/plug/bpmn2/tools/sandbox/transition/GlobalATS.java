@@ -4,6 +4,7 @@ import org.eclipse.bpmn2.BaseElement;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.transition.BPMNAbstractTransition;
+import plug.bpmn2.tools.sandbox.BPMNModelHandler;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,11 +14,16 @@ public class GlobalATS {
 
     private final Map<BaseElement, BaseElementATS> baseElementATSMap = new HashMap<>();
 
-    public BaseElementATS getRuntimeScopeATS(BaseElement baseElement) {
+    public BaseElementATS getRuntimeScopeATS(BPMNModelHandler modelHandler, BaseElement baseElement) {
         return baseElementATSMap.computeIfAbsent(
                 baseElement,
-                (be) -> new BaseElementATS(baseElement)
+                (be) -> new BaseElementATS(modelHandler, be)
         );
+    }
+
+    public BaseElementATS getRuntimeScopeATS(BaseElement baseElement) {
+        if (baseElement == null) return getRuntimeScopeATS(null, null);
+        return baseElementATSMap.get(baseElement);
     }
 
     public BaseElementATS getEmptyScopeATS() {

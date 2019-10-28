@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.sandbox;
+package plug.bpmn2.tools.sandbox.common;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;

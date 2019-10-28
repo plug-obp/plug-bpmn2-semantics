@@ -3,6 +3,8 @@ package plug.bpmn2.tools.sandbox;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
+import plug.bpmn2.tools.sandbox.common.BPMNModelPrinter;
+import plug.bpmn2.tools.sandbox.common.BPMNPrinterShort;
 import plug.bpmn2.tools.sandbox.runtime.BPMNInitialStateSetSupplier;
 
 import java.util.Set;

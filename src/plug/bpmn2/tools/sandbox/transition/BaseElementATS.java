@@ -4,6 +4,7 @@ import org.eclipse.bpmn2.BaseElement;
 import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.transition.BPMNAbstractTransition;
+import plug.bpmn2.tools.sandbox.BPMNModelHandler;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -33,8 +34,13 @@ public class BaseElementATS {
         this.guard = (guard != null ? guard : TransitionGuard.TRUE);
     }
 
-    BaseElementATS(BaseElement baseElement) {
-        this(null, ROOT_ID, baseElement, null);
+    BaseElementATS(BPMNModelHandler modelHandler, BaseElement baseElement) {
+        this(
+                null,
+                baseElement == null ? ROOT_ID : modelHandler.id.get(baseElement),
+                baseElement,
+                null
+        );
     }
 
     public BaseElementATS getParent() {
