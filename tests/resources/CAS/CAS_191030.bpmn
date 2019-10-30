@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.mega.com/bpmn20" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="5.1.2">
+  <bpmn:collaboration id="MegaId-771C90DC5DA54E43COLLAB">
+    <bpmn:participant id="MegaId-771C9CD95DA43F52POOL" name="Pool Fonctions systemes internes du CAS" processRef="MegaId-771C9CD95DA43F52" />
+    <bpmn:messageFlow id="MegaId-771C9F735DA444DB" name="Description visuelle de la menace" sourceRef="MegaId-771C9CF45DA44030" targetRef="MegaId-771C9F155DA4445D" />
+    <bpmn:messageFlow id="MegaId-771C850A5DA5471F" name="Compte-rendu de depart de la munition" sourceRef="MegaId-771C9CF25DA4401B" targetRef="MegaId-771C84D95DA546D1" />
+    <bpmn:messageFlow id="MegaId-771C8ACE5DA54996" name="Ordre de depart de la munition" sourceRef="MegaId-771C9CFC5DA4406F" targetRef="MegaId-771C8A925DA54944" />
+  </bpmn:collaboration>
+  <bpmn:process id="MegaId-771C9CD95DA43F52" name="Fonctions systemes internes du CAS">
+    <bpmn:laneSet>
+      <bpmn:lane id="MegaId-771C9CEA5DA43FD6" name="Vehicule de combat de l&#39;armee de Terre">
+        <bpmn:flowNodeRef>MegaId-771C9E265DA44398</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9DA05DA44333</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CF45DA44030</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CE75DA43FBB" name="Centre de Command &#38; Control avance">
+        <bpmn:flowNodeRef>MegaId-771C89D75DA548E8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9F155DA4445D</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CF75DA44045</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CEF5DA44006</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CF25DA4401B</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CEC5DA43FF1</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CE15DA43F85" name="Rafale">
+        <bpmn:flowNodeRef>MegaId-771C8E495DA54C08</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C8D085DA54A61</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C8D8B5DA54B7D</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C834D5DA545EC</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CFA5DA4405A</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CFC5DA4406F</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9D045DA440AE</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CDE5DA43F6A" name="Designateur de l&#39;objectif">
+        <bpmn:flowNodeRef>MegaId-771C84D95DA546D1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CFF5DA44084</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9D075DA440C3</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CE45DA43FA0" name="Missile Air-Terre">
+        <bpmn:flowNodeRef>MegaId-771C8C225DA54A28</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C8A925DA54944</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9D015DA44099</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:endEvent id="MegaId-771C9E265DA44398" name="Fin" />
+    <bpmn:endEvent id="MegaId-771C89D75DA548E8" name="Fin" />
+    <bpmn:endEvent id="MegaId-771C8C225DA54A28" name="Fin" />
+    <bpmn:endEvent id="MegaId-771C8EF15DA54CA7" name="Fin" />
+    <bpmn:endEvent id="MegaId-771C8E495DA54C08" name="Fin" />
+    <bpmn:exclusiveGateway id="MegaId-771C8D3C5DA54B0E" name="Gateway-2" />
+    <bpmn:parallelGateway id="MegaId-771C8D085DA54A61" name="" />
+    <bpmn:parallelGateway id="MegaId-771C8D8B5DA54B7D" name="" />
+    <bpmn:sequenceFlow id="MegaId-771C82BA5DA54587" name="" sourceRef="MegaId-771C9CF75DA44045" targetRef="MegaId-771C9CEF5DA44006" />
+    <bpmn:sequenceFlow id="MegaId-771C82FC5DA545C1" name="" sourceRef="MegaId-771C9CEF5DA44006" targetRef="MegaId-771C9CF25DA4401B" />
+    <bpmn:sequenceFlow id="MegaId-771C9E385DA443D7" name="" sourceRef="MegaId-771C9CF45DA44030" targetRef="MegaId-771C9E265DA44398" />
+    <bpmn:sequenceFlow id="MegaId-771C9FCD5DA44503" name="" sourceRef="MegaId-771C9F155DA4445D" targetRef="MegaId-771C9CF75DA44045" />
+    <bpmn:sequenceFlow id="MegaId-771C838B5DA54625" name="" sourceRef="MegaId-771C834D5DA545EC" targetRef="MegaId-771C9CFA5DA4405A" />
+    <bpmn:sequenceFlow id="MegaId-771C9DFB5DA4436C" name="" sourceRef="MegaId-771C9DA05DA44333" targetRef="MegaId-771C9CF45DA44030" />
+    <bpmn:sequenceFlow id="MegaId-771C89B75DA548B1" name="" sourceRef="MegaId-771C9CF25DA4401B" targetRef="MegaId-771C9CEC5DA43FF1" />
+    <bpmn:sequenceFlow id="MegaId-771C8B805DA549F1" name="" sourceRef="MegaId-771C9CEC5DA43FF1" targetRef="MegaId-771C89D75DA548E8" />
+    <bpmn:sequenceFlow id="MegaId-771C849F5DA546A6" name="" sourceRef="MegaId-771C9D075DA440C3" targetRef="MegaId-771C9CFF5DA44084" />
+    <bpmn:sequenceFlow id="MegaId-771C8B2B5DA549C6" name="" sourceRef="MegaId-771C8A925DA54944" targetRef="MegaId-771C9D015DA44099" />
+    <bpmn:sequenceFlow id="MegaId-771C859B5DA5477D" name="" sourceRef="MegaId-771C84D95DA546D1" targetRef="MegaId-771C9D075DA440C3" />
+    <bpmn:sequenceFlow id="MegaId-771C8F1B5DA54CEB" name="" sourceRef="MegaId-771C9CFF5DA44084" targetRef="MegaId-771C8EF15DA54CA7" />
+    <bpmn:sequenceFlow id="MegaId-771C8D2E5DA54AE3" name="" sourceRef="MegaId-771C8D085DA54A61" targetRef="MegaId-771C9CFC5DA4406F" />
+    <bpmn:sequenceFlow id="MegaId-771C8DFF5DA54BB2" name="" sourceRef="MegaId-771C9CFC5DA4406F" targetRef="MegaId-771C8D8B5DA54B7D" />
+    <bpmn:sequenceFlow id="MegaId-771C8EAF5DA54C7C" name="" sourceRef="MegaId-771C9D015DA44099" targetRef="MegaId-771C8C225DA54A28" />
+    <bpmn:sequenceFlow id="MegaId-771C8D225DA54AB8" name="" sourceRef="MegaId-771C8D085DA54A61" targetRef="MegaId-771C9D045DA440AE" />
+    <bpmn:sequenceFlow id="MegaId-771C8E8F5DA54C51" name="" sourceRef="MegaId-771C8D8B5DA54B7D" targetRef="MegaId-771C8E495DA54C08" />
+    <bpmn:sequenceFlow id="MegaId-771C8D145DA54A8D" name="" sourceRef="MegaId-771C9CFA5DA4405A" targetRef="MegaId-771C8D085DA54A61" />
+    <bpmn:sequenceFlow id="MegaId-771C8E1E5DA54BDD" name="" sourceRef="MegaId-771C9D045DA440AE" targetRef="MegaId-771C8D8B5DA54B7D" />
+    <bpmn:startEvent id="MegaId-771C834D5DA545EC" name="Debut" />
+    <bpmn:startEvent id="MegaId-771C9DA05DA44333" name="Debut" />
+    <bpmn:startEvent id="MegaId-771C9F155DA4445D" name="Debut">
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:startEvent id="MegaId-771C84D95DA546D1" name="Debut">
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:startEvent id="MegaId-771C8A925DA54944" name="Debut">
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:task id="MegaId-771C9CF45DA44030" name="Rendre compte de la menace" />
+    <bpmn:task id="MegaId-771C9CF75DA44045" name="Collationner la SITAC" />
+    <bpmn:task id="MegaId-771C9CEF5DA44006" name="Prendre les decisions tactiques" />
+    <bpmn:task id="MegaId-771C9CF25DA4401B" name="Transmettre les ordres" />
+    <bpmn:task id="MegaId-771C9CEC5DA43FF1" name="Collationner le BDA" />
+    <bpmn:task id="MegaId-771C9CFA5DA4405A" name="Rendre compte d&#39;observations aeriennes" />
+    <bpmn:task id="MegaId-771C9CFC5DA4406F" name="Tirer une munition" />
+    <bpmn:task id="MegaId-771C9CFF5DA44084" name="Constater visuellement les dommages" />
+    <bpmn:task id="MegaId-771C9D015DA44099" name="Se diriger vers l&#39;objectif" />
+    <bpmn:task id="MegaId-771C9D045DA440AE" name="Rendre compte de l&#39;avancee de la mission" />
+    <bpmn:task id="MegaId-771C9D075DA440C3" name="Designer l&#39;objectif" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="MegaId-771C9D1B5DA44182" name="System Process Diagram">
+    <bpmndi:BPMNPlane bpmnElement="MegaId-771C9CD95DA43F52">
+      <bpmndi:BPMNShape id="MegaId-771C9CD95DA43F52POOL-Shape" bpmnElement="MegaId-771C9CD95DA43F52POOL" isHorizontal="false" isExpanded="true">
+        <dc:Bounds x="22" y="20" width="1094" height="628" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CE45DA43FA0-Shape" bpmnElement="MegaId-771C9CE45DA43FA0" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="1116" y="170" width="164" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CE15DA43F85-Shape" bpmnElement="MegaId-771C9CE15DA43F85" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="693" y="170" width="226" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CDE5DA43F6A-Shape" bpmnElement="MegaId-771C9CDE5DA43F6A" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="934" y="170" width="164" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CE75DA43FBB-Shape" bpmnElement="MegaId-771C9CE75DA43FBB" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="453" y="170" width="225" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CEA5DA43FD6-Shape" bpmnElement="MegaId-771C9CEA5DA43FD6" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="217" y="170" width="219" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CF45DA44030-Shape" bpmnElement="MegaId-771C9CF45DA44030">
+        <dc:Bounds x="234" y="253" width="89" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CF75DA44045-Shape" bpmnElement="MegaId-771C9CF75DA44045">
+        <dc:Bounds x="519" y="253" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CEF5DA44006-Shape" bpmnElement="MegaId-771C9CEF5DA44006">
+        <dc:Bounds x="519" y="336" width="90" height="75" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CF25DA4401B-Shape" bpmnElement="MegaId-771C9CF25DA4401B">
+        <dc:Bounds x="519" y="434" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CEC5DA43FF1-Shape" bpmnElement="MegaId-771C9CEC5DA43FF1">
+        <dc:Bounds x="519" y="607" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CFA5DA4405A-Shape" bpmnElement="MegaId-771C9CFA5DA4405A">
+        <dc:Bounds x="813" y="208" width="89" height="74" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CFC5DA4406F-Shape" bpmnElement="MegaId-771C9CFC5DA4406F">
+        <dc:Bounds x="806" y="502" width="89" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9D045DA440AE-Shape" bpmnElement="MegaId-771C9D045DA440AE">
+        <dc:Bounds x="722" y="343" width="89" height="74" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9D075DA440C3-Shape" bpmnElement="MegaId-771C9D075DA440C3">
+        <dc:Bounds x="971" y="464" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CFF5DA44084-Shape" bpmnElement="MegaId-771C9CFF5DA44084">
+        <dc:Bounds x="971" y="570" width="90" height="74" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9D015DA44099-Shape" bpmnElement="MegaId-771C9D015DA44099">
+        <dc:Bounds x="1153" y="359" width="89" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9DA05DA44333-Shape" bpmnElement="MegaId-771C9DA05DA44333">
+        <dc:Bounds x="268" y="207" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="263" y="227" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9E265DA44398-Shape" bpmnElement="MegaId-771C9E265DA44398">
+        <dc:Bounds x="268" y="350" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="270" y="370" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9F155DA4445D-Shape" bpmnElement="MegaId-771C9F155DA4445D">
+        <dc:Bounds x="554" y="213" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="549" y="233" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C834D5DA545EC-Shape" bpmnElement="MegaId-771C834D5DA545EC">
+        <dc:Bounds x="762" y="209" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="757" y="229" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C84D95DA546D1-Shape" bpmnElement="MegaId-771C84D95DA546D1">
+        <dc:Bounds x="1005" y="417" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1000" y="437" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C89D75DA548E8-Shape" bpmnElement="MegaId-771C89D75DA548E8">
+        <dc:Bounds x="474" y="663" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="476" y="683" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8A925DA54944-Shape" bpmnElement="MegaId-771C8A925DA54944">
+        <dc:Bounds x="1158" y="318" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1153" y="338" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8C225DA54A28-Shape" bpmnElement="MegaId-771C8C225DA54A28">
+        <dc:Bounds x="1216" y="593" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1218" y="613" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8D085DA54A61-Shape" bpmnElement="MegaId-771C8D085DA54A61">
+        <dc:Bounds x="844" y="306" width="30" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8D3C5DA54B0E-Shape" bpmnElement="MegaId-771C8D3C5DA54B0E" isMarkerVisible="true">
+        <dc:Bounds x="182" y="82" width="2" height="2" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="156" y="84" width="54" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8D8B5DA54B7D-Shape" bpmnElement="MegaId-771C8D8B5DA54B7D">
+        <dc:Bounds x="730" y="555" width="30" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8E495DA54C08-Shape" bpmnElement="MegaId-771C8E495DA54C08">
+        <dc:Bounds x="765" y="590" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="767" y="610" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8EF15DA54CA7-Shape" bpmnElement="MegaId-771C8EF15DA54CA7">
+        <dc:Bounds x="1008" y="673" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1010" y="693" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EA4" bpmnElement="MegaId-771C9DFB5DA4436C">
+        <di:waypoint x="278" y="217" />
+        <di:waypoint x="278" y="282" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EA5" bpmnElement="MegaId-771C9E385DA443D7">
+        <di:waypoint x="278" y="282" />
+        <di:waypoint x="278" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EA6" bpmnElement="MegaId-771C9F735DA444DB">
+        <di:waypoint x="98" y="202" />
+        <di:waypoint x="245" y="202" />
+        <di:waypoint x="245" y="143" />
+        <di:waypoint x="384" y="143" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EA7" bpmnElement="MegaId-771C9FCD5DA44503">
+        <di:waypoint x="565" y="223" />
+        <di:waypoint x="565" y="282" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EA8" bpmnElement="MegaId-771C82BA5DA54587">
+        <di:waypoint x="564" y="282" />
+        <di:waypoint x="564" y="373" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EA9" bpmnElement="MegaId-771C82FC5DA545C1">
+        <di:waypoint x="564" y="373" />
+        <di:waypoint x="564" y="464" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EAA" bpmnElement="MegaId-771C838B5DA54625">
+        <di:waypoint x="772" y="218" />
+        <di:waypoint x="858" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EAB" bpmnElement="MegaId-771C849F5DA546A6">
+        <di:waypoint x="1016" y="494" />
+        <di:waypoint x="1016" y="607" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EAC" bpmnElement="MegaId-771C850A5DA5471F">
+        <di:waypoint x="384" y="403" />
+        <di:waypoint x="724" y="403" />
+        <di:waypoint x="724" y="347" />
+        <di:waypoint x="836" y="347" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EAD" bpmnElement="MegaId-771C859B5DA5477D">
+        <di:waypoint x="1016" y="427" />
+        <di:waypoint x="1016" y="494" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EAE" bpmnElement="MegaId-771C89B75DA548B1">
+        <di:waypoint x="564" y="464" />
+        <di:waypoint x="564" y="637" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EAF" bpmnElement="MegaId-771C8ACE5DA54996">
+        <di:waypoint x="670" y="471" />
+        <di:waypoint x="1071" y="471" />
+        <di:waypoint x="1071" y="252" />
+        <di:waypoint x="988" y="252" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB0" bpmnElement="MegaId-771C8B2B5DA549C6">
+        <di:waypoint x="1168" y="328" />
+        <di:waypoint x="1168" y="389" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB1" bpmnElement="MegaId-771C8B805DA549F1">
+        <di:waypoint x="564" y="637" />
+        <di:waypoint x="564" y="676" />
+        <di:waypoint x="484" y="676" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB2" bpmnElement="MegaId-771C8D145DA54A8D">
+        <di:waypoint x="858" y="245" />
+        <di:waypoint x="858" y="321" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB3" bpmnElement="MegaId-771C8D225DA54AB8">
+        <di:waypoint x="859" y="321" />
+        <di:waypoint x="764" y="321" />
+        <di:waypoint x="764" y="381" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB4" bpmnElement="MegaId-771C8D2E5DA54AE3">
+        <di:waypoint x="859" y="321" />
+        <di:waypoint x="859" y="532" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB5" bpmnElement="MegaId-771C8DFF5DA54BB2">
+        <di:waypoint x="850" y="532" />
+        <di:waypoint x="850" y="570" />
+        <di:waypoint x="745" y="570" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB6" bpmnElement="MegaId-771C8E1E5DA54BDD">
+        <di:waypoint x="746" y="389" />
+        <di:waypoint x="745" y="570" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB7" bpmnElement="MegaId-771C8E8F5DA54C51">
+        <di:waypoint x="745" y="570" />
+        <di:waypoint x="745" y="600" />
+        <di:waypoint x="775" y="600" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB8" bpmnElement="MegaId-771C8EAF5DA54C7C">
+        <di:waypoint x="1229" y="389" />
+        <di:waypoint x="1229" y="603" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EB9" bpmnElement="MegaId-771C8F1B5DA54CEB">
+        <di:waypoint x="1017" y="607" />
+        <di:waypoint x="1017" y="684" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

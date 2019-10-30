@@ -2,12 +2,8 @@ package plug.bpmn2.tools.sandbox;
 
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.tools.sandbox.common.BPMNModelPrinter;
 import plug.bpmn2.tools.sandbox.common.BPMNPrinterShort;
-import plug.bpmn2.tools.sandbox.runtime.BPMNInitialStateSetSupplier;
-
-import java.util.Set;
 
 public class BPMNLoaderTest {
 
@@ -19,7 +15,7 @@ public class BPMNLoaderTest {
         if (parentCount == 0) {
             System.out.println("    Has no " + relationName + ": " + printer.getShortString(object));
         } else if (parentCount > 1) {
-            System.out.println("    Has multiple " + relationName +  "s: " + printer.getShortString(object));
+            System.out.println("    Has multiple " + relationName + "s: " + printer.getShortString(object));
         }
     }
 
@@ -57,11 +53,6 @@ public class BPMNLoaderTest {
         System.out.println();
         System.out.println(modelPrinter.getString(loader.getDocumentRoot()));
 
-        System.out.println();
-        Set<BPMNModelRuntimeState> initialStateSet = new BPMNInitialStateSetSupplier().get(modelHandler);
-        for (BPMNModelRuntimeState initialState : initialStateSet) {
-            System.out.println(initialState);
-        }
     }
 
 
@@ -78,6 +69,21 @@ public class BPMNLoaderTest {
     @Test
     public void mutex() {
         load("mutexProblemDescription.bpmn");
+    }
+
+    @Test
+    public void process_e0t0e1() {
+        load("minimal/process_e0t0e1.bpmn");
+    }
+
+    @Test
+    public void process_CAS_191029() {
+        load("CAS/CAS_191029.bpmn");
+    }
+
+    @Test
+    public void process_CAS_191030() {
+        load("CAS/CAS_191030.bpmn");
     }
 
 }

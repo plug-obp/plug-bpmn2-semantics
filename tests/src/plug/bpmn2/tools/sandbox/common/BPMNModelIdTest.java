@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import plug.bpmn2.tools.sandbox.BPMNLoader;
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -59,5 +60,16 @@ public class BPMNModelIdTest {
     public void mutex() {
         load("mutexProblemDescription.bpmn");
     }
+
+    @Test
+    public void minimal() {
+        load("minimal/process_e0t0e1.bpmn");
+    }
+
+    @Test
+    public void process_CAS_191029() {
+        load("CAS/CAS.191029.bpmn");
+    }
+
 
 }
