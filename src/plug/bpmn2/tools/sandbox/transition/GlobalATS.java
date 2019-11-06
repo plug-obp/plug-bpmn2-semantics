@@ -12,27 +12,27 @@ import java.util.Map;
 
 public class GlobalATS {
 
+    private final BPMNModelHandler modelHandler;
     private final Map<BaseElement, BaseElementATS> baseElementATSMap = new HashMap<>();
 
-    public BaseElementATS getRuntimeScopeATS(BPMNModelHandler modelHandler, BaseElement baseElement) {
+    public GlobalATS(BPMNModelHandler modelHandler) {
+        this.modelHandler = modelHandler;
+    }
+
+    public BaseElementATS getBaseElementATS(BaseElement baseElement) {
         return baseElementATSMap.computeIfAbsent(
                 baseElement,
                 (be) -> new BaseElementATS(modelHandler, be)
         );
     }
 
-    public BaseElementATS getRuntimeScopeATS(BaseElement baseElement) {
-        if (baseElement == null) return getRuntimeScopeATS(null, null);
-        return baseElementATSMap.get(baseElement);
-    }
-
     public BaseElementATS getEmptyScopeATS() {
-        return getRuntimeScopeATS(null);
+        return getBaseElementATS(null);
     }
 
     public Iterator<BPMNAbstractTransition> iterator(BPMNModelRuntimeState state, BPMNRuntimeInstance runtimeScope) {
         BaseElement baseElement = runtimeScope == null ? null : runtimeScope.getBaseElement();
-        return getRuntimeScopeATS(baseElement).iterator(state, runtimeScope);
+        return getBaseElementATS(baseElement).iterator(state, runtimeScope);
     }
 
 }

@@ -7,18 +7,30 @@ import java.util.Map;
 
 public class BPMNModelId {
 
+    static public final String ROOT = "root";
+
     private final Map<BaseElement, String> baseElementIdMap = new HashMap<>();
     private final Map<String, BaseElement> idBaseElementMap = new HashMap<>();
-    private int nextNullId = 0;
+    private int nextTieBreaker = 0;
+
+    public BPMNModelId() {
+        baseElementIdMap.put(null, ROOT);
+        idBaseElementMap.put(ROOT, null);
+    }
 
     private String buildId(BaseElement baseElement) {
-        String baseId = baseElement.getId();
-        if (baseId == null) {
-            baseId = "null_" + nextNullId;
-            nextNullId += 1;
+        String result = baseElement.getId();
+        if (result == null) {
+            result = "nullId";
+        } else {
+            String className = baseElement.getClass().getSimpleName();
+            className = className.replace("Impl", "");
+            result = result.contains(className) ? result : className + "_" + result;
         }
-        String className = baseElement.getClass().getSimpleName().replace("Impl", "");
-        return baseId.contains(className) ? baseId : className + "_" + baseId;
+        while (idBaseElementMap.containsKey(result)) {
+            result += "_" + nextTieBreaker++;
+        }
+        return result;
     }
 
     public String get(BaseElement baseElement) {

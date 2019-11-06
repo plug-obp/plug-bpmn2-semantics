@@ -5,7 +5,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import plug.bpmn2.tools.sandbox.BPMNLoader;
 
-import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -68,7 +67,7 @@ public class BPMNModelIdTest {
 
     @Test
     public void process_CAS_191029() {
-        load("CAS/CAS.191029.bpmn");
+        load("CAS/CAS_191029.bpmn");
     }
 
 

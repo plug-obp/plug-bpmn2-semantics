@@ -5,6 +5,7 @@ import plug.bpmn2.interpretation.model.BPMNModelRuntimeState;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.transition.BPMNAbstractTransition;
 import plug.bpmn2.tools.sandbox.BPMNModelHandler;
+import plug.bpmn2.tools.sandbox.common.BPMNModelId;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +17,6 @@ import java.util.Set;
 public class BaseElementATS {
 
     static private final String DEFAULT_ID = "DEFAULT_ID";
-    static private final String ROOT_ID = "root";
 
     private final BaseElementATS parent;
     private final String localId;
@@ -37,7 +37,7 @@ public class BaseElementATS {
     BaseElementATS(BPMNModelHandler modelHandler, BaseElement baseElement) {
         this(
                 null,
-                baseElement == null ? ROOT_ID : modelHandler.id.get(baseElement),
+                baseElement == null ? BPMNModelId.ROOT : modelHandler.id.get(baseElement),
                 baseElement,
                 null
         );
