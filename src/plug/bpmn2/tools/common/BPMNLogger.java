@@ -1,6 +1,7 @@
 package plug.bpmn2.tools.common;
 
 import org.eclipse.emf.ecore.EObject;
+import plug.bpmn2.tools.common.printer.BPMNPrinterShort;
 
 import java.util.function.Consumer;
 import java.util.logging.Handler;
