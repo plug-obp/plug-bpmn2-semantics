@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.runtime.system;
+package plug.bpmn2.tools.runtime.system.ats;
 
 import org.eclipse.bpmn2.BaseElement;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
@@ -6,6 +6,7 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.transition.BPMNAbstractTransition;
 import plug.bpmn2.tools.BPMNModelHandler;
 import plug.bpmn2.tools.common.BPMNModelId;
+import plug.bpmn2.tools.runtime.system.TransitionGuard;
 
 import java.util.*;
 
@@ -48,6 +49,18 @@ public class BaseElementATS {
 
     public String getAbsoluteId() {
         return absoluteId;
+    }
+
+    public Collection<BaseElementATS> getSubSystems() {
+        return subSystemMap.values();
+    }
+
+    public Collection<String> getSubSystemsIDs() {
+        return subSystemMap.keySet();
+    }
+
+    public BaseElementATS getSubSystem(String id) {
+        return subSystemMap.get(id);
     }
 
     public BaseElementATS newSubSystem(String localId, TransitionGuard guard) {

@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.runtime.system;
+package plug.bpmn2.tools.runtime.system.ats;
 
 import org.eclipse.bpmn2.BaseElement;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
@@ -24,6 +24,14 @@ public class GlobalATS {
                 baseElement,
                 (be) -> new BaseElementATS(modelHandler, be)
         );
+    }
+
+    public BaseElementATS getBaseElementATS(BaseElement baseElement, String id, String... path) {
+        BaseElementATS result = baseElementATSMap.get(baseElement).getSubSystem(id);
+        for (String nextId : path) {
+            result = result.getSubSystem(nextId);
+        }
+        return result;
     }
 
     public BaseElementATS getEmptyScopeATS() {

@@ -1,19 +1,17 @@
 package plug.bpmn2.tools.common;
 
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
+import plug.bpmn2.tools.AbstractTest;
 import plug.bpmn2.tools.BPMNLoader;
 import plug.bpmn2.tools.BPMNModelHandler;
 import plug.bpmn2.tools.common.printer.BPMNModelPrinter;
 import plug.bpmn2.tools.common.printer.BPMNPrinterShort;
 
-public class BPMNLoaderTest {
-
-    private final BPMNLoader loader = new BPMNLoader();
-    private final BPMNPrinterShort printer = new BPMNPrinterShort();
-    private final BPMNModelPrinter modelPrinter = new BPMNModelPrinter();
+public class BPMNLoaderTest extends AbstractTest {
 
     private void printIssues(EObject object, int parentCount, String relationName) {
+        BPMNPrinterShort printer = getPrinter();
+
         if (parentCount == 0) {
             System.out.println("    Has no " + relationName + ": " + printer.getShortString(object));
         } else if (parentCount > 1) {
@@ -21,10 +19,12 @@ public class BPMNLoaderTest {
         }
     }
 
-    private void load(String urlString) {
-        System.out.println("Loading " + urlString);
-        loader.loadModelFromURLString(urlString);
-        BPMNModelHandler modelHandler = loader.getModelHandler();
+    @Override
+    protected void testModel() {
+        BPMNLoader loader = getLoader();
+        BPMNModelHandler modelHandler = getModelHandler();
+        BPMNPrinterShort printer = getPrinter();
+        BPMNModelPrinter modelPrinter = getModelPrinter();
 
         System.out.println();
         System.out.println("Model Elements:");
@@ -55,37 +55,6 @@ public class BPMNLoaderTest {
         System.out.println();
         System.out.println(modelPrinter.getString(loader.getDocumentRoot()));
 
-    }
-
-
-    @Test
-    public void omgPizzaDelivery() {
-        load("omg.pizzaDelivery.bpmn");
-    }
-
-    @Test
-    public void enstabSpray() {
-        load("enstab.spray.bpmn2");
-    }
-
-    @Test
-    public void mutex() {
-        load("mutexProblemDescription.bpmn");
-    }
-
-    @Test
-    public void process_e0t0e1() {
-        load("minimal/process_e0t0e1.bpmn");
-    }
-
-    @Test
-    public void process_CAS_191029() {
-        load("CAS/CAS_191029.bpmn");
-    }
-
-    @Test
-    public void process_CAS_191030() {
-        load("CAS/CAS_191030.bpmn");
     }
 
 }

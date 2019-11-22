@@ -2,26 +2,20 @@ package plug.bpmn2.tools.common;
 
 import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
+import plug.bpmn2.tools.AbstractTest;
 import plug.bpmn2.tools.BPMNLoader;
-import plug.bpmn2.tools.common.printer.BPMNPrinterShort;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.Assert.*;
 
-public class BPMNModelIdTest {
+public class BPMNModelIdTest extends AbstractTest {
 
-    private final BPMNLoader loader = new BPMNLoader();
-    private final BPMNPrinterShort printer = new BPMNPrinterShort();
+    @Override
+    protected void testModel() {
+        BPMNLoader loader = getLoader();
 
-    private void load(String urlString) {
-        loader.loadModelFromURLString(urlString);
-        assertUniqueIds();
-    }
-
-    private void assertUniqueIds() {
         Set<String> idSet = new HashSet<>();
         Set<String> nullIdSet = new HashSet<>();
         for (EObject object : loader.getModelHandler().containment.getNodeSet()) {
@@ -44,31 +38,6 @@ public class BPMNModelIdTest {
         } else {
             System.out.println("No null base id were found (that's good!).");
         }
-    }
-
-    @Test
-    public void omgPizzaDelivery() {
-        load("omg.pizzaDelivery.bpmn");
-    }
-
-    @Test
-    public void enstabSpray() {
-        load("enstab.spray.bpmn2");
-    }
-
-    @Test
-    public void mutex() {
-        load("mutexProblemDescription.bpmn");
-    }
-
-    @Test
-    public void minimal() {
-        load("minimal/process_e0t0e1.bpmn");
-    }
-
-    @Test
-    public void process_CAS_191029() {
-        load("CAS/CAS_191029.bpmn");
     }
     
 }
