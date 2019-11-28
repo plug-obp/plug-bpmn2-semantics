@@ -39,14 +39,18 @@ abstract class InstanceBase<P extends BPMNRuntimeInstance, E extends BaseElement
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InstanceBase<?, ?> that = (InstanceBase<?, ?>) o;
-        return Objects.equals(getParent(), that.getParent()) &&
+        // TODO fix that overflow
+        return //Objects.equals(getParent(), that.getParent()) &&
                 getBaseElement().equals(that.getBaseElement()) &&
                 getChildInstanceSet().equals(that.getChildInstanceSet());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getParent(), getBaseElement(), getChildInstanceSet());
+        // TODO
+        // Can not include parent in hashcode, as it tries to hash his children too ...
+        // return Objects.hash(getParent(), getBaseElement(), getChildInstanceSet());
+        return Objects.hash(getBaseElement(), getChildInstanceSet());
     }
 
 }
