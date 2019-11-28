@@ -8,6 +8,7 @@ import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 import plug.bpmn2.interpretation.model.instance.data.Token;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class SubProcessInstanceImpl
@@ -32,6 +33,20 @@ public class SubProcessInstanceImpl
     @Override
     public void acceptInstanceVisitor(BPMNInstanceVisitor visitor) {
         visitor.visitSubProcessInstance(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SubProcessInstanceImpl that = (SubProcessInstanceImpl) o;
+        return getTokenSet().equals(that.getTokenSet());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getTokenSet());
     }
 
 }

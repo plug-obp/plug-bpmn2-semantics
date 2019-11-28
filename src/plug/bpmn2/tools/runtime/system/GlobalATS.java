@@ -1,10 +1,11 @@
-package plug.bpmn2.tools.runtime.system.ats;
+package plug.bpmn2.tools.runtime.system;
 
 import org.eclipse.bpmn2.BaseElement;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.transition.BPMNAbstractTransition;
 import plug.bpmn2.tools.BPMNModelHandler;
+import plug.bpmn2.tools.runtime.system.BaseElementATS;
 
 import java.util.HashMap;
 import java.util.Iterator;

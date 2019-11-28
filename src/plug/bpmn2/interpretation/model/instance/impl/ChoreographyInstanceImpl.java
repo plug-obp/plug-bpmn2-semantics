@@ -10,19 +10,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ChoreographyInstanceImpl
-        extends InstanceBase<BPMNRuntimeInstance, Choreography>
+        extends FlowElementContainerInstanceBase<Choreography>
         implements ChoreographyInstance {
-
-    private final Set<Token> tokenSet;
 
     public ChoreographyInstanceImpl(BPMNRuntimeInstance parent, Choreography baseElement) {
         super(parent, baseElement);
-        tokenSet = new HashSet<>();
-    }
-
-    @Override
-    public Set<Token> getTokenSet() {
-        return tokenSet;
     }
 
     @Override

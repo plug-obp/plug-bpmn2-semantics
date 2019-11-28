@@ -4,6 +4,7 @@ import org.eclipse.bpmn2.BaseElement;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 abstract class InstanceBase<P extends BPMNRuntimeInstance, E extends BaseElement> implements BPMNRuntimeInstance {
@@ -31,6 +32,21 @@ abstract class InstanceBase<P extends BPMNRuntimeInstance, E extends BaseElement
     @Override
     public E getBaseElement() {
         return baseElement;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InstanceBase<?, ?> that = (InstanceBase<?, ?>) o;
+        return Objects.equals(getParent(), that.getParent()) &&
+                getBaseElement().equals(that.getBaseElement()) &&
+                getChildInstanceSet().equals(that.getChildInstanceSet());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getParent(), getBaseElement(), getChildInstanceSet());
     }
 
 }

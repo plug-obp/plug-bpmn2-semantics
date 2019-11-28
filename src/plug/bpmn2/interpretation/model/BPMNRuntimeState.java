@@ -3,10 +3,7 @@ package plug.bpmn2.interpretation.model;
 import plug.bpmn2.interpretation.model.instance.data.EventFlowData;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class BPMNRuntimeState {
 
@@ -45,4 +42,20 @@ public class BPMNRuntimeState {
                 intermediateFlagList.isEmpty();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BPMNRuntimeState that = (BPMNRuntimeState) o;
+        return getRootInstances().equals(that.getRootInstances()) &&
+                getMessageFlowDataSet().equals(that.getMessageFlowDataSet()) &&
+                getEventFlowDataSet().equals(that.getEventFlowDataSet()) &&
+                getIntermediateFlagList().equals(that.getIntermediateFlagList());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRootInstances(), getMessageFlowDataSet(), getEventFlowDataSet(), getIntermediateFlagList());
+    }
+    
 }

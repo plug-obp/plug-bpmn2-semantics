@@ -10,19 +10,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ProcessInstanceImpl
-        extends InstanceBase<BPMNRuntimeInstance, Process>
+        extends FlowElementContainerInstanceBase<Process>
         implements ProcessInstance {
-
-    private final Set<Token> tokenSet;
 
     public ProcessInstanceImpl(BPMNRuntimeInstance parent, Process baseElement) {
         super(parent, baseElement);
-        tokenSet = new HashSet<>();
-    }
-
-    @Override
-    public Set<Token> getTokenSet() {
-        return tokenSet;
     }
 
     @Override

@@ -27,13 +27,13 @@ public class BPMNLoaderTest extends AbstractTest {
         BPMNModelPrinter modelPrinter = getModelPrinter();
 
         System.out.println();
-        System.out.println("Model Elements:");
+        System.out.println("Model ElementsCommon:");
         for (EObject object : modelHandler.containment.getNodeSet()) {
             System.out.println("    " + printer.getShortString(object));
         }
 
         System.out.println();
-        System.out.println("Instantiable Elements:");
+        System.out.println("Instantiable ElementsCommon:");
         for (EObject object : modelHandler.ownership.getNodeSet()) {
             System.out.println("    " + printer.getShortString(object));
         }
