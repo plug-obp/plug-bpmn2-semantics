@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.mega.com/bpmn20" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="5.1.2">
+  <bpmn:collaboration id="MegaId-771C90DC5DA54E43COLLAB">
+    <bpmn:participant id="MegaId-771C9CD95DA43F52POOL" name="Pool Fonctions systemes internes du CAS" processRef="MegaId-771C9CD95DA43F52" />
+    <bpmn:messageFlow id="MegaId-771C9F735DA444DB" name="Description visuelle de la menace" sourceRef="MegaId-771C9CF45DA44030" targetRef="MegaId-771C9F155DA4445D" />
+    <bpmn:messageFlow id="MegaId-771C850A5DA5471F" name="Compte-rendu de depart de la munition" sourceRef="MegaId-771C9CF25DA4401B" targetRef="MegaId-771C84D95DA546D1" />
+    <bpmn:messageFlow id="MegaId-771C8ACE5DA54996" name="Ordre de depart de la munition" sourceRef="MegaId-771C9CFC5DA4406F" targetRef="MegaId-771C8A925DA54944" />
+  </bpmn:collaboration>
+  <bpmn:process id="MegaId-771C9CD95DA43F52" name="Fonctions systemes internes du CAS">
+    <bpmn:laneSet>
+      <bpmn:lane id="MegaId-771C9CEA5DA43FD6" name="Vehicule de combat de l&#39;armee de Terre">
+        <bpmn:flowNodeRef>MegaId-771C9E265DA44398</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CF45DA44030</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9DA05DA44333</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CE75DA43FBB" name="Centre de Command &#38; Control avance">
+        <bpmn:flowNodeRef>MegaId-771C9CF75DA44045</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CEF5DA44006</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CF25DA4401B</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CEC5DA43FF1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C89D75DA548E8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>StartEvent_03vevxv</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CE15DA43F85" name="Rafale">
+        <bpmn:flowNodeRef>MegaId-771C9CFA5DA4405A</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9D045DA440AE</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>StartEvent_1ykbo3t</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C8E495DA54C08</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CFC5DA4406F</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_023175q</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CDE5DA43F6A" name="Designateur de l&#39;objectif">
+        <bpmn:flowNodeRef>StartEvent_035ipck</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9CFF5DA44084</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C9D075DA440C3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C8EF15DA54CA7</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="MegaId-771C9CE45DA43FA0" name="Missile Air-Terre">
+        <bpmn:flowNodeRef>MegaId-771C9D015DA44099</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>StartEvent_0f8hrg2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MegaId-771C8C225DA54A28</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:endEvent id="MegaId-771C9E265DA44398" name="Fin">
+      <bpmn:incoming>SequenceFlow_085xwqk</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="MegaId-771C89D75DA548E8" name="Fin">
+      <bpmn:incoming>SequenceFlow_02kvn1b</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="MegaId-771C8C225DA54A28" name="Fin">
+      <bpmn:incoming>SequenceFlow_0qf7neg</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="MegaId-771C8EF15DA54CA7" name="Fin">
+      <bpmn:incoming>SequenceFlow_1xckbet</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="MegaId-771C8E495DA54C08" name="Fin">
+      <bpmn:incoming>SequenceFlow_0ylfrw2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="MegaId-771C9DA05DA44333" name="Debut">
+      <bpmn:outgoing>SequenceFlow_0yo81vd</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="MegaId-771C9CF75DA44045" name="Collationner la SITAC">
+      <bpmn:incoming>SequenceFlow_1qf3j8n</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0sbn53y</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9CEF5DA44006" name="Prendre les decisions tactiques">
+      <bpmn:incoming>SequenceFlow_0sbn53y</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_10j1ank</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9CF25DA4401B" name="Transmettre les ordres">
+      <bpmn:incoming>SequenceFlow_10j1ank</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1l9yhu1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9CEC5DA43FF1" name="Collationner le BDA">
+      <bpmn:incoming>SequenceFlow_1l9yhu1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_02kvn1b</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9CFA5DA4405A" name="Rendre compte d&#39;observations aeriennes">
+      <bpmn:incoming>SequenceFlow_0lq8fwk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0o3ezp1</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0qcculg</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9CFC5DA4406F" name="Tirer une munition">
+      <bpmn:incoming>SequenceFlow_0qcculg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0cs4aj6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9CFF5DA44084" name="Constater visuellement les dommages">
+      <bpmn:incoming>SequenceFlow_0nttmtl</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1xckbet</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9D015DA44099" name="Se diriger vers l&#39;objectif">
+      <bpmn:incoming>SequenceFlow_04bgvlr</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0qf7neg</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9D045DA440AE" name="Rendre compte de l&#39;avancee de la mission">
+      <bpmn:incoming>SequenceFlow_0o3ezp1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ylfrw2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="MegaId-771C9D075DA440C3" name="Designer l&#39;objectif">
+      <bpmn:incoming>SequenceFlow_0569odp</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0nttmtl</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_0yo81vd" sourceRef="MegaId-771C9DA05DA44333" targetRef="MegaId-771C9CF45DA44030" />
+    <bpmn:sequenceFlow id="SequenceFlow_085xwqk" sourceRef="MegaId-771C9CF45DA44030" targetRef="MegaId-771C9E265DA44398" />
+    <bpmn:sequenceFlow id="SequenceFlow_0sbn53y" sourceRef="MegaId-771C9CF75DA44045" targetRef="MegaId-771C9CEF5DA44006" />
+    <bpmn:sequenceFlow id="SequenceFlow_10j1ank" sourceRef="MegaId-771C9CEF5DA44006" targetRef="MegaId-771C9CF25DA4401B" />
+    <bpmn:sequenceFlow id="SequenceFlow_1l9yhu1" sourceRef="MegaId-771C9CF25DA4401B" targetRef="MegaId-771C9CEC5DA43FF1" />
+    <bpmn:sequenceFlow id="SequenceFlow_02kvn1b" sourceRef="MegaId-771C9CEC5DA43FF1" targetRef="MegaId-771C89D75DA548E8" />
+    <bpmn:endEvent id="EndEvent_023175q" name="Fin">
+      <bpmn:incoming>SequenceFlow_0cs4aj6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="StartEvent_1ykbo3t" name="Debut">
+      <bpmn:outgoing>SequenceFlow_0lq8fwk</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0lq8fwk" sourceRef="StartEvent_1ykbo3t" targetRef="MegaId-771C9CFA5DA4405A" />
+    <bpmn:sequenceFlow id="SequenceFlow_1qf3j8n" sourceRef="StartEvent_03vevxv" targetRef="MegaId-771C9CF75DA44045" />
+    <bpmn:sequenceFlow id="SequenceFlow_0o3ezp1" sourceRef="MegaId-771C9CFA5DA4405A" targetRef="MegaId-771C9D045DA440AE" />
+    <bpmn:sequenceFlow id="SequenceFlow_0qcculg" sourceRef="MegaId-771C9CFA5DA4405A" targetRef="MegaId-771C9CFC5DA4406F" />
+    <bpmn:sequenceFlow id="SequenceFlow_0ylfrw2" sourceRef="MegaId-771C9D045DA440AE" targetRef="MegaId-771C8E495DA54C08" />
+    <bpmn:sequenceFlow id="SequenceFlow_0cs4aj6" sourceRef="MegaId-771C9CFC5DA4406F" targetRef="EndEvent_023175q" />
+    <bpmn:startEvent id="StartEvent_035ipck" name="Debut">
+      <bpmn:outgoing>SequenceFlow_0569odp</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0569odp" sourceRef="StartEvent_035ipck" targetRef="MegaId-771C9D075DA440C3" />
+    <bpmn:sequenceFlow id="SequenceFlow_0nttmtl" sourceRef="MegaId-771C9D075DA440C3" targetRef="MegaId-771C9CFF5DA44084" />
+    <bpmn:sequenceFlow id="SequenceFlow_1xckbet" sourceRef="MegaId-771C9CFF5DA44084" targetRef="MegaId-771C8EF15DA54CA7" />
+    <bpmn:startEvent id="StartEvent_0f8hrg2" name="Debut">
+      <bpmn:outgoing>SequenceFlow_04bgvlr</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_04bgvlr" sourceRef="StartEvent_0f8hrg2" targetRef="MegaId-771C9D015DA44099" />
+    <bpmn:sequenceFlow id="SequenceFlow_0qf7neg" sourceRef="MegaId-771C9D015DA44099" targetRef="MegaId-771C8C225DA54A28" />
+    <bpmn:task id="MegaId-771C9CF45DA44030" name="Rendre compte de la menace">
+      <bpmn:incoming>SequenceFlow_0yo81vd</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_085xwqk</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:startEvent id="StartEvent_03vevxv" name="Debut">
+      <bpmn:outgoing>SequenceFlow_1qf3j8n</bpmn:outgoing>
+    </bpmn:startEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="MegaId-771C9D1B5DA44182" name="System Process Diagram">
+    <bpmndi:BPMNPlane bpmnElement="MegaId-771C9CD95DA43F52">
+      <bpmndi:BPMNShape id="MegaId-771C9CD95DA43F52POOL-Shape" bpmnElement="MegaId-771C9CD95DA43F52POOL" isHorizontal="false" isExpanded="true">
+        <dc:Bounds x="22" y="20" width="1094" height="628" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CE45DA43FA0-Shape" bpmnElement="MegaId-771C9CE45DA43FA0" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="1056" y="90" width="164" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CE15DA43F85-Shape" bpmnElement="MegaId-771C9CE15DA43F85" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="633" y="90" width="226" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CDE5DA43F6A-Shape" bpmnElement="MegaId-771C9CDE5DA43F6A" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="874" y="90" width="164" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CE75DA43FBB-Shape" bpmnElement="MegaId-771C9CE75DA43FBB" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="393" y="90" width="225" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CEA5DA43FD6-Shape" bpmnElement="MegaId-771C9CEA5DA43FD6" isHorizontal="true" isExpanded="true">
+        <dc:Bounds x="157" y="90" width="219" height="528" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CF75DA44045-Shape" bpmnElement="MegaId-771C9CF75DA44045">
+        <dc:Bounds x="459" y="173" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CEF5DA44006-Shape" bpmnElement="MegaId-771C9CEF5DA44006">
+        <dc:Bounds x="459" y="256" width="90" height="75" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CF25DA4401B-Shape" bpmnElement="MegaId-771C9CF25DA4401B">
+        <dc:Bounds x="459" y="354" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CEC5DA43FF1-Shape" bpmnElement="MegaId-771C9CEC5DA43FF1">
+        <dc:Bounds x="459" y="470" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CFA5DA4405A-Shape" bpmnElement="MegaId-771C9CFA5DA4405A">
+        <dc:Bounds x="753" y="128" width="89" height="74" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CFC5DA4406F-Shape" bpmnElement="MegaId-771C9CFC5DA4406F">
+        <dc:Bounds x="753" y="410" width="89" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9D045DA440AE-Shape" bpmnElement="MegaId-771C9D045DA440AE">
+        <dc:Bounds x="662" y="263" width="89" height="74" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9D075DA440C3-Shape" bpmnElement="MegaId-771C9D075DA440C3">
+        <dc:Bounds x="911" y="354" width="90" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9CFF5DA44084-Shape" bpmnElement="MegaId-771C9CFF5DA44084">
+        <dc:Bounds x="911" y="473" width="90" height="74" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9D015DA44099-Shape" bpmnElement="MegaId-771C9D015DA44099">
+        <dc:Bounds x="1093" y="279" width="89" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9DA05DA44333-Shape" bpmnElement="MegaId-771C9DA05DA44333">
+        <dc:Bounds x="208" y="127" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="202" y="103" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C9E265DA44398-Shape" bpmnElement="MegaId-771C9E265DA44398">
+        <dc:Bounds x="208" y="270" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="210" y="290" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C89D75DA548E8-Shape" bpmnElement="MegaId-771C89D75DA548E8">
+        <dc:Bounds x="494" y="583" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="496" y="603" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8C225DA54A28-Shape" bpmnElement="MegaId-771C8C225DA54A28">
+        <dc:Bounds x="1128" y="470" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1130" y="490" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8E495DA54C08-Shape" bpmnElement="MegaId-771C8E495DA54C08">
+        <dc:Bounds x="697" y="390" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="699" y="410" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MegaId-771C8EF15DA54CA7-Shape" bpmnElement="MegaId-771C8EF15DA54CA7">
+        <dc:Bounds x="946" y="583" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="948" y="603" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MegaId-771C91055DA54EA6" bpmnElement="MegaId-771C9F735DA444DB">
+        <di:waypoint x="98" y="202" />
+        <di:waypoint x="245" y="202" />
+        <di:waypoint x="245" y="143" />
+        <di:waypoint x="384" y="143" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EAC" bpmnElement="MegaId-771C850A5DA5471F">
+        <di:waypoint x="384" y="403" />
+        <di:waypoint x="724" y="403" />
+        <di:waypoint x="724" y="347" />
+        <di:waypoint x="836" y="347" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MegaId-771C91065DA54EAF" bpmnElement="MegaId-771C8ACE5DA54996">
+        <di:waypoint x="670" y="471" />
+        <di:waypoint x="1071" y="471" />
+        <di:waypoint x="1071" y="252" />
+        <di:waypoint x="988" y="252" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0yo81vd_di" bpmnElement="SequenceFlow_0yo81vd">
+        <di:waypoint x="218" y="147" />
+        <di:waypoint x="218" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_085xwqk_di" bpmnElement="SequenceFlow_085xwqk">
+        <di:waypoint x="218" y="239" />
+        <di:waypoint x="218" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0sbn53y_di" bpmnElement="SequenceFlow_0sbn53y">
+        <di:waypoint x="504" y="232" />
+        <di:waypoint x="504" y="256" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_10j1ank_di" bpmnElement="SequenceFlow_10j1ank">
+        <di:waypoint x="504" y="331" />
+        <di:waypoint x="504" y="354" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1l9yhu1_di" bpmnElement="SequenceFlow_1l9yhu1">
+        <di:waypoint x="504" y="413" />
+        <di:waypoint x="504" y="470" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_02kvn1b_di" bpmnElement="SequenceFlow_02kvn1b">
+        <di:waypoint x="504" y="529" />
+        <di:waypoint x="504" y="583" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_023175q_di" bpmnElement="EndEvent_023175q">
+        <dc:Bounds x="788" y="530" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="790" y="550" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1ykbo3t_di" bpmnElement="StartEvent_1ykbo3t">
+        <dc:Bounds x="690" y="155" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="684" y="131" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0lq8fwk_di" bpmnElement="SequenceFlow_0lq8fwk">
+        <di:waypoint x="710" y="165" />
+        <di:waypoint x="753" y="165" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qf3j8n_di" bpmnElement="SequenceFlow_1qf3j8n">
+        <di:waypoint x="504" y="148" />
+        <di:waypoint x="504" y="173" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0o3ezp1_di" bpmnElement="SequenceFlow_0o3ezp1">
+        <di:waypoint x="798" y="202" />
+        <di:waypoint x="798" y="233" />
+        <di:waypoint x="707" y="233" />
+        <di:waypoint x="707" y="263" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0qcculg_di" bpmnElement="SequenceFlow_0qcculg">
+        <di:waypoint x="798" y="202" />
+        <di:waypoint x="798" y="410" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ylfrw2_di" bpmnElement="SequenceFlow_0ylfrw2">
+        <di:waypoint x="707" y="337" />
+        <di:waypoint x="707" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0cs4aj6_di" bpmnElement="SequenceFlow_0cs4aj6">
+        <di:waypoint x="798" y="469" />
+        <di:waypoint x="798" y="530" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_035ipck_di" bpmnElement="StartEvent_035ipck">
+        <dc:Bounds x="946" y="155" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="940" y="131" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0569odp_di" bpmnElement="SequenceFlow_0569odp">
+        <di:waypoint x="956" y="175" />
+        <di:waypoint x="956" y="354" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0nttmtl_di" bpmnElement="SequenceFlow_0nttmtl">
+        <di:waypoint x="956" y="413" />
+        <di:waypoint x="956" y="473" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1xckbet_di" bpmnElement="SequenceFlow_1xckbet">
+        <di:waypoint x="956" y="547" />
+        <di:waypoint x="956" y="583" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_0f8hrg2_di" bpmnElement="StartEvent_0f8hrg2">
+        <dc:Bounds x="1128" y="223" width="20" height="20" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1122" y="199" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_04bgvlr_di" bpmnElement="SequenceFlow_04bgvlr">
+        <di:waypoint x="1138" y="243" />
+        <di:waypoint x="1138" y="279" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0qf7neg_di" bpmnElement="SequenceFlow_0qf7neg">
+        <di:waypoint x="1138" y="338" />
+        <di:waypoint x="1138" y="470" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="MegaId-771C9CF45DA44030-Shape" bpmnElement="MegaId-771C9CF45DA44030">
+        <dc:Bounds x="173" y="180" width="89" height="59" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0lt2789_di" bpmnElement="StartEvent_03vevxv">
+        <dc:Bounds x="486" y="112" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="488" y="96" width="31" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

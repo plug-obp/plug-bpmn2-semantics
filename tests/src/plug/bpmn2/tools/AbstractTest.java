@@ -71,4 +71,10 @@ public abstract class AbstractTest {
         testModel();
     }
 
+    @Test
+    public void process_CAS_191128() {
+        load("CAS/CAS_191128.bpmn");
+        testModel();
+    }
+
 }
