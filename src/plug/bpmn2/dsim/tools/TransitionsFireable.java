@@ -4,6 +4,8 @@ import org.eclipse.bpmn2.*;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
+import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
+import plug.bpmn2.interpretation.model.instance.data.Token;
 import plug.bpmn2.tools.BPMNModelHandler;
 
 import java.util.HashSet;
@@ -15,14 +17,26 @@ public class TransitionsFireable {
                                   BPMNRuntimeState state,
                                   BPMNRuntimeInstance instance,
                                   Set<Transition> targetCollection) {
-        Transition.Close close = new Transition.Close(model, state, instance);
+        TransitionClose close = new TransitionClose(model, state, instance);
         if (close.guard(state)) {
             targetCollection.add(close);
+        }
+        if (instance instanceof FlowElementsContainerInstance) {
+            FlowElementsContainerInstance flowInstance = (FlowElementsContainerInstance) instance;
+            for (Token token : flowInstance.getTokenSet()) {
+                FlowNode target = token.getBaseElement().getTargetRef();
+                if (target instanceof EndEvent) {
+                    EndEvent endEvent = (EndEvent) target;
+                    targetCollection.add(new TransitionEndEvent(
+                            model, state, instance, endEvent
+                    ));
+                }
+            }
         }
         for (EObject childObject : model.ownership.getTargetSet(instance.getBaseElement())) {
             if (childObject instanceof Activity || childObject instanceof FlowElementsContainer) {
                 BaseElement childElement = (BaseElement) childObject;
-                Transition.Open open = new Transition.Open(model, state, instance, childElement);
+                TransitionOpen open = new TransitionOpen(model, state, instance, childElement);
                 if (open.guard(state)) {
                     targetCollection.add(open);
                 }

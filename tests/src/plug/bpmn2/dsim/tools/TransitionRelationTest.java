@@ -58,14 +58,14 @@ public class TransitionRelationTest {
         simpleAssertState(initialState, 1, 0);
 
         Transition openTask = simpleTransition(transitionRelation, initialState);
-        assertTrue(openTask instanceof Transition.Open);
+        assertTrue(openTask instanceof TransitionOpen);
 
         BPMNRuntimeState taskActive = simpleFire(transitionRelation, openTask, initialState);
         simpleAssertState(taskActive, 0, 1);
         simpleAssertState(initialState, 1, 0);
 
         Transition closeTask = simpleTransition(transitionRelation, taskActive);
-        assertTrue(closeTask instanceof Transition.Close);
+        assertTrue(closeTask instanceof TransitionClose);
 
         BPMNRuntimeState taskClosed = simpleFire(transitionRelation, closeTask, taskActive);
         simpleAssertState(taskClosed, 1, 0);
@@ -73,16 +73,16 @@ public class TransitionRelationTest {
         simpleAssertState(initialState, 1, 0);
 
         Transition closeProcess = simpleTransition(transitionRelation, taskClosed);
-        assertTrue(closeProcess instanceof Transition.Close);
+        assertTrue(closeProcess instanceof TransitionEndEvent);
 
         BPMNRuntimeState finalState = simpleFire(transitionRelation, closeProcess, taskClosed);
-        assertTrue(finalState.isEmpty());
+        simpleAssertState(finalState, 0, 0);
         simpleAssertState(taskClosed, 1, 0);
         simpleAssertState(taskActive, 0, 1);
         simpleAssertState(initialState, 1, 0);
 
         assertTrue(transitionRelation.fireableTransitionsFrom(finalState).isEmpty());
-        assertTrue(finalState.isEmpty());
+        simpleAssertState(finalState, 0, 0);
         simpleAssertState(taskClosed, 1, 0);
         simpleAssertState(taskActive, 0, 1);
         simpleAssertState(initialState, 1, 0);

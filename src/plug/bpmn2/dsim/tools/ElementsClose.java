@@ -27,18 +27,10 @@ class ElementsClose {
                                        BPMNRuntimeState state,
                                        ProcessInstance processInstance,
                                        boolean execute) {
-        Collection<EndEvent> endEvents = processInstance.getBaseElement().getFlowElements().stream()
-                .filter(flowElement -> flowElement instanceof EndEvent)
-                .map(flowElement -> (EndEvent) flowElement)
-                .collect(Collectors.toSet());
-        for (EndEvent endEvent : endEvents) {
-            for (SequenceFlow incoming : endEvent.getIncoming()) {
-                if (processInstance.getTokenSet().contains(model.tokens.get(incoming))) {
-                    if (execute) {
-                        removeInstance(state, processInstance);
-                    }
-                    return true;
-                }
+        if (processInstance.getTokenSet().isEmpty() &&
+                processInstance.getChildInstanceList().isEmpty()) {
+            if (execute) {
+                removeInstance(state, processInstance);
             }
         }
         return false;
