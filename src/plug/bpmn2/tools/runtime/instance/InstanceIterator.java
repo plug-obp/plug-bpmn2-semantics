@@ -16,14 +16,14 @@ public class InstanceIterator implements Iterator<BPMNRuntimeInstance> {
     private Iterator<BPMNRuntimeInstance> currentChildIterator;
 
     public InstanceIterator(BPMNRuntimeState state) {
-        currentChildIterator = state.getRootInstances().iterator();
+        currentChildIterator = state.getRootInstanceList().iterator();
         updateNext();
     }
 
     private boolean pickNextChild() {
         if (currentChildIterator.hasNext()) {
             nextInstance = currentChildIterator.next();
-            parentList.addAll(nextInstance.getChildInstanceSet());
+            parentList.addAll(nextInstance.getChildInstanceList());
             return true;
         }
         return false;
@@ -33,7 +33,7 @@ public class InstanceIterator implements Iterator<BPMNRuntimeInstance> {
         if (pickNextChild()) return;
         if (!parentList.isEmpty()) {
             nextInstance = parentList.removeFirst();
-            currentChildIterator = nextInstance.getChildInstanceSet().iterator();
+            currentChildIterator = nextInstance.getChildInstanceList().iterator();
         }
         nextInstance = null;
     }

@@ -46,7 +46,7 @@ public class BPMNRuntimeInstanceWalker {
             BPMNRuntimeInstance nextInstance = toWalkInstanceList.removeFirst();
             BPMNInstanceAspectHandler.handle(aspectHandler, nextInstance);
             nextInstance.acceptInstanceVisitor(leafVisitor);
-            for (BPMNRuntimeInstance childInstance : nextInstance.getChildInstanceSet()) {
+            for (BPMNRuntimeInstance childInstance : nextInstance.getChildInstanceList()) {
                 if (walkedInstanceSet.add(childInstance)) {
                     toWalkInstanceList.add(childInstance);
                 }

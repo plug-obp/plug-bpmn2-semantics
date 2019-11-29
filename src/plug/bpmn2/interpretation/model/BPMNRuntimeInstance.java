@@ -1,12 +1,12 @@
 package plug.bpmn2.interpretation.model;
 
-import java.util.Set;
+import java.util.List;
 
 public interface BPMNRuntimeInstance extends BPMNRuntimeBaseElement {
 
     BPMNRuntimeInstance getParent();
 
-    Set<BPMNRuntimeInstance> getChildInstanceSet();
+    List<BPMNRuntimeInstance> getChildInstanceList();
 
     void acceptInstanceVisitor(BPMNInstanceVisitor visitor);
 

@@ -28,14 +28,14 @@ public class TransitionsFireable {
                 }
             }
         }
-        for (BPMNRuntimeInstance childInstance : instance.getChildInstanceSet()) {
+        for (BPMNRuntimeInstance childInstance : instance.getChildInstanceList()) {
             addRelated(model, state, childInstance, targetCollection);
         }
     }
 
     static public Set<Transition> get(BPMNModelHandler model, BPMNRuntimeState state) {
         HashSet<Transition> result = new HashSet<>();
-        for (BPMNRuntimeInstance instance : state.getRootInstances()) {
+        for (BPMNRuntimeInstance instance : state.getRootInstanceList()) {
             addRelated(model, state, instance, result);
         }
         return result;

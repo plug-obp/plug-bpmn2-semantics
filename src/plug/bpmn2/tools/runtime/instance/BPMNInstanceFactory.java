@@ -12,7 +12,7 @@ import plug.bpmn2.interpretation.model.instance.impl.*;
 import plug.bpmn2.tools.BPMNModelHandler;
 
 import java.util.LinkedList;
-import java.util.Set;
+import java.util.List;
 
 public class BPMNInstanceFactory {
 
@@ -45,10 +45,10 @@ public class BPMNInstanceFactory {
                        BPMNRuntimeInstance owner,
                        BaseElement parent) {
         setArguments(modelHandler, state, owner, parent);
-        Set<BPMNRuntimeInstance> targetSet = owner == null ?
-                state.getRootInstances() :
-                owner.getChildInstanceSet();
-        targetSet.add(internalSwitch.doSwitch(parent));
+        List<BPMNRuntimeInstance> targetList = owner == null ?
+                state.getRootInstanceList() :
+                owner.getChildInstanceList();
+        targetList.add(internalSwitch.doSwitch(parent));
     }
 
     class InternalSwitch extends Bpmn2Switch<BPMNRuntimeInstance> {
@@ -81,7 +81,7 @@ public class BPMNInstanceFactory {
             for (EObject owned : modelHandler.ownership.getTargetSet(owner.getBaseElement())) {
                 BPMNRuntimeInstance ownedInstance = doSwitch(owned);
                 if (ownedInstance != null) {
-                    owner.getChildInstanceSet().add(ownedInstance);
+                    owner.getChildInstanceList().add(ownedInstance);
                 }
             }
             popOwner();

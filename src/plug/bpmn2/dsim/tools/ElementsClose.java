@@ -18,8 +18,8 @@ class ElementsClose {
         BPMNRuntimeInstance parent = instance.getParent();
         Collection<BPMNRuntimeInstance> targetCollection =
                 parent == null ?
-                        state.getRootInstances() :
-                        parent.getChildInstanceSet();
+                        state.getRootInstanceList() :
+                        parent.getChildInstanceList();
         targetCollection.remove(instance);
     }
 
@@ -48,9 +48,9 @@ class ElementsClose {
                                     TaskInstance taskInstance,
                                     boolean execute) {
         FlowElementsContainerInstance parentInstance = taskInstance.getParent();
-        if (!parentInstance.getChildInstanceSet().contains(taskInstance)) return false;
+        if (!parentInstance.getChildInstanceList().contains(taskInstance)) return false;
         if (execute) {
-            parentInstance.getChildInstanceSet().remove(taskInstance);
+            parentInstance.getChildInstanceList().remove(taskInstance);
             Collection<SequenceFlow> outgoingSequenceFlows = taskInstance.getBaseElement().getOutgoing();
             Collection<Token> outgoingTokens = model.tokens.get(outgoingSequenceFlows);
             parentInstance.getTokenSet().addAll(outgoingTokens);

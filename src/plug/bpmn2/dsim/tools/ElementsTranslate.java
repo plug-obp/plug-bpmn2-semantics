@@ -17,8 +17,8 @@ class ElementsTranslate {
                         return targetInstance;
                     } else {
                         BPMNRuntimeInstance result = get(
-                                sourceInstance.getChildInstanceSet(),
-                                targetInstance.getChildInstanceSet(),
+                                sourceInstance.getChildInstanceList(),
+                                targetInstance.getChildInstanceList(),
                                 scope
                         );
                         if (result != null) {
@@ -34,7 +34,8 @@ class ElementsTranslate {
     static public BPMNRuntimeInstance get(BPMNRuntimeState source,
                                    BPMNRuntimeState target,
                                    BPMNRuntimeInstance scope) {
-        return get(source.getRootInstances(), target.getRootInstances(), scope);
+        BPMNRuntimeInstance result = get(source.getRootInstanceList(), target.getRootInstanceList(), scope);
+        return result;
     }
 
 }

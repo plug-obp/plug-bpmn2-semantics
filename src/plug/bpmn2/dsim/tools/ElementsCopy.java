@@ -16,7 +16,7 @@ class ElementsCopy {
                                           BPMNRuntimeState state,
                                           BPMNRuntimeInstance instance,
                                           BPMNRuntimeInstance result) {
-        for (BPMNRuntimeInstance childInstance : instance.getChildInstanceSet()) {
+        for (BPMNRuntimeInstance childInstance : instance.getChildInstanceList()) {
             copyInstance(model, state, childInstance, result);
         }
     }
@@ -25,8 +25,8 @@ class ElementsCopy {
                                       BPMNRuntimeInstance newParent,
                                       BPMNRuntimeInstance result) {
         Collection<BPMNRuntimeInstance> targetCollection = newParent == null ?
-                state.getRootInstances() :
-                newParent.getChildInstanceSet();
+                state.getRootInstanceList() :
+                newParent.getChildInstanceList();
         targetCollection.add(result);
     }
 
@@ -81,7 +81,7 @@ class ElementsCopy {
     static public BPMNRuntimeState copy(BPMNModelHandler model,
                                         BPMNRuntimeState state) {
         BPMNRuntimeState result = new BPMNRuntimeState();
-        for (BPMNRuntimeInstance instance : state.getRootInstances()) {
+        for (BPMNRuntimeInstance instance : state.getRootInstanceList()) {
             copyInstance(model, result, instance, null);
         }
         return result;

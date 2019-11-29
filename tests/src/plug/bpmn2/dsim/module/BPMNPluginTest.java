@@ -1,6 +1,6 @@
 package plug.bpmn2.dsim.module;
 
-import plug.bpmn2.tools.AbstractTest;
+import plug.bpmn2.AbstractTest;
 
 import java.net.URL;
 

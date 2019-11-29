@@ -1,6 +1,8 @@
-package plug.bpmn2.tools;
+package plug.bpmn2;
 
 import org.junit.Test;
+import plug.bpmn2.tools.BPMNLoader;
+import plug.bpmn2.tools.BPMNModelHandler;
 import plug.bpmn2.tools.common.printer.BPMNModelPrinter;
 import plug.bpmn2.tools.common.printer.BPMNPrinterShort;
 

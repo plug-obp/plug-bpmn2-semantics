@@ -7,28 +7,28 @@ import java.util.*;
 
 public class BPMNRuntimeState {
 
-    private final Set<BPMNRuntimeInstance> rootInstances;
-    private final Set<MessageFlowData> messageFlowDataSet;
-    private final Set<EventFlowData> eventFlowDataSet;
+    private final List<BPMNRuntimeInstance> rootInstanceList;
+    private final List<MessageFlowData> messageFlowDataList;
+    private final List<EventFlowData> eventFlowDataList;
     private final List<Object> intermediateFlagList;
 
     public BPMNRuntimeState() {
-        rootInstances = new HashSet<>();
-        messageFlowDataSet = new HashSet<>();
-        eventFlowDataSet = new HashSet<>();
+        rootInstanceList = new LinkedList<>();
+        messageFlowDataList = new LinkedList<>();
+        eventFlowDataList = new LinkedList<>();
         intermediateFlagList = new LinkedList<>();
     }
 
-    public Set<BPMNRuntimeInstance> getRootInstances() {
-        return rootInstances;
+    public List<BPMNRuntimeInstance> getRootInstanceList() {
+        return rootInstanceList;
     }
 
-    public Set<MessageFlowData> getMessageFlowDataSet() {
-        return messageFlowDataSet;
+    public List<MessageFlowData> getMessageFlowDataList() {
+        return messageFlowDataList;
     }
 
-    public Set<EventFlowData> getEventFlowDataSet() {
-        return eventFlowDataSet;
+    public List<EventFlowData> getEventFlowDataList() {
+        return eventFlowDataList;
     }
 
     public List<Object> getIntermediateFlagList() {
@@ -36,9 +36,9 @@ public class BPMNRuntimeState {
     }
 
     public boolean isEmpty() {
-        return rootInstances.isEmpty() &&
-                messageFlowDataSet.isEmpty() &&
-                eventFlowDataSet.isEmpty() &&
+        return rootInstanceList.isEmpty() &&
+                messageFlowDataList.isEmpty() &&
+                eventFlowDataList.isEmpty() &&
                 intermediateFlagList.isEmpty();
     }
 
@@ -47,15 +47,15 @@ public class BPMNRuntimeState {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BPMNRuntimeState that = (BPMNRuntimeState) o;
-        return getRootInstances().equals(that.getRootInstances()) &&
-                getMessageFlowDataSet().equals(that.getMessageFlowDataSet()) &&
-                getEventFlowDataSet().equals(that.getEventFlowDataSet()) &&
+        return getRootInstanceList().equals(that.getRootInstanceList()) &&
+                getMessageFlowDataList().equals(that.getMessageFlowDataList()) &&
+                getEventFlowDataList().equals(that.getEventFlowDataList()) &&
                 getIntermediateFlagList().equals(that.getIntermediateFlagList());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getRootInstances(), getMessageFlowDataSet(), getEventFlowDataSet(), getIntermediateFlagList());
+        return Objects.hash(getRootInstanceList(), getMessageFlowDataList(), getEventFlowDataList(), getIntermediateFlagList());
     }
     
 }

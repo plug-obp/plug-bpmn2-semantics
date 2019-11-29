@@ -25,8 +25,8 @@ class ElementsOpen {
                                    BPMNRuntimeInstance instance) {
         Collection<BPMNRuntimeInstance> targetCollection =
                 scope == null ?
-                        state.getRootInstances() :
-                        scope.getChildInstanceSet();
+                        state.getRootInstanceList() :
+                        scope.getChildInstanceList();
         targetCollection.add(instance);
     }
 
@@ -34,7 +34,7 @@ class ElementsOpen {
                                             BPMNRuntimeState state,
                                             Collaboration collaboration,
                                             boolean execute) {
-        for (BPMNRuntimeInstance rootInstance : state.getRootInstances()) {
+        for (BPMNRuntimeInstance rootInstance : state.getRootInstanceList()) {
             if (rootInstance.getBaseElement() == collaboration) {
                 return false;
             }

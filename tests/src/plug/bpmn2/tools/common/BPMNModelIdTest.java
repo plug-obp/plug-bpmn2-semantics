@@ -2,7 +2,7 @@ package plug.bpmn2.tools.common;
 
 import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.AbstractTest;
+import plug.bpmn2.AbstractTest;
 import plug.bpmn2.tools.BPMNLoader;
 
 import java.util.HashSet;

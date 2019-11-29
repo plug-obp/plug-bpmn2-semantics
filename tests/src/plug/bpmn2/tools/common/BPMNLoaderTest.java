@@ -1,7 +1,7 @@
 package plug.bpmn2.tools.common;
 
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.tools.AbstractTest;
+import plug.bpmn2.AbstractTest;
 import plug.bpmn2.tools.BPMNLoader;
 import plug.bpmn2.tools.BPMNModelHandler;
 import plug.bpmn2.tools.common.printer.BPMNModelPrinter;

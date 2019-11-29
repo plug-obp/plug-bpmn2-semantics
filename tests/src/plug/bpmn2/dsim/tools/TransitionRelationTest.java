@@ -5,7 +5,6 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.ProcessInstance;
 import plug.bpmn2.tools.BPMNLoader;
-import plug.bpmn2.tools.BPMNModelHandler;
 import plug.core.IFiredTransition;
 
 import java.util.Collection;
@@ -16,12 +15,12 @@ import static org.junit.Assert.*;
 public class TransitionRelationTest {
 
     private void simpleAssertState(BPMNRuntimeState initialState, int tokens, int children) {
-        assertEquals(1, initialState.getRootInstances().size());
-        for (BPMNRuntimeInstance instance : initialState.getRootInstances()) {
+        assertEquals(1, initialState.getRootInstanceList().size());
+        for (BPMNRuntimeInstance instance : initialState.getRootInstanceList()) {
             assertTrue(instance instanceof ProcessInstance);
             ProcessInstance processInstance = (ProcessInstance) instance;
             assertEquals(tokens, processInstance.getTokenSet().size());
-            assertEquals(children, processInstance.getChildInstanceSet().size());
+            assertEquals(children, processInstance.getChildInstanceList().size());
         }
     }
 
