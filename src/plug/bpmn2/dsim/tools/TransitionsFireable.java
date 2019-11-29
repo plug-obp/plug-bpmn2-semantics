@@ -15,14 +15,14 @@ public class TransitionsFireable {
                                   BPMNRuntimeState state,
                                   BPMNRuntimeInstance instance,
                                   Set<Transition> targetCollection) {
-        Transition.Close close = new Transition.Close(model, instance);
+        Transition.Close close = new Transition.Close(model, state, instance);
         if (close.guard(state)) {
             targetCollection.add(close);
         }
         for (EObject childObject : model.ownership.getTargetSet(instance.getBaseElement())) {
             if (childObject instanceof Activity || childObject instanceof FlowElementsContainer) {
                 BaseElement childElement = (BaseElement) childObject;
-                Transition.Open open = new Transition.Open(model, instance, childElement);
+                Transition.Open open = new Transition.Open(model, state, instance, childElement);
                 if (open.guard(state)) {
                     targetCollection.add(open);
                 }

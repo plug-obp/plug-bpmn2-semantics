@@ -10,26 +10,23 @@ import java.util.Objects;
 public abstract class Transition {
 
     private final BPMNModelHandler model;
-    private final BPMNRuntimeInstance scope;
+    private final RuntimeScope scope;
 
-    public Transition(BPMNModelHandler model, BPMNRuntimeInstance scope) {
+    public Transition(BPMNModelHandler model, BPMNRuntimeState state, BPMNRuntimeInstance scope) {
         this.model = model;
-        this.scope = scope;
+        this.scope = new RuntimeScope(state, scope);
     }
 
     public BPMNModelHandler getModel() {
         return model;
     }
 
-    public BPMNRuntimeInstance getScope() {
+    public RuntimeScope getScope() {
         return scope;
     }
 
-    public BPMNRuntimeInstance getTargetScope(BPMNRuntimeState source, BPMNRuntimeState target) {
-        if (getScope() == null) {
-            return null;
-        }
-        return ElementsTranslate.get(source, target, getScope());
+    public BPMNRuntimeInstance getScope(BPMNRuntimeState state) {
+        return scope.getInstance(state);
     }
 
     public abstract boolean attempt(BPMNRuntimeState source, BPMNRuntimeState target);
@@ -62,8 +59,8 @@ public abstract class Transition {
 
         private final BaseElement baseElement;
 
-        public Open(BPMNModelHandler model, BPMNRuntimeInstance scope, BaseElement baseElement) {
-            super(model, scope);
+        public Open(BPMNModelHandler model, BPMNRuntimeState state, BPMNRuntimeInstance scope, BaseElement baseElement) {
+            super(model, state, scope);
             this.baseElement = baseElement;
         }
 
@@ -75,7 +72,7 @@ public abstract class Transition {
         public boolean attempt(BPMNRuntimeState source, BPMNRuntimeState target) {
             boolean execute = target != null;
             BPMNRuntimeState state = execute ? target : source;
-            BPMNRuntimeInstance scope = execute ? getTargetScope(source, target) : getScope();
+            BPMNRuntimeInstance scope = getScope(state);
             return ElementsOpen.open(getModel(), state, scope, getBaseElement(), execute);
         }
 
@@ -101,21 +98,21 @@ public abstract class Transition {
 
     public static class Close extends Transition {
 
-        public Close(BPMNModelHandler model, BPMNRuntimeInstance scope) {
-            super(model, scope);
+        public Close(BPMNModelHandler model, BPMNRuntimeState state, BPMNRuntimeInstance scope) {
+            super(model, state, scope);
         }
 
         @Override
         public boolean attempt(BPMNRuntimeState source, BPMNRuntimeState target) {
             boolean execute = target != null;
             BPMNRuntimeState state = execute ? target : source;
-            BPMNRuntimeInstance scope = execute ? getTargetScope(source, target) : getScope();
+            BPMNRuntimeInstance scope = getScope(state);
             return ElementsClose.close(getModel(), state, scope, execute);
         }
 
         @Override
         public String toString() {
-            return "Close " + getScope().getBaseElement().getId();
+            return "Close " + getScope().getId();
         }
 
     }
