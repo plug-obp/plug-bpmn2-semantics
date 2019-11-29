@@ -47,15 +47,22 @@ public class BPMNRuntimeState {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BPMNRuntimeState that = (BPMNRuntimeState) o;
-        return getRootInstanceList().equals(that.getRootInstanceList()) &&
-                getMessageFlowDataList().equals(that.getMessageFlowDataList()) &&
-                getEventFlowDataList().equals(that.getEventFlowDataList()) &&
-                getIntermediateFlagList().equals(that.getIntermediateFlagList());
+        if (getRootInstanceList().size() != that.getRootInstanceList().size()) return false;
+        if (!getRootInstanceList().containsAll(that.getRootInstanceList())) return false;
+        if (!that.getRootInstanceList().containsAll(that.getRootInstanceList())) return false;
+        // TODO {a, a, b} == {a, b, b} ... Strengthen it.
+        // TODO test other lists too
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getRootInstanceList(), getMessageFlowDataList(), getEventFlowDataList(), getIntermediateFlagList());
+        // TODO include other lists
+        int result = 0;
+        for (BPMNRuntimeInstance instance : getRootInstanceList()) {
+            result += instance.hashCode();
+        }
+        return result;
     }
     
 }

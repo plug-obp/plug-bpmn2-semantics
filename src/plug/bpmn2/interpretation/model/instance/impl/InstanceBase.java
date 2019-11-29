@@ -37,18 +37,20 @@ abstract class InstanceBase<P extends BPMNRuntimeInstance, E extends BaseElement
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InstanceBase<?, ?> that = (InstanceBase<?, ?>) o;
-        // TODO fix that overflow
-        return //Objects.equals(getParent(), that.getParent()) &&
-                getBaseElement().equals(that.getBaseElement()) &&
-                getChildInstanceList().equals(that.getChildInstanceList());
+        if (getBaseElement().equals(that.getBaseElement())) return false;
+        // if (!getParent().equals(that.getParent())) return false;
+        // TODO fix above overflow
+        if (getChildInstanceList().size() != that.getChildInstanceList().size()) return false;
+        if (!getChildInstanceList().containsAll(that.getChildInstanceList())) return false;
+        if (!that.getChildInstanceList().containsAll(this.getChildInstanceList())) return false;
+        // TODO the above will give false positive for {a, b, b} == {a, a, b} ... To strengthen.
+        return true;
     }
 
     @Override
     public int hashCode() {
-        // TODO
-        // Can not include parent in hashcode, as it tries to hash his children too ...
-        // return Objects.hash(getParent(), getBaseElement(), getChildInstanceList());
-        return Objects.hash(getBaseElement(), getChildInstanceList());
+        // TODO safe but collision heavy hash, make it better
+        return Objects.hash(getBaseElement());
     }
 
 }

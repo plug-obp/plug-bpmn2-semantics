@@ -30,6 +30,17 @@ class ElementsOpen {
         targetCollection.add(instance);
     }
 
+    static public int countInstances(BPMNRuntimeState state, BPMNRuntimeInstance scope, BaseElement baseElement) {
+        int result = 0;
+        Collection<BPMNRuntimeInstance> instances = scope == null ? state.getRootInstanceList() : scope.getChildInstanceList();
+        for (BPMNRuntimeInstance instance : instances) {
+            if (instance.getBaseElement().equals(baseElement)) {
+                result += 1;
+            }
+        }
+        return result;
+    }
+
     static public boolean openCollaboration(BPMNModelHandler model,
                                             BPMNRuntimeState state,
                                             Collaboration collaboration,
@@ -106,6 +117,7 @@ class ElementsOpen {
                                BPMNRuntimeInstance scope,
                                BaseElement element,
                                boolean execute) {
+        if (countInstances(state, scope, element) > 0) return false;
         if (element instanceof Choreography) {
             throw new UnsupportedOperationException("Open Choreography");
         }

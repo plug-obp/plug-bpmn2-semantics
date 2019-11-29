@@ -9,17 +9,20 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ExplorationTest extends AbstractTest {
 
     static private final int MAX_COUNT = 1000;
 
+    private Set<BPMNRuntimeState> known;
+
     @Override
     protected void testModel() {
         TransitionRelation relation = new TransitionRelation(getModelHandler());
 
-        Set<BPMNRuntimeState> known = new HashSet<>();
+        known = new HashSet<>();
         LinkedList<BPMNRuntimeState> toSee = new LinkedList<>();
 
         known.addAll(relation.initialConfigurations());
@@ -43,8 +46,26 @@ public class ExplorationTest extends AbstractTest {
             }
         }
 
-        assertTrue(toSee.isEmpty());
+        assertTrue("Explored " + known.size() + " states, aborted.", toSee.isEmpty());
+        System.out.println("Successfully explored " + known.size() + " states");
+    }
 
+    @Override
+    public void process_e0t0e1() {
+        super.process_e0t0e1();
+        assertEquals(4, known.size());
+    }
+
+    @Override
+    public void process_CAS_191029() {
+        super.process_CAS_191029();
+        assertEquals(1, known.size());
+    }
+
+    @Override
+    public void process_CAS_191030() {
+        super.process_CAS_191030();
+        assertEquals(1, known.size());
     }
 
 }
