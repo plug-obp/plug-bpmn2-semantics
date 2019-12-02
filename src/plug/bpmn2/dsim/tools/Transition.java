@@ -38,7 +38,7 @@ public abstract class Transition {
     }
 
     public BPMNRuntimeState execute(BPMNRuntimeState source) {
-        BPMNRuntimeState target = ElementsCopy.copy(getModel(), source);
+        BPMNRuntimeState target = source.createCopy();
         attempt(source, target);
         return target;
     }

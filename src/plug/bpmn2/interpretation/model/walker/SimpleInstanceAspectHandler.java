@@ -1,4 +1,4 @@
-package plug.bpmn2.tools.common.walker;
+package plug.bpmn2.interpretation.model.walker;
 
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 
