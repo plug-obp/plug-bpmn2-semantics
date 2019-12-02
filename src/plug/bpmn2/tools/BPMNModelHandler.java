@@ -17,10 +17,12 @@ public class BPMNModelHandler {
     public final BPMNInstanceFactory instance = new BPMNInstanceFactory();
     public final BPMNTokenPool tokens = new BPMNTokenPool();
     public final BPMNPrinterShort printer = new BPMNPrinterShort();
-
+    public final DocumentRoot documentRoot;
+    
     public BPMNModelHandler(DocumentRoot documentRoot) {
         containment.populate(documentRoot);
         ownership.populate(documentRoot);
+        this.documentRoot = documentRoot;
     }
 
 }

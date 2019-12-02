@@ -18,6 +18,10 @@ public class TransitionRelation
         this.model = model;
     }
 
+    public BPMNModelHandler getModel() {
+		return model;
+	}
+    
     @Override
     public Set<BPMNRuntimeState> initialConfigurations() {
         return TransitionsInitial.get(model);
