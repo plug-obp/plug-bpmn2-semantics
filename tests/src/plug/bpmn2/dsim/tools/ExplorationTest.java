@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ExplorationTest extends AbstractTest {
 
-    static private final int MAX_COUNT = 1000;
+    static private final int MAX_COUNT = 10000;
 
     private Set<BPMNRuntimeState> known;
 
@@ -68,4 +68,9 @@ public class ExplorationTest extends AbstractTest {
         assertEquals(1, known.size());
     }
 
+    @Override
+    public void process_CAS_191128() {
+        super.process_CAS_191128();
+        assertEquals(1836, known.size());
+    }
 }

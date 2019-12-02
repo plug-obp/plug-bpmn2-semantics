@@ -38,7 +38,7 @@ abstract class InstanceBase<P extends BPMNRuntimeInstance, E extends BaseElement
         if (o == null || getClass() != o.getClass()) return false;
         InstanceBase<?, ?> that = (InstanceBase<?, ?>) o;
         if (getBaseElement().equals(that.getBaseElement())) return false;
-        // if (!getParent().equals(that.getParent())) return false;
+        // if (!getParent().instanceEquals(that.getParent())) return false;
         // TODO fix above overflow
         if (getChildInstanceList().size() != that.getChildInstanceList().size()) return false;
         if (!getChildInstanceList().containsAll(that.getChildInstanceList())) return false;

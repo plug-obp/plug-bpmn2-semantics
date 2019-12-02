@@ -3,6 +3,7 @@ package plug.bpmn2.interpretation.model;
 import plug.bpmn2.interpretation.model.instance.data.EventFlowData;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
 import plug.bpmn2.interpretation.model.utils.BPMNRuntimeStateCopy;
+import plug.bpmn2.interpretation.model.utils.BPMNRuntimeStateEquals;
 import plug.core.defaults.DefaultConfiguration;
 
 import java.util.*;
@@ -54,12 +55,12 @@ public class BPMNRuntimeState extends DefaultConfiguration<BPMNRuntimeState> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BPMNRuntimeState that = (BPMNRuntimeState) o;
-        if (getRootInstanceList().size() != that.getRootInstanceList().size()) return false;
-        if (!getRootInstanceList().containsAll(that.getRootInstanceList())) return false;
-        if (!that.getRootInstanceList().containsAll(that.getRootInstanceList())) return false;
-        // TODO {a, a, b} == {a, b, b} ... Strengthen it.
-        // TODO test other lists too
-        return true;
+        return new BPMNRuntimeStateEquals().stateEquals(this, that);
     }
-    
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRootInstanceList().size(), getMessageFlowDataList(), getEventFlowDataList(), getIntermediateFlagList());
+    }
+
 }
