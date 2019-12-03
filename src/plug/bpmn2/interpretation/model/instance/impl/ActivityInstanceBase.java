@@ -26,17 +26,4 @@ abstract class ActivityInstanceBase<T extends Activity>
         return state;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        ActivityInstanceBase<?> that = (ActivityInstanceBase<?>) o;
-        return state == that.state;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), state);
-    }
 }

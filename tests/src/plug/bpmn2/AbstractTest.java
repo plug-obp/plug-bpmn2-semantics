@@ -62,6 +62,12 @@ public abstract class AbstractTest {
     }
 
     @Test
+    public void process_2() {
+        load("minimal/process_2.bpmn");
+        testModel();
+    }
+
+    @Test
     public void process_CAS_191029() {
         load("CAS/CAS_191029.bpmn");
         testModel();

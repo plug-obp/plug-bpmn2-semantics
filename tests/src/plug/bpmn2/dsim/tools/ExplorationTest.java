@@ -1,13 +1,13 @@
 package plug.bpmn2.dsim.tools;
 
 import plug.bpmn2.AbstractTest;
+import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
+import plug.bpmn2.interpretation.model.instance.ProcessInstance;
+import plug.bpmn2.interpretation.model.instance.TaskInstance;
 import plug.core.IFiredTransition;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -73,4 +73,14 @@ public class ExplorationTest extends AbstractTest {
         super.process_CAS_191128();
         assertEquals(1836, known.size());
     }
+
+    @Override
+    public void process_2() {
+        super.process_2();
+        int size0 = 4;
+        int size1 = 2 + (4 * 4);
+        int size = size0 * size1;
+        assertEquals(size, known.size());
+    }
+
 }

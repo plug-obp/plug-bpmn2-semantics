@@ -2,8 +2,9 @@ package plug.bpmn2.interpretation.model;
 
 import plug.bpmn2.interpretation.model.instance.data.EventFlowData;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
-import plug.bpmn2.interpretation.model.utils.BPMNRuntimeStateCopy;
-import plug.bpmn2.interpretation.model.utils.BPMNRuntimeStateEquals;
+import plug.bpmn2.interpretation.model.utils.BPMNRuntimeCopy;
+import plug.bpmn2.interpretation.model.utils.BPMNRuntimeEquals;
+import plug.bpmn2.interpretation.model.utils.BPMNRuntimeHashCode;
 import plug.core.defaults.DefaultConfiguration;
 
 import java.util.*;
@@ -47,20 +48,20 @@ public class BPMNRuntimeState extends DefaultConfiguration<BPMNRuntimeState> {
 
     @Override
     public BPMNRuntimeState createCopy() {
-        return new BPMNRuntimeStateCopy().copy(this);
+        return new BPMNRuntimeCopy().copy(this);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof BPMNRuntimeState)) return false;
         BPMNRuntimeState that = (BPMNRuntimeState) o;
-        return new BPMNRuntimeStateEquals().stateEquals(this, that);
+        return BPMNRuntimeEquals.stateEquals(this, that);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getRootInstanceList().size(), getMessageFlowDataList(), getEventFlowDataList(), getIntermediateFlagList());
+        return BPMNRuntimeHashCode.hashState(this);
     }
 
 }

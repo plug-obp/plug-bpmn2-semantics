@@ -2,6 +2,8 @@ package plug.bpmn2.interpretation.model.instance.impl;
 
 import org.eclipse.bpmn2.BaseElement;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
+import plug.bpmn2.interpretation.model.utils.BPMNRuntimeEquals;
+import plug.bpmn2.interpretation.model.utils.BPMNRuntimeHashCode;
 
 import java.util.*;
 
@@ -35,22 +37,14 @@ abstract class InstanceBase<P extends BPMNRuntimeInstance, E extends BaseElement
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        InstanceBase<?, ?> that = (InstanceBase<?, ?>) o;
-        if (getBaseElement().equals(that.getBaseElement())) return false;
-        // if (!getParent().instanceEquals(that.getParent())) return false;
-        // TODO fix above overflow
-        if (getChildInstanceList().size() != that.getChildInstanceList().size()) return false;
-        if (!getChildInstanceList().containsAll(that.getChildInstanceList())) return false;
-        if (!that.getChildInstanceList().containsAll(this.getChildInstanceList())) return false;
-        // TODO the above will give false positive for {a, b, b} == {a, a, b} ... To strengthen.
-        return true;
+        if (!(o instanceof BPMNRuntimeInstance)) return false;
+        BPMNRuntimeInstance that = (BPMNRuntimeInstance) o;
+        return BPMNRuntimeEquals.instanceEquals(this, that);
     }
 
     @Override
     public int hashCode() {
-        // TODO safe but collision heavy hash, make it better
-        return Objects.hash(getBaseElement());
+        return BPMNRuntimeHashCode.hashInstance(this);
     }
 
 }

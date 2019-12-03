@@ -8,7 +8,7 @@ import plug.bpmn2.interpretation.model.instance.impl.*;
 
 import java.util.LinkedList;
 
-public class BPMNRuntimeStateCopy implements BPMNInstanceVisitor {
+public class BPMNRuntimeCopy implements BPMNInstanceVisitor {
 
     public BPMNRuntimeState copy(BPMNRuntimeState state) {
         BPMNRuntimeState copy = new BPMNRuntimeState();
