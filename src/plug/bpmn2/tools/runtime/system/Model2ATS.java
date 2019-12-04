@@ -3,8 +3,6 @@ package plug.bpmn2.tools.runtime.system;
 import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.tools.BPMNModelHandler;
-import plug.bpmn2.tools.runtime.system.BaseElementATS;
-import plug.bpmn2.tools.runtime.system.GlobalATS;
 
 import java.util.Set;
 

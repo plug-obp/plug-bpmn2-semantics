@@ -4,7 +4,6 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.ActivityInstance;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
-import plug.bpmn2.interpretation.model.instance.ProcessInstance;
 
 import java.util.List;
 

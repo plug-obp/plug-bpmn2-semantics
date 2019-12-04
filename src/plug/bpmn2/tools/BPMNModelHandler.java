@@ -4,7 +4,6 @@ import org.eclipse.bpmn2.DocumentRoot;
 import plug.bpmn2.tools.common.BPMNModelId;
 import plug.bpmn2.tools.common.dag.BPMNInstanceOwnerDiagnosis;
 import plug.bpmn2.tools.common.dag.BPMNeContainmentDiagnosis;
-import plug.bpmn2.tools.common.pools.BPMNPools;
 import plug.bpmn2.tools.common.pools.BPMNTokenPool;
 import plug.bpmn2.tools.common.printer.BPMNPrinterShort;
 import plug.bpmn2.tools.runtime.instance.BPMNInstanceFactory;

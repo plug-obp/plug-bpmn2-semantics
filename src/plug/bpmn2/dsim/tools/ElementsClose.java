@@ -1,6 +1,5 @@
 package plug.bpmn2.dsim.tools;
 
-import org.eclipse.bpmn2.EndEvent;
 import org.eclipse.bpmn2.SequenceFlow;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
@@ -9,7 +8,6 @@ import plug.bpmn2.interpretation.model.instance.data.Token;
 import plug.bpmn2.tools.BPMNModelHandler;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 class ElementsClose {
 

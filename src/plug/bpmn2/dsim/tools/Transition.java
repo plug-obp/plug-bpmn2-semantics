@@ -5,8 +5,6 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.tools.BPMNModelHandler;
 
-import java.util.Objects;
-
 public abstract class Transition {
 
     private final BPMNModelHandler model;

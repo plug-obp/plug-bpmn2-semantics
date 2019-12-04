@@ -5,7 +5,8 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.utils.BPMNRuntimeEquals;
 import plug.bpmn2.interpretation.model.utils.BPMNRuntimeHashCode;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
 abstract class InstanceBase<P extends BPMNRuntimeInstance, E extends BaseElement> implements BPMNRuntimeInstance {
 

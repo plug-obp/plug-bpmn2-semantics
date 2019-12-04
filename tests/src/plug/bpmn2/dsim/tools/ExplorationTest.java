@@ -1,14 +1,16 @@
 package plug.bpmn2.dsim.tools;
 
 import plug.bpmn2.AbstractTest;
-import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
-import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 import plug.core.IFiredTransition;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ExplorationTest extends AbstractTest {
 

@@ -7,7 +7,8 @@ import plug.bpmn2.interpretation.model.utils.BPMNRuntimeEquals;
 import plug.bpmn2.interpretation.model.utils.BPMNRuntimeHashCode;
 import plug.core.defaults.DefaultConfiguration;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
 public class BPMNRuntimeState extends DefaultConfiguration<BPMNRuntimeState> {
 

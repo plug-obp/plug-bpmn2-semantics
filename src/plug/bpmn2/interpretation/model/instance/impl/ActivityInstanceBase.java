@@ -5,8 +5,6 @@ import plug.bpmn2.interpretation.model.instance.ActivityInstance;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 
-import java.util.Objects;
-
 abstract class ActivityInstanceBase<T extends Activity>
         extends InstanceBase<FlowElementsContainerInstance, T>
         implements ActivityInstance {

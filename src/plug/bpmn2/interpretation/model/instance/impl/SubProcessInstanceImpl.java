@@ -8,7 +8,6 @@ import plug.bpmn2.interpretation.model.instance.data.ActivityState;
 import plug.bpmn2.interpretation.model.instance.data.Token;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 public class SubProcessInstanceImpl

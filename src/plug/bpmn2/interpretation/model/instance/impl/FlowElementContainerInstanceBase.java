@@ -7,7 +7,6 @@ import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 import plug.bpmn2.interpretation.model.instance.data.Token;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 abstract class FlowElementContainerInstanceBase<T extends FlowElementsContainer>
