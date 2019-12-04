@@ -3,18 +3,16 @@ package plug.bpmn2.dsim.tools;
 import plug.bpmn2.AbstractTest;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
-import plug.bpmn2.interpretation.model.instance.ProcessInstance;
-import plug.bpmn2.interpretation.model.instance.TaskInstance;
+import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 import plug.core.IFiredTransition;
 
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ExplorationTest extends AbstractTest {
 
-    static private final int MAX_COUNT = 10000;
+    static private final int MAX_COUNT = 100000;
 
     private Set<BPMNRuntimeState> known;
 
@@ -71,7 +69,13 @@ public class ExplorationTest extends AbstractTest {
     @Override
     public void process_CAS_191128() {
         super.process_CAS_191128();
-        assertEquals(1836, known.size());
+        int size0 = 4;
+        int size1 = 10;
+        int size2 = 2 + (4 * 4);
+        int size3 = 6;
+        int size4 = 4;
+        int size = size0 * size1 * size2 * size3 * size4; // 17280
+        assertEquals(size, known.size());
     }
 
     @Override
@@ -79,8 +83,17 @@ public class ExplorationTest extends AbstractTest {
         super.process_2();
         int size0 = 4;
         int size1 = 2 + (4 * 4);
-        int size = size0 * size1;
+        int size = size0 * size1; // 72
         assertEquals(size, known.size());
     }
 
+    @Override
+    public void enstabSpray() {
+        try {
+            super.enstabSpray();
+        } catch (UnsupportedOperationException e) {
+            assertTrue(e.getMessage().contains("SubProcess"));
+            System.out.println("Unsupported Operation Exception 'SubProcess' thrown as expected");
+        }
+    }
 }
