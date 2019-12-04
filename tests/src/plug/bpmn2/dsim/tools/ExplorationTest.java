@@ -4,10 +4,7 @@ import plug.bpmn2.AbstractTest;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.core.IFiredTransition;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -16,38 +13,80 @@ public class ExplorationTest extends AbstractTest {
 
     static private final int MAX_COUNT = 100000;
 
+    TransitionRelation relation;
+    private Set<Integer> knownHashSet;
     private Set<BPMNRuntimeState> known;
+    LinkedList<BPMNRuntimeState> toSee;
+    private int hashCollisionCount;
+    private int transitionCount;
+
+    protected void init() {
+        relation = new TransitionRelation(getModelHandler());
+        knownHashSet = new HashSet<>();
+        known = new HashSet<>();
+        toSee = new LinkedList<>();
+        transitionCount = 0;
+        hashCollisionCount = 0;
+    }
+
+    protected boolean registerState(BPMNRuntimeState target) {
+        if (known.add(target)) {
+            if (!knownHashSet.add(target.hashCode())) {
+                hashCollisionCount += 1;
+            }
+            toSee.add(target);
+            return true;
+        }
+        return false;
+    }
+
+    protected void registerInitialStates() {
+        for (BPMNRuntimeState initialState : relation.initialConfigurations()) {
+            registerState(initialState);
+        }
+    }
+
+    protected BPMNRuntimeState getNext() {
+        return toSee.removeLast();
+    }
+
+    protected boolean isFinished() {
+        return toSee.isEmpty() || known.size() >= MAX_COUNT;
+    }
+
+    protected String getMetricsString() {
+        return "Metrics: " +
+                known.size() + " states, " +
+                transitionCount + " transitions, " +
+                hashCollisionCount + " hash collisions.";
+    }
+
+    protected Collection<BPMNRuntimeState> getTargets(BPMNRuntimeState source, Transition transition) {
+        IFiredTransition<BPMNRuntimeState, ?> firedTransition = relation.fireOneTransition(
+                source, transition
+        );
+        return firedTransition.getTargets();
+    }
 
     @Override
     protected void testModel() {
-        TransitionRelation relation = new TransitionRelation(getModelHandler());
-
-        known = new HashSet<>();
-        LinkedList<BPMNRuntimeState> toSee = new LinkedList<>();
-
-        known.addAll(relation.initialConfigurations());
-        toSee.addAll(known);
-
-        int count = known.size();
-
-        while (!toSee.isEmpty() && count < MAX_COUNT) {
-            BPMNRuntimeState source = toSee.removeFirst();
+        init();
+        registerInitialStates();
+        while (!isFinished()) {
+            BPMNRuntimeState source = getNext();
             Collection<Transition> outgoingTransitions = relation.fireableTransitionsFrom(source);
-            for (Transition outgoingTransition : outgoingTransitions) {
-                IFiredTransition<BPMNRuntimeState, ?> firedTransition = relation.fireOneTransition(
-                        source, outgoingTransition
-                );
-                for (BPMNRuntimeState target : firedTransition.getTargets()) {
-                    if (known.add(target)) {
-                        toSee.add(target);
-                        count++;
-                    }
+            for (Transition transition : outgoingTransitions) {
+                Collection<BPMNRuntimeState> targets = getTargets(source, transition);
+                for (BPMNRuntimeState target : targets) {
+                    transitionCount += 1;
+                    registerState(target);
                 }
             }
         }
 
         assertTrue("Explored " + known.size() + " states, aborted.", toSee.isEmpty());
-        System.out.println("Successfully explored " + known.size() + " states");
+        System.out.println("Exploration successful.");
+        System.out.println(getMetricsString());
     }
 
     @Override
@@ -78,6 +117,7 @@ public class ExplorationTest extends AbstractTest {
         int size4 = 4;
         int size = size0 * size1 * size2 * size3 * size4; // 17280
         assertEquals(size, known.size());
+        assertEquals(80832, transitionCount);
     }
 
     @Override
@@ -87,6 +127,7 @@ public class ExplorationTest extends AbstractTest {
         int size1 = 2 + (4 * 4);
         int size = size0 * size1; // 72
         assertEquals(size, known.size());
+        assertEquals(158, transitionCount);
     }
 
     @Override
@@ -98,4 +139,5 @@ public class ExplorationTest extends AbstractTest {
             System.out.println("Unsupported Operation Exception 'SubProcess' thrown as expected");
         }
     }
+
 }
