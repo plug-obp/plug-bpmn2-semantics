@@ -85,4 +85,10 @@ public abstract class AbstractTest {
         testModel();
     }
 
+    @Test
+    public void messages_1to1() {
+        load("minimal/messages_1to1.bpmn");
+        testModel();
+    }
+
 }

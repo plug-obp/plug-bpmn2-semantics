@@ -60,10 +60,21 @@ class ElementsOpen {
         return true;
     }
 
-    static public boolean isUnconditionalStartEvent(FlowElement flowElement) {
-        if (!(flowElement instanceof StartEvent)) return false;
-        StartEvent startEvent = (StartEvent) flowElement;
-        return startEvent.getIncoming().isEmpty();
+    static public void proceedStartEvent(BPMNModelHandler model,
+                                         BPMNRuntimeState state,
+                                         ProcessInstance processInstance,
+                                         StartEvent startEvent) {
+        if (startEvent.getIncoming().isEmpty() && startEvent.getIncomingConversationLinks().isEmpty()) {
+            List<SequenceFlow> outgoings = startEvent.getOutgoing();
+            for (SequenceFlow outgoing : outgoings) {
+                Token token = model.tokens.get(outgoing);
+                processInstance.getTokenSet().add(token);
+            }
+        } else if (!startEvent.getIncoming().isEmpty()) {
+            throw new UnsupportedOperationException("Incoming sequence flow to a StartEvent");
+        } else {
+            throw new UnsupportedOperationException("Conversation Link to a a StartEvent");
+        }
     }
 
     static public boolean openProcess(BPMNModelHandler model,
@@ -73,14 +84,10 @@ class ElementsOpen {
                                       boolean execute) {
         final ProcessInstance processInstance = new ProcessInstanceImpl(scope, process);
         process.getFlowElements().stream()
-                .filter(flowElement -> isUnconditionalStartEvent(flowElement))
+                .filter(flowElement -> flowElement instanceof StartEvent)
                 .forEach(flowElement -> {
                     StartEvent startEvent = (StartEvent) flowElement;
-                    List<SequenceFlow> outgoings = startEvent.getOutgoing();
-                    for (SequenceFlow outgoing : outgoings) {
-                        Token token = model.tokens.get(outgoing);
-                        processInstance.getTokenSet().add(token);
-                    }
+                    proceedStartEvent(model, state, processInstance, startEvent);
                 });
         if (processInstance.getTokenSet().isEmpty()) return false;
         if (execute) {

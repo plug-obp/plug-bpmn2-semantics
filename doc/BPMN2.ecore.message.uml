@@ -3,112 +3,85 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="552.0" y="443.0">org.eclipse.bpmn2.InteractionNode</node>
-    <node x="191.0" y="344.0">org.eclipse.bpmn2.Process</node>
-    <node x="0.0" y="443.0">org.eclipse.bpmn2.Message</node>
-    <node x="939.9681372549019" y="432.0">org.eclipse.bpmn2.FlowNode</node>
-    <node x="797.9651960784313" y="776.0">org.eclipse.bpmn2.Event</node>
-    <node x="1144.881862745098" y="988.0">org.eclipse.bpmn2.SubProcess</node>
-    <node x="1003.9651960784313" y="666.0">org.eclipse.bpmn2.Activity</node>
-    <node x="725.7249999999999" y="1010.0">org.eclipse.bpmn2.Task</node>
-    <node x="289.5" y="732.0">org.eclipse.bpmn2.Participant</node>
-    <node x="13.0" y="988.0">org.eclipse.bpmn2.MessageFlowAssociation</node>
-    <node x="1182.2151960784313" y="110.0">org.eclipse.bpmn2.FlowElementsContainer</node>
-    <node x="97.75" y="0.0">org.eclipse.bpmn2.Collaboration</node>
-    <node x="37.5" y="743.0">org.eclipse.bpmn2.MessageFlow</node>
+    <node x="281.5041666666667" y="245.0">org.eclipse.bpmn2.InteractionNode</node>
+    <node x="999.6041666666667" y="468.0">org.eclipse.bpmn2.Process</node>
+    <node x="1162.0" y="785.0">org.eclipse.bpmn2.Message</node>
+    <node x="0.0" y="578.0">org.eclipse.bpmn2.Event</node>
+    <node x="349.97916666666674" y="0.0">org.eclipse.bpmn2.FlowNode</node>
+    <node x="789.5041666666667" y="567.0">org.eclipse.bpmn2.SubProcess</node>
+    <node x="629.5041666666667" y="146.0">org.eclipse.bpmn2.Activity</node>
+    <node x="559.75" y="589.0">org.eclipse.bpmn2.Task</node>
+    <node x="206.00000000000006" y="534.0">org.eclipse.bpmn2.Participant</node>
+    <node x="876.0" y="785.0">org.eclipse.bpmn2.MessageFlowAssociation</node>
+    <node x="996.7541666666667" y="245.0">org.eclipse.bpmn2.FlowElementsContainer</node>
+    <node x="0.0" y="785.0">org.eclipse.bpmn2.Collaboration</node>
+    <node x="402.0" y="785.0">org.eclipse.bpmn2.MessageFlow</node>
+    <node x="639.0" y="785.0">org.eclipse.bpmn2.ConversationLink</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="org.eclipse.bpmn2.Participant" target="org.eclipse.bpmn2.Process">
-      <point x="-72.0" y="-70.0" />
-      <point x="0.0" y="136.0" />
-    </edge>
     <edge source="org.eclipse.bpmn2.Participant" target="org.eclipse.bpmn2.InteractionNode">
-      <point x="72.0" y="-70.0" />
-      <point x="505.5" y="646.0" />
-      <point x="650.4000000000001" y="646.0" />
-      <point x="-65.59999999999991" y="37.0" />
-    </edge>
-    <edge source="org.eclipse.bpmn2.MessageFlow" target="org.eclipse.bpmn2.InteractionNode">
-      <point x="48.0" y="-59.0" />
-      <point x="181.5" y="636.0" />
-      <point x="584.8" y="636.0" />
-      <point x="-131.20000000000005" y="37.0" />
+      <point x="0.0" y="-70.0" />
+      <point x="350.00000000000006" y="448.0" />
+      <point x="404.5041666666667" y="448.0" />
+      <point x="-41.0" y="37.0" />
     </edge>
     <edge source="org.eclipse.bpmn2.Task" target="org.eclipse.bpmn2.Activity">
       <point x="18.0" y="-15.0" />
-      <point x="779.7249999999999" y="968.0" />
-      <point x="1088.4651960784313" y="968.0" />
+      <point x="613.75" y="448.0" />
+      <point x="714.0041666666667" y="448.0" />
       <point x="-84.5" y="136.0" />
     </edge>
     <edge source="org.eclipse.bpmn2.SubProcess" target="org.eclipse.bpmn2.InteractionNode">
       <point x="-62.33333333333337" y="-37.0" />
-      <point x="1176.0485294117645" y="958.0" />
-      <point x="752.0485294117647" y="958.0" />
-      <point x="752.0485294117647" y="646.0" />
-      <point x="781.5999999999999" y="646.0" />
-      <point x="65.59999999999991" y="37.0" />
+      <point x="820.6708333333333" y="438.0" />
+      <point x="568.5041666666667" y="438.0" />
+      <point x="123.0" y="37.0" />
     </edge>
     <edge source="org.eclipse.bpmn2.Process" target="org.eclipse.bpmn2.FlowElementsContainer">
-      <point x="85.25" y="-136.0" />
-      <point x="446.75" y="319.0" />
-      <point x="1238.9651960784313" y="319.0" />
-      <point x="-56.75" y="37.0" />
+      <point x="0.0" y="-136.0" />
+      <point x="1170.1041666666667" y="448.0" />
+      <point x="1167.0041666666666" y="448.0" />
+      <point x="56.75" y="37.0" />
     </edge>
     <edge source="org.eclipse.bpmn2.Task" target="org.eclipse.bpmn2.InteractionNode">
       <point x="-18.0" y="-15.0" />
-      <point x="743.7249999999999" y="968.0" />
-      <point x="721.6348039215686" y="968.0" />
-      <point x="721.6348039215686" y="646.0" />
-      <point x="716.0" y="646.0" />
-      <point x="0.0" y="37.0" />
+      <point x="577.75" y="448.0" />
+      <point x="486.5041666666667" y="448.0" />
+      <point x="41.0" y="37.0" />
+    </edge>
+    <edge source="org.eclipse.bpmn2.Event" target="org.eclipse.bpmn2.InteractionNode">
+      <point x="46.5" y="-26.0" />
+      <point x="139.5" y="448.0" />
+      <point x="322.5041666666667" y="448.0" />
+      <point x="-123.0" y="37.0" />
     </edge>
     <edge source="org.eclipse.bpmn2.SubProcess" target="org.eclipse.bpmn2.Activity">
       <point x="0.0" y="-37.0" />
-      <point x="1238.381862745098" y="968.0" />
-      <point x="1257.4651960784313" y="968.0" />
       <point x="84.5" y="136.0" />
     </edge>
-    <edge source="org.eclipse.bpmn2.Event" target="org.eclipse.bpmn2.InteractionNode">
-      <point x="-46.5" y="-26.0" />
-      <point x="844.4651960784313" y="646.0" />
-      <point x="847.2" y="646.0" />
-      <point x="131.20000000000005" y="37.0" />
-    </edge>
-    <edge source="org.eclipse.bpmn2.Process" target="org.eclipse.bpmn2.Collaboration">
-      <point x="-85.25" y="-136.0" />
-      <point x="0.0" y="147.0" />
-    </edge>
     <edge source="org.eclipse.bpmn2.Event" target="org.eclipse.bpmn2.FlowNode">
-      <point x="46.5" y="-26.0" />
-      <point x="937.4651960784313" y="646.0" />
-      <point x="993.7181372549019" y="646.0" />
+      <point x="-46.5" y="-26.0" />
+      <point x="46.5" y="121.0" />
+      <point x="403.72916666666674" y="121.0" />
       <point x="-53.75" y="48.0" />
-    </edge>
-    <edge source="org.eclipse.bpmn2.MessageFlowAssociation" target="org.eclipse.bpmn2.MessageFlow">
-      <point x="0.0" y="-37.0" />
-      <point x="0.0" y="59.0" />
     </edge>
     <edge source="org.eclipse.bpmn2.Activity" target="org.eclipse.bpmn2.FlowNode">
       <point x="0.0" y="-136.0" />
-      <point x="1172.9651960784313" y="646.0" />
-      <point x="1101.2181372549019" y="646.0" />
+      <point x="798.5041666666667" y="121.0" />
+      <point x="511.22916666666674" y="121.0" />
       <point x="53.75" y="48.0" />
     </edge>
     <edge source="org.eclipse.bpmn2.SubProcess" target="org.eclipse.bpmn2.FlowElementsContainer">
-      <point x="62.333333333333314" y="-37.0" />
-      <point x="1300.7151960784313" y="968.0" />
-      <point x="1352.4651960784313" y="968.0" />
-      <point x="56.75" y="37.0" />
-    </edge>
-    <edge source="org.eclipse.bpmn2.MessageFlow" target="org.eclipse.bpmn2.Message">
-      <point x="-48.0" y="-59.0" />
-      <point x="0.0" y="37.0" />
+      <point x="62.33333333333337" y="-37.0" />
+      <point x="945.3375000000001" y="448.0" />
+      <point x="1053.5041666666666" y="448.0" />
+      <point x="-56.75" y="37.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9625935162094763" x="391.0" y="135.0" />
+  <settings layout="Hierarchic Group" zoom="0.9625935162094763" x="794.740932642487" y="630.6010362694301" />
   <SelectedNodes>
-    <node>org.eclipse.bpmn2.MessageFlowAssociation</node>
+    <node>org.eclipse.bpmn2.ConversationLink</node>
   </SelectedNodes>
   <Categories>
     <Category>Properties</Category>

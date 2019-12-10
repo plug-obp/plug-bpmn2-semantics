@@ -140,4 +140,9 @@ public class ExplorationTest extends AbstractTest {
         }
     }
 
+    @Override
+    public void messages_1to1() {
+        super.messages_1to1();
+        assertEquals(3, known.size());
+    }
 }

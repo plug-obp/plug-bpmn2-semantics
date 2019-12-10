@@ -4,18 +4,32 @@ import plug.bpmn2.interpretation.model.BPMNInstanceVisitor;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.*;
+import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
 import plug.bpmn2.interpretation.model.instance.impl.*;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class BPMNRuntimeCopy implements BPMNInstanceVisitor {
 
+    Map<BPMNRuntimeInstance, BPMNRuntimeInstance> copyMap = new HashMap<>();
+
     public BPMNRuntimeState copy(BPMNRuntimeState state) {
         BPMNRuntimeState copy = new BPMNRuntimeState();
-        ;
         for (BPMNRuntimeInstance instance : state.getRootInstanceList()) {
             BPMNRuntimeInstance instanceCopy = get(instance);
+            copyMap.put(instance, instanceCopy);
             copy.getRootInstanceList().add(instanceCopy);
+        }
+        for (MessageFlowData messageFlowData : state.getMessageFlowDataList()) {
+            MessageFlowData messageFlowDataCopy = new MessageFlowData(
+                    messageFlowData.getBaseElement(),
+                    copyMap.get(messageFlowData.getSourceParent()),
+                    copyMap.get(messageFlowData.getTargetParent()),
+                    messageFlowData.getData()
+            );
+            copy.getMessageFlowDataList().add(messageFlowDataCopy);
         }
         return copy;
     }
