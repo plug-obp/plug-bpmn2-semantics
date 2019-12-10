@@ -23,7 +23,7 @@ class TransitionsInitial {
             }
         }
     }
-    
+
     static private void addMessageFlowData(BPMNModelHandler model, BPMNRuntimeState initialState) {
         for (MessageFlow messageFlow : ElementsMessageFlow.getMessageFlows(model)) {
             MessageFlowData messageFlowData = ElementsMessageFlow.createMessageFlowData(
@@ -31,7 +31,9 @@ class TransitionsInitial {
                     messageFlow,
                     false
             );
-            initialState.getMessageFlowDataList().add(messageFlowData);
+            if (messageFlowData != null) {
+                initialState.getMessageFlowDataList().add(messageFlowData);
+            }
         }
     }
 

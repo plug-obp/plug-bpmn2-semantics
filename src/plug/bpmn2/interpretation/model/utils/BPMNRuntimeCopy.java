@@ -19,7 +19,6 @@ public class BPMNRuntimeCopy implements BPMNInstanceVisitor {
         BPMNRuntimeState copy = new BPMNRuntimeState();
         for (BPMNRuntimeInstance instance : state.getRootInstanceList()) {
             BPMNRuntimeInstance instanceCopy = get(instance);
-            copyMap.put(instance, instanceCopy);
             copy.getRootInstanceList().add(instanceCopy);
         }
         for (MessageFlowData messageFlowData : state.getMessageFlowDataList()) {
@@ -52,6 +51,7 @@ public class BPMNRuntimeCopy implements BPMNInstanceVisitor {
     public BPMNRuntimeInstance get(BPMNRuntimeInstance instance) {
         result = null;
         instance.acceptInstanceVisitor(this);
+        copyMap.put(instance, result);
         if (parentStack.size() != 0) {
             throw new IllegalStateException();
         }
@@ -63,6 +63,7 @@ public class BPMNRuntimeCopy implements BPMNInstanceVisitor {
         parentStack.addLast(copy);
         for (BPMNRuntimeInstance childInstance : original.getChildInstanceList()) {
             childInstance.acceptInstanceVisitor(this);
+            copyMap.put(childInstance, result);
             copy.getChildInstanceList().add(result);
         }
         parentStack.removeLast();

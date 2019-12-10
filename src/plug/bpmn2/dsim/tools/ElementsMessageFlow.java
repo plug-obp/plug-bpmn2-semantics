@@ -42,10 +42,14 @@ class ElementsMessageFlow {
     static public MessageFlowData createMessageFlowData(BPMNRuntimeState state,
                                                         MessageFlow messageFlow,
                                                         boolean isPresent) {
+        BPMNRuntimeInstance sourceOwner = getOwner(state, messageFlow.getSourceRef());
+        if (sourceOwner == null) return null;
+        BPMNRuntimeInstance targetOwner = getOwner(state, messageFlow.getTargetRef());
+        if (targetOwner == null) return null;
         return new MessageFlowData(
                 messageFlow,
-                getOwner(state, messageFlow.getSourceRef()),
-                getOwner(state, messageFlow.getTargetRef()),
+                sourceOwner,
+                targetOwner,
                 isPresent
         );
     }
