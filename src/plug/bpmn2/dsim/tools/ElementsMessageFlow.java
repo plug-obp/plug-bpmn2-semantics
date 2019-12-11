@@ -1,5 +1,6 @@
 package plug.bpmn2.dsim.tools;
 
+import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.bpmn2.InteractionNode;
 import org.eclipse.bpmn2.MessageFlow;
 import org.eclipse.emf.ecore.EObject;
@@ -39,6 +40,10 @@ class ElementsMessageFlow {
         return getOwner(state.getRootInstanceList(), container);
     }
 
+    static public BaseElement getBaseElement(InteractionNode interactionNode) {
+        return (BaseElement) interactionNode;
+    }
+
     static public MessageFlowData createMessageFlowData(BPMNRuntimeState state,
                                                         MessageFlow messageFlow,
                                                         boolean isPresent) {
@@ -52,6 +57,22 @@ class ElementsMessageFlow {
                 targetOwner,
                 isPresent
         );
+    }
+
+    static public int getMessageFlowIndex(BPMNRuntimeState state,
+                                          BaseElement baseElement,
+                                          boolean source) {
+        for (int i = 0; i < state.getMessageFlowDataList().size(); i++) {
+            MessageFlowData currentMessageFlowData = state.getMessageFlowDataList().get(i);
+            InteractionNode currentInteractionNode = source ?
+                    currentMessageFlowData.getBaseElement().getSourceRef() :
+                    currentMessageFlowData.getBaseElement().getTargetRef();
+            BaseElement currentBaseElement = getBaseElement(currentInteractionNode);
+            if (baseElement == currentBaseElement) {
+                return i;
+            }
+        }
+        return -1;
     }
 
 }
