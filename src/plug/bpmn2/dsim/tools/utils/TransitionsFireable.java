@@ -3,10 +3,7 @@ package plug.bpmn2.dsim.tools.utils;
 import org.eclipse.bpmn2.*;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.dsim.tools.Transition;
-import plug.bpmn2.dsim.tools.transitions.TransitionCatchEvent;
-import plug.bpmn2.dsim.tools.transitions.TransitionClose;
-import plug.bpmn2.dsim.tools.transitions.TransitionEndEvent;
-import plug.bpmn2.dsim.tools.transitions.TransitionOpen;
+import plug.bpmn2.dsim.tools.transitions.*;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
@@ -32,6 +29,14 @@ public class TransitionsFireable {
             IntermediateCatchEvent catchEvent = (IntermediateCatchEvent) flowNode;
             TransitionCatchEvent transition = new TransitionCatchEvent(
                     model, state, flowInstance, catchEvent
+            );
+            if (transition.guard(state)) {
+                targetCollection.add(transition);
+            }
+        } else if (flowNode instanceof Gateway) {
+            Gateway gateway = (Gateway) flowNode;
+            TransitionGateway transition = new TransitionGateway(
+                    model, state, flowInstance, gateway
             );
             if (transition.guard(state)) {
                 targetCollection.add(transition);

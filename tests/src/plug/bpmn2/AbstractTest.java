@@ -91,4 +91,10 @@ public abstract class AbstractTest {
         testModel();
     }
 
+    @Test
+    public void parallel_gateway() {
+        load("minimal/parallel_gateway.bpmn");
+        testModel();
+    }
+
 }
