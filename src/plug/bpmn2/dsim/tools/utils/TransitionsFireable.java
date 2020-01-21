@@ -1,7 +1,12 @@
-package plug.bpmn2.dsim.tools;
+package plug.bpmn2.dsim.tools.utils;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.emf.ecore.EObject;
+import plug.bpmn2.dsim.tools.Transition;
+import plug.bpmn2.dsim.tools.transitions.TransitionCatchEvent;
+import plug.bpmn2.dsim.tools.transitions.TransitionClose;
+import plug.bpmn2.dsim.tools.transitions.TransitionEndEvent;
+import plug.bpmn2.dsim.tools.transitions.TransitionOpen;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;

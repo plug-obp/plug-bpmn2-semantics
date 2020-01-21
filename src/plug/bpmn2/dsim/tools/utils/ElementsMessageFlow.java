@@ -1,4 +1,4 @@
-package plug.bpmn2.dsim.tools;
+package plug.bpmn2.dsim.tools.utils;
 
 import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.bpmn2.InteractionNode;
@@ -13,7 +13,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class ElementsMessageFlow {
+public class ElementsMessageFlow {
 
     static public Collection<MessageFlow> getMessageFlows(BPMNModelHandler model) {
         return model.containment.getNodeSet().stream()

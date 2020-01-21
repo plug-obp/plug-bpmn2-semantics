@@ -1,19 +1,16 @@
-package plug.bpmn2.dsim.tools;
+package plug.bpmn2.dsim.tools.utils;
 
 import org.eclipse.bpmn2.*;
 import org.eclipse.bpmn2.Process;
 import org.eclipse.emf.ecore.EObject;
-import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
 import plug.bpmn2.tools.BPMNModelHandler;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-class TransitionsInitial {
+public class TransitionsInitial {
 
     static private void openInstances(BPMNModelHandler model, BPMNRuntimeState initialState) {
         for (EObject rootObject : model.ownership.getFloorSet(0)) {

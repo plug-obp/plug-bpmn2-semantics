@@ -1,4 +1,4 @@
-package plug.bpmn2.dsim.tools;
+package plug.bpmn2.dsim.tools.utils;
 
 import org.eclipse.bpmn2.SequenceFlow;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
@@ -9,7 +9,7 @@ import plug.bpmn2.tools.BPMNModelHandler;
 
 import java.util.Collection;
 
-class ElementsClose {
+public class ElementsClose {
 
     static public void removeInstance(BPMNRuntimeState state,
                                       BPMNRuntimeInstance instance) {

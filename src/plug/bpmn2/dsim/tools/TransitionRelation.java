@@ -1,5 +1,7 @@
 package plug.bpmn2.dsim.tools;
 
+import plug.bpmn2.dsim.tools.utils.TransitionsFireable;
+import plug.bpmn2.dsim.tools.utils.TransitionsInitial;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.tools.BPMNModelHandler;
 import plug.core.IFiredTransition;

@@ -1,7 +1,9 @@
-package plug.bpmn2.dsim.tools;
+package plug.bpmn2.dsim.tools.transitions;
 
 import org.eclipse.bpmn2.IntermediateCatchEvent;
 import org.eclipse.bpmn2.SequenceFlow;
+import plug.bpmn2.dsim.tools.utils.ElementsMessageFlow;
+import plug.bpmn2.dsim.tools.Transition;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;

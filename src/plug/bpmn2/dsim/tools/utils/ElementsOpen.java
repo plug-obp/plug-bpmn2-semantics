@@ -1,4 +1,4 @@
-package plug.bpmn2.dsim.tools;
+package plug.bpmn2.dsim.tools.utils;
 
 import org.eclipse.bpmn2.Process;
 import org.eclipse.bpmn2.*;
@@ -18,7 +18,7 @@ import plug.bpmn2.tools.BPMNModelHandler;
 import java.util.Collection;
 import java.util.List;
 
-class ElementsOpen {
+public class ElementsOpen {
 
     static public void addInstance(BPMNRuntimeState state,
                                    BPMNRuntimeInstance scope,

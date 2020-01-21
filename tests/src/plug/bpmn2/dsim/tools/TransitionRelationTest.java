@@ -1,6 +1,9 @@
 package plug.bpmn2.dsim.tools;
 
 import org.junit.Test;
+import plug.bpmn2.dsim.tools.transitions.TransitionClose;
+import plug.bpmn2.dsim.tools.transitions.TransitionEndEvent;
+import plug.bpmn2.dsim.tools.transitions.TransitionOpen;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.ProcessInstance;
