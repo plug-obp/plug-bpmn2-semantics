@@ -152,4 +152,10 @@ public class ExplorationTest extends AbstractTest {
         super.messages_1to1();
         assertEquals(3, known.size());
     }
+
+    @Override
+    public void parallel_gateway() {
+        super.parallel_gateway();
+        assertEquals(12, known.size());
+    }
 }
