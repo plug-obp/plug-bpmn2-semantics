@@ -6,6 +6,7 @@ import org.eclipse.bpmn2.MessageFlow;
 import org.eclipse.emf.ecore.EObject;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
+import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
 import plug.bpmn2.tools.BPMNModelHandler;
 
@@ -73,6 +74,39 @@ public class ElementsMessageFlow {
             }
         }
         return -1;
+    }
+
+    static private boolean isPresent(BPMNRuntimeState state,
+                                    int messageFlowIndex) {
+        return state.getMessageFlowDataList().get(messageFlowIndex).getData();
+    }
+
+    static public boolean attemptToReceive(BPMNRuntimeState source,
+                                           BPMNRuntimeState target,
+                                           InteractionNode interactionNode) {
+        if (!(interactionNode instanceof BaseElement)) {
+            throw new IllegalArgumentException("interactionNode is not a BaseElement");
+        }
+        BaseElement baseElement = (BaseElement) interactionNode;
+        int messageFlowIndex = getMessageFlowIndex(source, baseElement, false);
+        if (messageFlowIndex == -1) {
+            throw new IllegalArgumentException("could not find a matching MessageFlow");
+        }
+        MessageFlowData messageFlowData = source.getMessageFlowDataList().get(messageFlowIndex);
+        if (!messageFlowData.getData()) {
+            return false;
+        }
+        if (target != null) {
+            MessageFlowData targetMessageFlowData = target.getMessageFlowDataList().get(messageFlowIndex);
+            MessageFlowData nextMessageFlowData = new MessageFlowData(
+                    targetMessageFlowData.getBaseElement(),
+                    targetMessageFlowData.getSourceParent(),
+                    targetMessageFlowData.getTargetParent(),
+                    false
+            );
+            target.getMessageFlowDataList().set(messageFlowIndex, nextMessageFlowData);
+        }
+        return true;
     }
 
 }

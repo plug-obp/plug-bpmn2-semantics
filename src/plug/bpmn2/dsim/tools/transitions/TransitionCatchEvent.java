@@ -7,7 +7,6 @@ import plug.bpmn2.dsim.tools.Transition;
 import plug.bpmn2.interpretation.model.BPMNRuntimeInstance;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
-import plug.bpmn2.interpretation.model.instance.data.MessageFlowData;
 import plug.bpmn2.tools.BPMNModelHandler;
 
 public class TransitionCatchEvent extends Transition {
@@ -29,31 +28,18 @@ public class TransitionCatchEvent extends Transition {
 
     @Override
     public boolean attempt(BPMNRuntimeState source, BPMNRuntimeState target) {
-        int messageFlowIndex = ElementsMessageFlow.getMessageFlowIndex(source, catchEvent, false);
-        if (messageFlowIndex == -1) {
-            return false;
-        }
-        MessageFlowData sourceMessageFlowData = source.getMessageFlowDataList().get(messageFlowIndex);
-        if (!sourceMessageFlowData.getData()) {
-            return false;
-        }
-        if (target != null) {
-            MessageFlowData targetMessageFlowData = target.getMessageFlowDataList().get(messageFlowIndex);
-            FlowElementsContainerInstance scope = (FlowElementsContainerInstance) getScope(target);
-            for (SequenceFlow sequenceFlow : catchEvent.getIncoming()) {
-                scope.getTokenSet().remove(getModel().tokens.get(sequenceFlow));
+        if (ElementsMessageFlow.attemptToReceive(source, target, catchEvent)) {
+            if (target != null) {
+                FlowElementsContainerInstance scope = (FlowElementsContainerInstance) getScope(target);
+                for (SequenceFlow sequenceFlow : catchEvent.getIncoming()) {
+                    scope.getTokenSet().remove(getModel().tokens.get(sequenceFlow));
+                }
+                for (SequenceFlow sequenceFlow : catchEvent.getOutgoing()) {
+                    scope.getTokenSet().add(getModel().tokens.get(sequenceFlow));
+                }
             }
-            for (SequenceFlow sequenceFlow : catchEvent.getOutgoing()) {
-                scope.getTokenSet().add(getModel().tokens.get(sequenceFlow));
-            }
-            MessageFlowData nextMessageFlowData = new MessageFlowData(
-                    targetMessageFlowData.getBaseElement(),
-                    targetMessageFlowData.getSourceParent(),
-                    targetMessageFlowData.getTargetParent(),
-                    false
-            );
-            target.getMessageFlowDataList().set(messageFlowIndex, nextMessageFlowData);
+            return true;
         }
-        return true;
+        return false;
     }
 }

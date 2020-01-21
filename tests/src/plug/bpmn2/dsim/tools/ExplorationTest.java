@@ -1,5 +1,6 @@
 package plug.bpmn2.dsim.tools;
 
+import org.junit.Test;
 import plug.bpmn2.AbstractTest;
 import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.core.IFiredTransition;
@@ -87,6 +88,12 @@ public class ExplorationTest extends AbstractTest {
         assertTrue("Explored " + known.size() + " states, aborted.", toSee.isEmpty());
         System.out.println("Exploration successful.");
         System.out.println(getMetricsString());
+    }
+
+    @Override
+    @Test(expected = IllegalArgumentException.class)
+    public void mutex() {
+        super.mutex();
     }
 
     @Override
