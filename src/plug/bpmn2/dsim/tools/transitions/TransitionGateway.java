@@ -1,6 +1,5 @@
 package plug.bpmn2.dsim.tools.transitions;
 
-import org.eclipse.bpmn2.FlowElementsContainer;
 import org.eclipse.bpmn2.Gateway;
 import org.eclipse.bpmn2.SequenceFlow;
 import plug.bpmn2.dsim.tools.Transition;
@@ -9,6 +8,8 @@ import plug.bpmn2.interpretation.model.BPMNRuntimeState;
 import plug.bpmn2.interpretation.model.instance.FlowElementsContainerInstance;
 import plug.bpmn2.interpretation.model.instance.data.Token;
 import plug.bpmn2.tools.BPMNModelHandler;
+
+import java.util.Objects;
 
 public class TransitionGateway extends Transition {
     //TODO: At the moment handle all gateways as parallel gateways, no good
@@ -54,4 +55,10 @@ public class TransitionGateway extends Transition {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Go Through " + getModel().printer.getShortString(getBaseElement());
+    }
+
 }
