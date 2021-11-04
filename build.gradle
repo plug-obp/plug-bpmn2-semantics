@@ -1,22 +1,43 @@
-buildscript {
-	repositories {
-		jcenter()
-		maven { url "https://dl.bintray.com/plug-obp/maven" }
-	}
-	dependencies {
-		classpath group: 'fr.ensta-bretagne', name: 'plug-plugin', version: '0.7'
-	}
-}
-
-apply plugin: 'plug.plugin'
+version='1.0.0'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 repositories {
-	ivy {
+    mavenCentral()
+    maven { url "${OBP2LocalMavenRepository}" }
+    ivy {
 		url = 'https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/modeling/mdt/bpmn2/updates/oxygen/1.4.0/plugins/'
 		layout 'pattern', {
 			artifact '[artifact](_[revision])(.[ext])'
 		}
 	}
+}
+
+compileJava.options.encoding = 'UTF-8'
+sourceSets {
+    main {
+        java { srcDir  'src' }
+        resources { srcDir 'resources'}
+    }
+    test {
+        java { srcDir 'tests/src' }
+        resources { srcDir 'tests/resources'}
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url = "${OBP2LocalMavenRepository}"
+        }
+    }
+    publications {
+        jar(MavenPublication) {
+            groupId = 'fr.ensta-bretagne'
+            from components.java
+        }
+    }
 }
 
 dependencies {
@@ -30,7 +51,9 @@ dependencies {
 
 	runtime group: 'fr.ensta-bretagne', name: 'plug-bpmn2-examples', version: '+'
 
-	compile group: 'fr.ensta-bretagne', name: 'plug-core', version: '+'
+    compile group: 'fr.ensta-bretagne', name: 'obp2-runtime', version: '1.0.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.7'
 }
 
 

@@ -1,10 +1,10 @@
 package plug.bpmn2;
 
 import org.junit.Test;
-import plug.bpmn2.tools.BPMNLoader;
-import plug.bpmn2.tools.BPMNModelHandler;
-import plug.bpmn2.tools.common.printer.BPMNModelPrinter;
-import plug.bpmn2.tools.common.printer.BPMNPrinterShort;
+import plug.bpmn2.model.BPMNLoader;
+import plug.bpmn2.model.BPMNModelHandler;
+import plug.bpmn2.model.printer.BPMNModelPrinter;
+import plug.bpmn2.model.printer.BPMNPrinterShort;
 
 public abstract class AbstractTest {
 
