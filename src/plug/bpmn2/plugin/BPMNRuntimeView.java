@@ -2,6 +2,7 @@ package plug.bpmn2.plugin;
 
 import obp2.runtime.core.TreeItem;
 import obp2.runtime.core.defaults.DefaultTreeProjector;
+import plug.bpmn2.model.printer.BPMNPrinterShort;
 import plug.bpmn2.semantics.state.BPMNRuntimeInstance;
 import plug.bpmn2.semantics.state.BPMNRuntimeState;
 import plug.bpmn2.semantics.state.instance.FlowElementsContainerInstance;
@@ -13,6 +14,8 @@ import java.util.List;
 
 public class BPMNRuntimeView
         extends DefaultTreeProjector<BPMNRuntimeState, Transition, Void> {
+
+    private final BPMNPrinterShort printer = new BPMNPrinterShort();
 
     public TreeItem projectInstance(BPMNRuntimeInstance instance) {
         List<TreeItem> featuresList = new LinkedList<>();
@@ -28,12 +31,12 @@ public class BPMNRuntimeView
             FlowElementsContainerInstance containerInstance = (FlowElementsContainerInstance) instance;
             List<TreeItem> tokenItemList = new LinkedList<>();
             for (Token token : containerInstance.getTokenSet()) {
-                TreeItem tokenItem = new TreeItem(token.getBaseElement().getName());
+                TreeItem tokenItem = new TreeItem(printer.getShortString(token.getBaseElement()));
                 tokenItemList.add(tokenItem);
             }
             featuresList.add(new TreeItem("Tokens", tokenItemList));
         }
-        return new TreeItem(instance.getBaseElement().getId(), featuresList);
+        return new TreeItem(printer.getShortString(instance.getBaseElement()), featuresList);
     }
 
     public TreeItem projectConfiguration(BPMNRuntimeState configuration) {
