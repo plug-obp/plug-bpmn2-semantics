@@ -7,3 +7,5 @@ build
 .project
 **/bin
 **/.settings
+/doc/~$*.docx
+/doc/*.tmp
