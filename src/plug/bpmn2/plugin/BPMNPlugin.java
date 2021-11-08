@@ -29,7 +29,7 @@ public class BPMNPlugin implements ILanguagePlugin<URI, BPMNRuntimeState, Transi
 
     @Override
     public String getName() {
-        return "BPMN4DSim";
+        return "BPMN";
     }
 
     @Override
