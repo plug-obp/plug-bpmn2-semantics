@@ -20,12 +20,13 @@ public class BPMNRuntimeView
     public TreeItem projectInstance(BPMNRuntimeInstance instance) {
         List<TreeItem> featuresList = new LinkedList<>();
         if (instance.getChildInstanceList().size() > 0) {
-            List<TreeItem> childInstanceList = new LinkedList<>();
+            //List<TreeItem> childInstanceList = new LinkedList<>();
             for (BPMNRuntimeInstance childInstance : instance.getChildInstanceList()) {
                 TreeItem childInstanceItem = projectInstance(childInstance);
-                childInstanceList.add(childInstanceItem);
+                //childInstanceList.add(childInstanceItem);
+                featuresList.add(childInstanceItem);
             }
-            featuresList.add(new TreeItem("Child instances", childInstanceList));
+            //featuresList.add(new TreeItem("Child instances", childInstanceList));
         }
         if (instance instanceof FlowElementsContainerInstance) {
             FlowElementsContainerInstance containerInstance = (FlowElementsContainerInstance) instance;
@@ -41,12 +42,12 @@ public class BPMNRuntimeView
 
     public TreeItem projectConfiguration(BPMNRuntimeState configuration) {
         if (configuration == null) return TreeItem.empty;
-        List<TreeItem> instancesItemList = new LinkedList<>();
+        List<TreeItem> itemList = new LinkedList<>();
         for (BPMNRuntimeInstance instance : configuration.getRootInstanceList()) {
-            instancesItemList.add(projectInstance(instance));
+            itemList.add(projectInstance(instance));
         }
-        TreeItem instancesItem = new TreeItem("instances", instancesItemList);
-        TreeItem configurationItem = new TreeItem("BPMN Configuration", instancesItem);
+        //TreeItem instancesItem = new TreeItem("instances", itemList);
+        TreeItem configurationItem = new TreeItem("BPMN Configuration", itemList);
         return configurationItem;
     }
 
