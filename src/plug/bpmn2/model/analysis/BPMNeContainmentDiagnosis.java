@@ -12,7 +12,7 @@ import java.util.Set;
 public class BPMNeContainmentDiagnosis extends AbstractDAGDiagnosis<EObject> {
 
     @Override
-    void fillNodeTargetSourceSets(EObject rootObject) {
+    protected void fillNodeTargetSourceSets(EObject rootObject) {
         new InternalSwitch().doSwitch(rootObject);
     }
 

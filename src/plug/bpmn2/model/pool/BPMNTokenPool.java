@@ -25,4 +25,8 @@ public class BPMNTokenPool {
                 .collect(Collectors.toSet());
     }
 
+    public Collection<Token> getAll() {
+        return sequenceFlowTokenMap.values();
+    }
+
 }

@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class BPMNInstanceOwnerDiagnosis extends AbstractDAGDiagnosis<EObject> {
 
     @Override
-    void fillNodeTargetSourceSets(EObject rootObject) {
+    protected void fillNodeTargetSourceSets(EObject rootObject) {
         new InternalSwitch().doSwitch(rootObject);
     }
 
@@ -18,7 +18,7 @@ public class BPMNInstanceOwnerDiagnosis extends AbstractDAGDiagnosis<EObject> {
 
         private final Object NON_NULL_TAG = 0;
 
-        private LinkedList<EObject> ownerStack = new LinkedList<>();
+        private final LinkedList<EObject> ownerStack = new LinkedList<>();
 
         private boolean openInstance(EObject object) {
             if (!ownerStack.isEmpty()) {

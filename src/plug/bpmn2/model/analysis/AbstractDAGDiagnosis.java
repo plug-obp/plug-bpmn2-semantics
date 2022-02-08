@@ -26,11 +26,11 @@ public abstract class AbstractDAGDiagnosis<T> {
         );
     }
 
-    abstract void fillNodeTargetSourceSets(T rootObject);
+    protected abstract void fillNodeTargetSourceSets(T rootObject);
 
-    private List<Set<T>> floorList = new LinkedList<>();
-    private Map<Integer, Set<T>> depthNodeSetMap = new HashMap<>();
-    private Map<T, Integer> nodeDepthMap = new HashMap<>();
+    private final List<Set<T>> floorList = new LinkedList<>();
+    private final Map<Integer, Set<T>> depthNodeSetMap = new HashMap<>();
+    private final Map<T, Integer> nodeDepthMap = new HashMap<>();
 
     public Set<T> getFloorSet(int depth) {
         return depthNodeSetMap.get(depth);
