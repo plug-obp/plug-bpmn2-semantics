@@ -6,7 +6,7 @@ repositories {
     mavenCentral()
     maven { url "${OBP2LocalMavenRepository}" }
     ivy {
-		url = 'https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/modeling/mdt/bpmn2/updates/oxygen/1.4.0/plugins/'
+		url = 'https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/modeling/mdt/bpmn2/updates/2020-09/1.5.1/plugins/'
 		layout 'pattern', {
 			artifact '[artifact](_[revision])(.[ext])'
 		}
@@ -42,12 +42,13 @@ publishing {
 
 dependencies {
 	//emf packages needed for org.eclipse.bpmn2
-	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', 				version: '2.12.0'
-	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore',				version: '2.12.0'
-	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.xmi', 			version: '2.12.0'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', 				version: '2.24.0'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore',				version: '2.26.0'
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.xmi', 			version: '2.16.0'
 
 	//bpmn2 packages
-	compile group: 'org.eclipse.bpmn2', name: 'org.eclipse.bpmn2', version: '1.4.0.Final-v20170607-1423', ext: 'jar'
+	//compile group: 'org.eclipse.bpmn2', name: 'org.eclipse.bpmn2', version: '1.4.0.Final-v20170607-1423', ext: 'jar'
+    compile group: 'org.eclipse.bpmn2', name: 'org.eclipse.bpmn2', version: '1.5.1.Final-v20200903-1545', ext: 'jar'
 
 	runtime group: 'fr.ensta-bretagne', name: 'plug-bpmn2-examples', version: '+'
 

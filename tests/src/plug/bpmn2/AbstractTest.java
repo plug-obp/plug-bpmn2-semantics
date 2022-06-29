@@ -97,4 +97,10 @@ public abstract class AbstractTest {
         testModel();
     }
 
+    @Test
+    public void representative_oneway() {
+        load("08102021 Representative model.bpmn");
+        testModel();
+    }
+
 }
