@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" exporter="PragmaDev Process" exporterVersion="1.2" targetNamespace="http://www.pragmadev.com/process/BPMN">
+  <bpmn:globalTask id="SEM_SYMB_7"/>
+  <bpmn:globalTask id="SEM_SYMB_9"/>
+  <bpmn:collaboration id="SEM_SYMB_1"/>
+  <bpmn:process id="SEM_SYMB_2_7178a5a8af0d56c320bed6d3e9b01162">
+    <bpmn:startEvent id="SEM_SYMB_3" name="Start Root"/>
+    <bpmn:parallelGateway id="SEM_SYMB_4" name="fork"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_4" id="SEM_SYMB_5" name="" sourceRef="SEM_SYMB_3"/>
+    <bpmn:parallelGateway id="SEM_SYMB_12" name="join"/>
+    <bpmn:endEvent id="SEM_SYMB_15" name="Start End"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_15" id="SEM_SYMB_16" name="" sourceRef="SEM_SYMB_12"/>
+    <bpmn:callActivity name="Call A" calledElement="SEM_SYMB_26_7178a5a8af0d56c320bed6d3e9b01162" id="SEM_SYMB_35"/>
+    <bpmn:callActivity name="Call B" calledElement="SEM_SYMB_17_7178a5a8af0d56c320bed6d3e9b01162" id="SEM_SYMB_36"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_35" id="SEM_SYMB_37" name="" sourceRef="SEM_SYMB_4"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_36" id="SEM_SYMB_38" name="" sourceRef="SEM_SYMB_4"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_12" id="SEM_SYMB_39" name="" sourceRef="SEM_SYMB_35"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_12" id="SEM_SYMB_40" name="" sourceRef="SEM_SYMB_36"/>
+  </bpmn:process>
+  <bpmn:process id="SEM_SYMB_17_7178a5a8af0d56c320bed6d3e9b01162">
+    <bpmn:startEvent id="SEM_SYMB_18" name="Start B"/>
+    <bpmn:task name="Task B" id="SEM_SYMB_19"/>
+    <bpmn:intermediateCatchEvent id="SEM_SYMB_20" name="signal">
+      <bpmn:signalEventDefinition id="SEM_SYMB_21"/>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:endEvent id="SEM_SYMB_22" name="End B"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_19" id="SEM_SYMB_23" name="" sourceRef="SEM_SYMB_18"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_20" id="SEM_SYMB_24" name="&#10;" sourceRef="SEM_SYMB_19"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_22" id="SEM_SYMB_25" name="" sourceRef="SEM_SYMB_20"/>
+  </bpmn:process>
+  <bpmn:process id="SEM_SYMB_26_7178a5a8af0d56c320bed6d3e9b01162">
+    <bpmn:startEvent id="SEM_SYMB_27" name="Start A"/>
+    <bpmn:task name="Task A" id="SEM_SYMB_28"/>
+    <bpmn:intermediateThrowEvent id="SEM_SYMB_29" name="signal">
+      <bpmn:signalEventDefinition id="SEM_SYMB_30"/>
+    </bpmn:intermediateThrowEvent>
+    <bpmn:endEvent id="SEM_SYMB_31" name="End A"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_28" id="SEM_SYMB_32" name="" sourceRef="SEM_SYMB_27"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_29" id="SEM_SYMB_33" name="" sourceRef="SEM_SYMB_28"/>
+    <bpmn:sequenceFlow targetRef="SEM_SYMB_31" id="SEM_SYMB_34" name="" sourceRef="SEM_SYMB_29"/>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram name="Process Root" id="DI_SYMB_1">
+    <bpmndi:BPMNPlane bpmnElement="SEM_SYMB_1" id="DI_SYMB_2">
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_3" id="DI_SYMB_3">
+        <dc:Bounds y="110.0" x="50.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_4" id="DI_SYMB_4">
+        <dc:Bounds y="110.0" x="140.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_12" id="DI_SYMB_10">
+        <dc:Bounds y="110.0" x="370.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_15" id="DI_SYMB_13">
+        <dc:Bounds y="110.0" x="470.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_35" id="DI_SYMB_33">
+        <dc:Bounds y="50.0" x="240.0" width="60.0" height="60.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_5" id="DI_SYMB_5">
+        <di:waypoint y="130.0" x="70.0"/>
+        <di:waypoint y="130.0" x="160.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_16" id="DI_SYMB_14">
+        <di:waypoint y="130.0" x="390.0"/>
+        <di:waypoint y="130.0" x="490.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_36" id="DI_SYMB_34">
+        <dc:Bounds y="150.0" x="240.0" width="60.0" height="60.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_37" id="DI_SYMB_35">
+        <di:waypoint y="130.0" x="170.0"/>
+        <di:waypoint y="80.0" x="270.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_38" id="DI_SYMB_36">
+        <di:waypoint y="130.0" x="160.0"/>
+        <di:waypoint y="190.0" x="250.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_39" id="DI_SYMB_37">
+        <di:waypoint y="80.0" x="290.0"/>
+        <di:waypoint y="120.0" x="390.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_40" id="DI_SYMB_38">
+        <di:waypoint y="180.0" x="280.0"/>
+        <di:waypoint y="130.0" x="390.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram name="Process A" id="DI_SYMB_15">
+    <bpmndi:BPMNPlane bpmnElement="SEM_SYMB_1" id="DI_SYMB_16">
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_27" id="DI_SYMB_26">
+        <dc:Bounds y="180.0" x="100.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_28" id="DI_SYMB_27">
+        <dc:Bounds y="170.0" x="210.0" width="60.0" height="60.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_29" id="DI_SYMB_28">
+        <dc:Bounds y="180.0" x="340.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_31" id="DI_SYMB_29">
+        <dc:Bounds y="180.0" x="460.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_32" id="DI_SYMB_30">
+        <di:waypoint y="200.0" x="130.0"/>
+        <di:waypoint y="200.0" x="230.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_33" id="DI_SYMB_31">
+        <di:waypoint y="200.0" x="260.0"/>
+        <di:waypoint y="200.0" x="360.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_34" id="DI_SYMB_32">
+        <di:waypoint y="200.0" x="370.0"/>
+        <di:waypoint y="200.0" x="480.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram name="Process B" id="DI_SYMB_17">
+    <bpmndi:BPMNPlane bpmnElement="SEM_SYMB_1" id="DI_SYMB_18">
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_18" id="DI_SYMB_19">
+        <dc:Bounds y="150.0" x="80.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_19" id="DI_SYMB_20">
+        <dc:Bounds y="140.0" x="190.0" width="60.0" height="60.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_20" id="DI_SYMB_21">
+        <dc:Bounds y="150.0" x="310.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SEM_SYMB_22" id="DI_SYMB_22">
+        <dc:Bounds y="150.0" x="420.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_23" id="DI_SYMB_23">
+        <di:waypoint y="170.0" x="110.0"/>
+        <di:waypoint y="170.0" x="220.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_24" id="DI_SYMB_24">
+        <di:waypoint y="170.0" x="230.0"/>
+        <di:waypoint y="170.0" x="330.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SEM_SYMB_25" id="DI_SYMB_25">
+        <di:waypoint y="170.0" x="330.0"/>
+        <di:waypoint y="170.0" x="440.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

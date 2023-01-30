@@ -41,6 +41,14 @@ public abstract class AbstractExplorationTest extends AbstractTest {
         hashCollisionCount = 0;
     }
 
+    protected void reset() {
+        knownHashSet.clear();
+        known.clear();
+        toSee.clear();
+        transitionCount = 0;
+        hashCollisionCount = 0;
+    }
+
     protected boolean registerState(BPMNRuntimeState target) {
         if (known.add(target)) {
             if (!knownHashSet.add(target.hashCode())) {
@@ -80,25 +88,33 @@ public abstract class AbstractExplorationTest extends AbstractTest {
         return firedTransition.getTargets();
     }
 
-    @Override
-    protected void testModel() {
+
+    protected void testModel(int iterationCount) {
         init();
-        registerInitialStates();
-        while (!isFinished()) {
-            BPMNRuntimeState source = getNext();
-            Collection<Transition> outgoingTransitions = relation.fireableTransitionsFrom(source);
-            for (Transition transition : outgoingTransitions) {
-                Collection<BPMNRuntimeState> targets = getTargets(source, transition);
-                for (BPMNRuntimeState target : targets) {
-                    transitionCount += 1;
-                    registerState(target);
+        for (int i = 0; i < iterationCount; i++) {
+            registerInitialStates();
+            while (!isFinished()) {
+                BPMNRuntimeState source = getNext();
+                Collection<Transition> outgoingTransitions = relation.fireableTransitionsFrom(source);
+                for (Transition transition : outgoingTransitions) {
+                    Collection<BPMNRuntimeState> targets = getTargets(source, transition);
+                    for (BPMNRuntimeState target : targets) {
+                        transitionCount += 1;
+                        registerState(target);
+                    }
                 }
             }
+            if (i+1 < iterationCount) reset();
         }
-
         assertTrue("Explored " + known.size() + " states, aborted.", toSee.isEmpty());
+        if (iterationCount > 1) System.out.println(known.size() * iterationCount + " states over " + iterationCount + " explorations.");
         System.out.println("Exploration successful.");
         System.out.println(getMetricsString());
+    }
+
+    @Override
+    protected void testModel() {
+        testModel(100000);
     }
 
 }

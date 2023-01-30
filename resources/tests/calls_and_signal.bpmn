@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1dnxofc" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="11.1.0">
+  <bpmn:process id="Process_0b5vgob" name="Root process" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_1shvtjc" name="Root start">
+      <bpmn:outgoing>Flow_16fyuuy</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:parallelGateway id="Gateway_1832g2l">
+      <bpmn:incoming>Flow_16fyuuy</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ueedkl</bpmn:outgoing>
+      <bpmn:outgoing>Flow_13ydht8</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:parallelGateway id="Gateway_077hlzj">
+      <bpmn:incoming>Flow_13xde4c</bpmn:incoming>
+      <bpmn:incoming>Flow_15mdwy0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0y9ifvo</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:endEvent id="Event_0y9c6pa" name="Root end">
+      <bpmn:incoming>Flow_0y9ifvo</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:callActivity id="Activity_1na9ssa" name="Call A" calledElement="Process_19m1u6p">
+      <bpmn:incoming>Flow_1ueedkl</bpmn:incoming>
+      <bpmn:outgoing>Flow_13xde4c</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:callActivity id="Activity_09s0y7t" name="Call B" calledElement="Process_1swvga9">
+      <bpmn:incoming>Flow_13ydht8</bpmn:incoming>
+      <bpmn:outgoing>Flow_15mdwy0</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="Flow_16fyuuy" sourceRef="StartEvent_1shvtjc" targetRef="Gateway_1832g2l" />
+    <bpmn:sequenceFlow id="Flow_1ueedkl" sourceRef="Gateway_1832g2l" targetRef="Activity_1na9ssa" />
+    <bpmn:sequenceFlow id="Flow_13ydht8" sourceRef="Gateway_1832g2l" targetRef="Activity_09s0y7t" />
+    <bpmn:sequenceFlow id="Flow_13xde4c" sourceRef="Activity_1na9ssa" targetRef="Gateway_077hlzj" />
+    <bpmn:sequenceFlow id="Flow_15mdwy0" sourceRef="Activity_09s0y7t" targetRef="Gateway_077hlzj" />
+    <bpmn:sequenceFlow id="Flow_0y9ifvo" sourceRef="Gateway_077hlzj" targetRef="Event_0y9c6pa" />
+  </bpmn:process>
+  <bpmn:process id="Process_19m1u6p" name="Process A">
+    <bpmn:startEvent id="Event_02jlovx" name="A start">
+      <bpmn:outgoing>Flow_1y9odtp</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_18far1h" name="Task A">
+      <bpmn:incoming>Flow_1y9odtp</bpmn:incoming>
+      <bpmn:outgoing>Flow_1eztsdv</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:intermediateThrowEvent id="Event_1sm214t" name="signal">
+      <bpmn:incoming>Flow_1eztsdv</bpmn:incoming>
+      <bpmn:outgoing>Flow_03uux8m</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_1rxgbmq" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:endEvent id="Event_1531t0z" name="A end">
+      <bpmn:incoming>Flow_03uux8m</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1y9odtp" sourceRef="Event_02jlovx" targetRef="Activity_18far1h" />
+    <bpmn:sequenceFlow id="Flow_1eztsdv" sourceRef="Activity_18far1h" targetRef="Event_1sm214t" />
+    <bpmn:sequenceFlow id="Flow_03uux8m" sourceRef="Event_1sm214t" targetRef="Event_1531t0z" />
+  </bpmn:process>
+  <bpmn:process id="Process_1swvga9" name="Process B">
+    <bpmn:startEvent id="Event_149tjzm" name="B start">
+      <bpmn:outgoing>Flow_0v4ts51</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1u1pm1a" name="Task B">
+      <bpmn:incoming>Flow_0v4ts51</bpmn:incoming>
+      <bpmn:outgoing>Flow_0lwamg9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:intermediateCatchEvent id="Event_03kzevn" name="signal">
+      <bpmn:incoming>Flow_0lwamg9</bpmn:incoming>
+      <bpmn:outgoing>Flow_082lwcf</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_1am7rpf" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:endEvent id="Event_02npig6" name="B end">
+      <bpmn:incoming>Flow_082lwcf</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0v4ts51" sourceRef="Event_149tjzm" targetRef="Activity_1u1pm1a" />
+    <bpmn:sequenceFlow id="Flow_0lwamg9" sourceRef="Activity_1u1pm1a" targetRef="Event_03kzevn" />
+    <bpmn:sequenceFlow id="Flow_082lwcf" sourceRef="Event_03kzevn" targetRef="Event_02npig6" />
+  </bpmn:process>
+</bpmn:definitions>

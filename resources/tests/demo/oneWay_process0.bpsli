@@ -1,0 +1,5 @@
+{
+  "modelFileName" : "oneWay.bpmn",
+  "flowCompletion" : true,
+  "includeCalledProcesses" : false
+}

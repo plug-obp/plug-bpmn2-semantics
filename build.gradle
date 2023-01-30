@@ -5,6 +5,7 @@ apply plugin: 'maven-publish'
 repositories {
     mavenCentral()
     maven { url "${OBP2LocalMavenRepository}" }
+    maven { url "https://maven.openflexo.org/artifactory/openflexo-snapshot/" }
     ivy {
 		url = 'https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/modeling/mdt/bpmn2/updates/2020-09/1.5.1/plugins/'
 		layout 'pattern', {
@@ -55,6 +56,17 @@ dependencies {
     compile group: 'fr.ensta-bretagne', name: 'obp2-runtime', version: '1.0.0'
 
     testCompile group: 'junit', name: 'junit', version: '4.7'
+
+    //for json needs
+    compile group: 'com.fasterxml.jackson.core', name:'jackson-databind', version:'2.7.2'
+
+    //for atomic proposition evaluation
+    compile group:'org.apache.commons', name: 'commons-jexl3', version: '3.1'
+
+    //alternatively, use connie
+    compile group: 'org.openflexo', name: 'connie.core', version: '2.0.0-SNAPSHOT'
+    compile group: 'org.openflexo', name: 'java-expression-language', version: '2.0.0-SNAPSHOT'
+
 }
 
 

@@ -1,0 +1,3 @@
+noDeadlock = [] not |deadlock|
+
+noDeadlock_bpmn = [] (|deadlock| implies |source.isTerminated()|)

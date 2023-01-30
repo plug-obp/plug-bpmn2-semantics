@@ -1,0 +1,20 @@
+emptySource = |source.tokensLength() == 0|
+emptyTarget = |target.tokensLength() == 0|
+
+activeProcess = |source.hasActiveProcess("myProcess")|
+sentSignal = |action.sentSignal("mySignal")|
+activeTask = |source.hasActiveTask("myTask")|
+
+
+terminated = |target.isTerminated()|
+activeTask1 = |target.hasActiveTask("task 1")|
+
+
+neverEmptySource = [] not emptySource
+neverEmptyTarget = [] not emptyTarget
+noDeadlock = [] not |deadlock|
+noDeadlock_unless_emptySource = [] (|deadlock| implies emptySource)
+noDeadlock_unless_emptyTarget = [] (|deadlock| implies emptyTarget)
+noDeadlock_unless_terminated = [] (|deadlock| implies terminated)
+neverTask1 = [] not activeTask1
+tryEvent = [] not sentSignal
