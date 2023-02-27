@@ -2,7 +2,6 @@ package obp2.bpmn2.model;
 
 import obp2.bpmn2.model.action.FlowActionPool;
 import obp2.bpmn2.model.action.FlowActionUtils;
-import obp2.bpmn2.model.observers.Observers;
 import obp2.bpmn2.model.signal.SignalData;
 import obp2.bpmn2.model.signal.SignalDataUtils;
 import obp2.bpmn2.model.signal.SignalIdStrategy;
@@ -15,9 +14,7 @@ import org.eclipse.bpmn2.Process;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.function.Predicate;
 
 public class BPMN2ProcessedModel {
 
