@@ -15,11 +15,15 @@ public class ActionProps {
         this.flowAction = flowAction;
     }
 
-    public boolean sendsSignal(String signalName) {
-        if (flowAction == null || flowAction.getType() != BPMN2FlowAction.Type.THROW_SIGNAL) return false;
+    public String getEventName() {
+        if (flowAction == null || flowAction.getType() != BPMN2FlowAction.Type.THROW_SIGNAL) return "";
         Event event = (Event) flowAction.getFlowNode();
         Object eventId = model.getSignalData().getSignal(event);
-        return signalName.equals(eventId.toString());
+        return eventId.toString();
+    }
+
+    public boolean sendsSignal(String signalName) {
+        return getEventName().equals(signalName);
     }
 
     public boolean endsTask(String taskName) {

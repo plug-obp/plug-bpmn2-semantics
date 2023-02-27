@@ -32,6 +32,7 @@ public class BPMN2Plugin implements ILanguagePlugin<URI, BPMN2ExecutionState, BP
 
     public BPMN2Module getLanguageModule(URI uri) {
         BPSLIFile settings;
+
         URI fileURI;
         if (uri.toString().toLowerCase().contains(BPSLIFile.EXTENSION)) {
             settings = BPSLIFile.loadFromFile(uri);

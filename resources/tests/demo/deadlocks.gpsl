@@ -6,7 +6,7 @@ alwaysTerminates = []<>|state.isTerminated()|
 
 // If "Task B" ends before "signal" is thrown, process always properly ends
 // Given the following atomic propositions :
-B = |action.endsTask("Task A")|
+B = |action.endsTask("Task B")|
 S = |action.sendsSignal("signal")|
 T = |state.isTerminated()|
 // Dwyers Pattern : After B, T responds to S

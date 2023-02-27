@@ -38,4 +38,11 @@ public class BPMN2ExecutionState extends DefaultConfiguration<BPMN2ExecutionStat
         return new BPMN2ExecutionState(copyTokens);
     }
 
+    @Override
+    public String toString() {
+        return "BPMN2ExecutionState{" +
+                "tokens=" + Arrays.toString(tokens) +
+                '}';
+    }
+
 }

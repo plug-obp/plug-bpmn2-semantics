@@ -13,9 +13,11 @@ public class BPMN2Module extends LanguageModule<BPMN2ExecutionState, BPMN2FlowAc
         super(
           new BPMN2TransitionRelation(model, flowCompletion),
           new BPMN2Evaluator(model),
-          new BPMN2View(model)
+          new BPMN2View(model), new BPMN2Marshaller()
         );
         this.model = model;
+        this.marshaller = new BPMN2Marshaller();
+        this.marshaller.setModule(this);
     }
 
     public BPMN2ProcessedModel getModel() {
@@ -25,11 +27,6 @@ public class BPMN2Module extends LanguageModule<BPMN2ExecutionState, BPMN2FlowAc
     @Override
     public BPMN2TransitionRelation getTransitionRelation() {
         return (BPMN2TransitionRelation) super.getTransitionRelation();
-    }
-
-    @Override
-    public IMarshaller<BPMN2ExecutionState, BPMN2FlowAction, Void> getMarshaller() {
-        return new BPMN2Marshaller();
     }
 
 }

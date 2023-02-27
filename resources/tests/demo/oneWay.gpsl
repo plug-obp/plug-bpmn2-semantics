@@ -1,0 +1,12 @@
+findDeadlock = [] not |deadlock|
+// with flowCompletion, 1422 configurations to find first deadlock, a proper termination
+
+findMG01 = [] not |action.getEventName().contains("MG-01")|
+// with flowCompletions, 1421 configurations to find first thrown MG-01
+
+verifyEventuallyTerminates = []<> |state.isTerminated()|
+
+verifyEventuallyMG01 = []<> |action.getEventName().contains("MG-01")|
+
+findMG01toDeadlock = [] (|action.getEventName().contains("MG-01")| -> [] (not |deadlock|))
+findMG01toDeadlock2 = [] (|action.getEventName().contains("signal")| -> [] (not |deadlock|))
