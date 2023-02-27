@@ -8,7 +8,6 @@ import obp2.bpmn2.model.signal.SignalDataUtils;
 import obp2.bpmn2.model.signal.SignalIdStrategy;
 import obp2.bpmn2.model.token.TokenPool;
 import obp2.bpmn2.model.token.TokenPoolUtils;
-import obp2.bpmn2.plugin.json.BPSLIFile;
 import obp2.bpmn2.utils.BPMN2ModelValidation;
 import org.eclipse.bpmn2.CallActivity;
 import org.eclipse.bpmn2.DocumentRoot;
@@ -28,7 +27,6 @@ public class BPMN2ProcessedModel {
     private final SignalData signalData;
     private final FlowActionPool flowActionPool;
     private final ProcessInstances processInstances;
-    private final Observers observers;
 
     public BPMN2ProcessedModel(DocumentRoot documentRoot, Set<Process> rootProcesses, boolean includeCalledProcesses) {
         if (BPMN2ModelValidation.nodesAreMissingFlows(rootProcesses)) {
@@ -40,7 +38,7 @@ public class BPMN2ProcessedModel {
         signalData = SignalDataUtils.compute(rootProcesses, SignalIdStrategy::byName);
         flowActionPool = FlowActionUtils.compute(rootProcesses, tokenPool, signalData);
         processInstances = new ProcessInstances(tokenPool);
-        observers = new Observers();
+        //observers = new Observers();
     }
 
     public BPMN2ProcessedModel(DocumentRoot documentRoot, Set<Process> rootProcesses) {
@@ -85,10 +83,6 @@ public class BPMN2ProcessedModel {
 
     public Process getProcess(List<CallActivity> callStack) {
         return processInstances.getProcess(callStack);
-    }
-
-    public Observers getObservers() {
-        return observers;
     }
 
 }
