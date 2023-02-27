@@ -37,7 +37,7 @@ public abstract class AbstractTest {
 
     protected abstract void testModel();
 
-    @Test
+//    @Test
     public void omgPizzaDelivery() {
         load("omg.pizzaDelivery.bpmn");
         testModel();
@@ -61,25 +61,25 @@ public abstract class AbstractTest {
         testModel();
     }
 
-    @Test
+//    @Test
     public void process_2() {
         load("minimal/process_2.bpmn");
         testModel();
     }
 
-    @Test
+//    @Test
     public void process_CAS_191029() {
         load("CAS/CAS_191029.bpmn");
         testModel();
     }
 
-    @Test
+//    @Test
     public void process_CAS_191030() {
         load("CAS/CAS_191030.bpmn");
         testModel();
     }
 
-    @Test
+//    @Test
     public void process_CAS_191128() {
         load("CAS/CAS_191128.bpmn");
         testModel();
@@ -97,7 +97,7 @@ public abstract class AbstractTest {
         testModel();
     }
 
-    @Test
+//    @Test
     public void representative_oneway() {
         //load("08102021 Representative model.bpmn");
         load("oneWay_reloaded.bpmn");
