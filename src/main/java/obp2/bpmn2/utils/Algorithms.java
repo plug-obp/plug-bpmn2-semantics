@@ -1,7 +1,5 @@
 package obp2.bpmn2.utils;
 
-import javafx.util.Pair;
-
 import java.util.*;
 import java.util.function.Function;
 
@@ -153,13 +151,13 @@ public class Algorithms {
     static public <T> void biSort(int[] toSortArray, T[] toMirrorArray) {
         if (toSortArray.length != toMirrorArray.length)
             throw new IllegalArgumentException("toSortArray.length != toMirrorArray.length");
-        List<Pair<Integer, T>> pairList = new LinkedList<>();
+        List<Map.Entry<Integer, T>> pairList = new LinkedList<>();
         for (int i = 0; i < toSortArray.length; i++) {
-            pairList.add(new Pair<>(toSortArray[i], toMirrorArray[i]));
+            pairList.add(new AbstractMap.SimpleEntry<>(toSortArray[i], toMirrorArray[i]));
         }
-        pairList.sort(Comparator.comparingInt(Pair::getKey));
+        pairList.sort(Comparator.comparingInt(Map.Entry::getKey));
         int index = 0;
-        for (Pair<Integer, T> pair : pairList) {
+        for (Map.Entry<Integer, T> pair : pairList) {
             toSortArray[index] = pair.getKey();
             toMirrorArray[index] = pair.getValue();
             index += 1;

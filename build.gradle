@@ -1,79 +1,89 @@
-version='1.0.0'
-apply plugin: 'java'
-apply plugin: 'maven-publish'
-
-repositories {
-    mavenCentral()
-    maven { url "${OBP2ReadOnlyMavenRepository}" }
-//    maven { url "https://maven.openflexo.org/artifactory/openflexo-snapshot/" }
-    ivy {
-		url = 'https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/modeling/mdt/bpmn2/updates/2020-09/1.5.1/plugins/'
-		layout 'pattern', {
-			artifact '[artifact](_[revision])(.[ext])'
-		}
-	}
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'application'
 }
 
-compileJava.options.encoding = 'UTF-8'
-sourceSets {
-    main {
-        java { srcDir  'src' }
-        resources { srcDir 'resources'}
+group = 'org.obpcdl'
+version = '2.0.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url = uri("${OBP2ReadOnlyMavenRepository}") }
+    ivy {
+        url = 'https://repo.huaweicloud.com/eclipse/modeling/mdt/bpmn2/updates/2020-09/1.5.1/plugins/'
+        patternLayout {
+            artifact '[artifact]_[revision].[ext]'
+        }
+        metadataSources {
+            artifact()
+        }
     }
-    test {
-        java { srcDir 'tests/src' }
-        resources { srcDir 'tests/resources'}
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
     }
+    withSourcesJar()
+    withJavadocJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.encoding = 'UTF-8'
+    options.addBooleanOption('Xdoclint:none', true)
+}
+
+tasks.withType(Jar).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+dependencies {
+    // EMF packages needed for org.eclipse.bpmn2
+    api 'org.eclipse.emf:org.eclipse.emf.common:2.24.0'
+    api 'org.eclipse.emf:org.eclipse.emf.ecore:2.26.0'
+    api 'org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.16.0'
+
+    // BPMN2 packages
+    api 'org.eclipse.bpmn2:org.eclipse.bpmn2:1.5.1.Final-v20200903-1545@jar'
+
+    // OBP2 dependencies
+    api 'org.obpcdl:obp2-runtime:2.0.0'
+    api 'org.obpcdl:obp2-bytearray:2.0.0'
+
+    // For JSON needs
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+
+    // For atomic proposition evaluation
+    implementation 'org.apache.commons:commons-jexl3:3.4.0'
+
+    // Test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'plug.bpmn2.semantics.Main'
 }
 
 publishing {
     repositories {
-        maven {
-            // change to point to your repo, e.g. http://my.org/repo
-            url = "${OBP2PublishMavenRepository}"
-        }
+        mavenLocal()
     }
     publications {
-        jar(MavenPublication) {
-            groupId = 'fr.ensta-bretagne'
+        mavenJava(MavenPublication) {
             from components.java
         }
     }
 }
-
-dependencies {
-	//emf packages needed for org.eclipse.bpmn2
-	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', 				version: '2.24.0'
-	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore',				version: '2.26.0'
-	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.xmi', 			version: '2.16.0'
-
-	//bpmn2 packages
-	//compile group: 'org.eclipse.bpmn2', name: 'org.eclipse.bpmn2', version: '1.4.0.Final-v20170607-1423', ext: 'jar'
-    compile group: 'org.eclipse.bpmn2', name: 'org.eclipse.bpmn2', version: '1.5.1.Final-v20200903-1545', ext: 'jar'
-
-	runtime group: 'fr.ensta-bretagne', name: 'plug-bpmn2-examples', version: '+'
-
-    compile group: 'fr.ensta-bretagne', name: 'obp2-runtime', version: '1.0.0'
-
-    compile group: 'fr.ensta-bretagne', name: 'obp2-bytearray', version: '+'
-
-    testCompile group: 'junit', name: 'junit', version: '4.7'
-
-    //for json needs
-    compile group: 'com.fasterxml.jackson.core', name:'jackson-databind', version:'2.7.2'
-
-    //for atomic proposition evaluation
-    compile group:'org.apache.commons', name: 'commons-jexl3', version: '3.1'
-
-    //alternatively, use connie
-//    compile group: 'org.openflexo', name: 'connie.core', version: '2.0.0-SNAPSHOT'
-//    compile group: 'org.openflexo', name: 'java-expression-language', version: '2.0.0-SNAPSHOT'
-
-}
-
-
-
-//To run the Main from gradle do --> ./gradlew :plug-bpmn2-semantics:run
-//To build a distribution of this project --> ./gradlew :plug-bpmn2-semantics:assembleDist
-apply plugin: 'application'
-mainClassName = "plug.bpmn2.semantics.Main"
