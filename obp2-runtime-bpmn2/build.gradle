@@ -1,0 +1,81 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'application'
+}
+
+group = 'org.obpcdl'
+version = '3.0.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url = uri("${OBP2ReadOnlyMavenRepository}") }
+    ivy {
+        url = 'https://repo.huaweicloud.com/eclipse/modeling/mdt/bpmn2/updates/2020-09/1.5.1/plugins/'
+        patternLayout {
+            artifact '[artifact]_[revision].[ext]'
+        }
+        metadataSources {
+            artifact()
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+    withSourcesJar()
+    withJavadocJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.encoding = 'UTF-8'
+    options.addBooleanOption('Xdoclint:none', true)
+}
+
+tasks.withType(Jar).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+dependencies {
+    // Depend on the bpmn2-semantics subproject
+    api project(':bpmn2-semantics')
+
+    // OBP2 dependencies
+    api 'org.obpcdl:obp2-runtime:2.0.0'
+    api 'org.obpcdl:obp2-bytearray:2.0.0'
+
+    // For atomic proposition evaluation (used by BPMN2Evaluator)
+    implementation 'org.apache.commons:commons-jexl3:3.4.0'
+
+    // Test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'plug.bpmn2.semantics.Main'
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}

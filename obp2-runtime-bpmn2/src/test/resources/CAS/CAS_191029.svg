@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"  width="1114" height="656" viewBox="0 0 1115 657" id="CAS" onload="on_load(evt)" onmousemove="onmouse_move(evt)" onzoom="on_zoom()" ><script language="JavaScript">function on_load(evt) {}; function onmouse_move(evt) {}; function on_zoom() {}; function SvgRefertoAddress(str,target) {}; </script><script language="JavaScript" xlink:href="ws_svg.js"/><defs/><rect x="0" y="0" width="1114" height="656" fill-opacity="0.000000"/><g>
+<g metaClassId="EA52EA613AAC008B" OccId="771C9CD95DA43F52" ObjId="549498576" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS" MetaClassName="System Process"><rect stroke="#6ac28e" stroke-width="3" fill="#ffffff" fill-opacity="0.400000" x="20" y="18" width="1094" height="628"/>
+<polygon stroke="#6ac28e" stroke-width="1" fill="#6ac08e" points="21,19,229,20,229,62,21,61,21,19"/>
+<polyline stroke="#ffffff" fill="none" points="35,37,35,40"/>
+<polyline stroke="#ffffff" fill="none" points="34,42,30,45"/>
+<rect stroke="#ffffff" fill="#ffffff" x="31" y="33" width="6" height="4"/>
+<rect stroke="#ffffff" fill="#ffffff" x="36" y="45" width="6" height="4"/>
+<rect stroke="#ffffff" fill="#ffffff" x="26" y="45" width="6" height="4"/>
+<polyline stroke="#ffffff" fill="none" points="39,45,35,42"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="33,41,34,42,35,41,34,40,33,41"/>
+<image x="1106" y="648" width="8" height="8" xlink:href="CASimage/status3.png"/>
+<g font-family="Roboto" font-size="13" font-weight="bold"><text x="70" y="41" textLength="116" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-5)">Fonctions systemes</text>
+<text x="81" y="57" textLength="93.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-5)">internes du CAS</text>
+</g>
+</g>
+</g><g ObjIdStart="549511364" ObjIdEnd="549498576" MetaAssociationId="2DEF329149300344"/><g>
+<g metaClassId="10C5117E48060036" OccId="771C9CE45DA43FA0" ObjId="549511364" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Missile Air-Terre" MetaClassName="Participant"><rect stroke="#000000" fill="#ffffff" fill-opacity="0.400000" x="934" y="88" width="165" height="528"/>
+<rect stroke="#ffffff" fill="#56656e" x="934" y="88" width="165" height="29"/>
+<g font-family="Roboto" font-size="11" font-weight="bold" fill="#ffffff"><text x="974" y="106" textLength="85.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Missile Air-Terre</text>
+</g>
+</g>
+</g><g ObjIdStart="720129112" ObjIdEnd="549498576" MetaAssociationId="2DEF329149300344"/><g>
+<g metaClassId="10C5117E48060036" OccId="771C9CE15DA43F85" ObjId="720129112" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Rafale" MetaClassName="Participant"><rect stroke="#000000" fill="#ffffff" fill-opacity="0.400000" x="511" y="88" width="226" height="528"/>
+<rect stroke="#ffffff" fill="#56656e" x="511" y="88" width="226" height="29"/>
+<g font-family="Roboto" font-size="11" font-weight="bold" fill="#ffffff"><text x="608" y="106" textLength="32" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Rafale</text>
+</g>
+</g>
+</g><g ObjIdStart="720133560" ObjIdEnd="549498576" MetaAssociationId="2DEF329149300344"/><g>
+<g metaClassId="10C5117E48060036" OccId="771C9CDE5DA43F6A" ObjId="720133560" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Designateur de l&apos;objectif" MetaClassName="Participant"><rect stroke="#000000" fill="#ffffff" fill-opacity="0.400000" x="752" y="88" width="165" height="528"/>
+<rect stroke="#ffffff" fill="#56656e" x="752" y="88" width="165" height="29"/>
+<g font-family="Roboto" font-size="11" font-weight="bold" fill="#ffffff"><text x="774" y="106" textLength="121.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Designateur de l'objectif</text>
+</g>
+</g>
+</g><g ObjIdStart="720138008" ObjIdEnd="549498576" MetaAssociationId="2DEF329149300344"/><g>
+<g metaClassId="10C5117E48060036" OccId="771C9CE75DA43FBB" ObjId="720138008" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Centre de Command &amp; Control avance" MetaClassName="Participant"><rect stroke="#000000" fill="#ffffff" fill-opacity="0.400000" x="271" y="88" width="226" height="528"/>
+<rect stroke="#ffffff" fill="#56656e" x="271" y="88" width="226" height="29"/>
+<g font-family="Roboto" font-size="11" font-weight="bold" fill="#ffffff"><text x="289" y="106" textLength="189.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Centre de Command &amp; Control avance</text>
+</g>
+</g>
+</g><g ObjIdStart="535883044" ObjIdEnd="549498576" MetaAssociationId="2DEF329149300344"/><g>
+<g metaClassId="10C5117E48060036" OccId="771C9CEA5DA43FD6" ObjId="535883044" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Vehicule de combat de l&apos;armee de Terre" MetaClassName="Participant"><rect stroke="#000000" fill="#ffffff" fill-opacity="0.400000" x="35" y="87" width="220" height="528"/>
+<rect stroke="#ffffff" fill="#56656e" x="35" y="87" width="220" height="29"/>
+<g font-family="Roboto" font-size="11" font-weight="bold" fill="#ffffff"><text x="46" y="106" textLength="198.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Vehicule de combat de l'armee de Terre</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CF45DA44030" ObjId="535887492" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Rendre compte de la menace" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="51" y="170" width="90" height="60" rx="10" ry="10"/>
+<polyline stroke="#ffffff" fill="none" points="130,217,130,219"/>
+<polyline stroke="#ffffff" fill="none" points="129,221,125,223"/>
+<rect stroke="#ffffff" fill="#ffffff" x="126" y="214" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="131" y="223" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="122" y="223" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="134,223,130,221"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="129,220,130,221,131,220,130,219,129,220"/>
+<image x="133" y="232" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="58" y="189" textLength="76" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Rendre compte</text>
+<text x="63" y="202" textLength="66.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">de la menace</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CF75DA44045" ObjId="535920804" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Collationner la SITAC" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="337" y="170" width="90" height="60" rx="10" ry="10"/>
+<polyline stroke="#ffffff" fill="none" points="416,217,416,219"/>
+<polyline stroke="#ffffff" fill="none" points="415,221,411,223"/>
+<rect stroke="#ffffff" fill="#ffffff" x="413" y="214" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="417" y="223" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="408" y="223" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="420,223,416,221"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="415,220,416,221,417,220,416,219,415,220"/>
+<image x="419" y="232" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="346" y="189" textLength="72" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Collationner la</text>
+<text x="367" y="202" textLength="30.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">SITAC</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CEF5DA44006" ObjId="535925808" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Prendre les decisions tactiques" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="337" y="254" width="90" height="75" rx="13" ry="13"/>
+<polyline stroke="#ffffff" fill="none" points="416,315,416,317"/>
+<polyline stroke="#ffffff" fill="none" points="415,318,411,321"/>
+<rect stroke="#ffffff" fill="#ffffff" x="413" y="311" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="417" y="321" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="408" y="321" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="420,321,416,318"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="415,318,416,319,417,318,416,317,415,318"/>
+<image x="419" y="331" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="354" y="272" textLength="57.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Prendre les</text>
+<text x="358" y="285" textLength="48" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">decisions</text>
+<text x="359" y="298" textLength="46.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">tactiques</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CF25DA4401B" ObjId="535930812" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Transmettre les ordres" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="337" y="352" width="90" height="60" rx="10" ry="10"/>
+<polyline stroke="#ffffff" fill="none" points="416,398,416,401"/>
+<polyline stroke="#ffffff" fill="none" points="415,402,411,404"/>
+<rect stroke="#ffffff" fill="#ffffff" x="413" y="395" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="417" y="404" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="408" y="404" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="420,404,416,402"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="415,402,416,403,417,402,416,401,415,402"/>
+<image x="419" y="414" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="342" y="370" textLength="81.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Transmettre les</text>
+<text x="366" y="383" textLength="32" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">ordres</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CEC5DA43FF1" ObjId="204492060" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Collationner le BDA" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="337" y="525" width="90" height="60" rx="10" ry="10"/>
+<polyline stroke="#ffffff" fill="none" points="416,571,416,574"/>
+<polyline stroke="#ffffff" fill="none" points="415,575,411,577"/>
+<rect stroke="#ffffff" fill="#ffffff" x="413" y="568" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="417" y="577" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="408" y="577" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="420,577,416,575"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="415,575,416,576,417,575,416,574,415,575"/>
+<image x="419" y="587" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="346" y="543" textLength="72" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Collationner le</text>
+<text x="371" y="557" textLength="21.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">BDA</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CFA5DA4405A" ObjId="204497064" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Rendre compte d&apos;observations aeriennes" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="631" y="126" width="90" height="75" rx="12" ry="12"/>
+<polyline stroke="#ffffff" fill="none" points="709,186,709,188"/>
+<polyline stroke="#ffffff" fill="none" points="709,190,705,192"/>
+<rect stroke="#ffffff" fill="#ffffff" x="706" y="183" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="711" y="192" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="702" y="192" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="714,192,710,190"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="708,189,709,190,710,189,709,188,708,189"/>
+<image x="713" y="202" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="638" y="144" textLength="76" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Rendre compte</text>
+<text x="639" y="157" textLength="73.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">d'observations</text>
+<text x="651" y="170" textLength="49.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">aeriennes</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CFC5DA4406F" ObjId="204502068" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Tirer une munition" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="623" y="419" width="90" height="60" rx="10" ry="10"/>
+<polyline stroke="#ffffff" fill="none" points="702,466,702,468"/>
+<polyline stroke="#ffffff" fill="none" points="701,470,697,472"/>
+<rect stroke="#ffffff" fill="#ffffff" x="698" y="463" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="703" y="472" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="694" y="472" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="706,472,702,470"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="701,469,702,470,703,469,702,468,701,469"/>
+<image x="705" y="481" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="646" y="438" textLength="45.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Tirer une</text>
+<text x="646" y="451" textLength="44" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">munition</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9D045DA440AE" ObjId="204507100" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Rendre compte de l&apos;avancee de la mission" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="540" y="261" width="90" height="75" rx="12" ry="12"/>
+<polyline stroke="#ffffff" fill="none" points="618,322,618,324"/>
+<polyline stroke="#ffffff" fill="none" points="618,325,614,327"/>
+<rect stroke="#ffffff" fill="#ffffff" x="615" y="318" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="619" y="327" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="610" y="327" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="622,327,619,325"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="617,325,618,326,619,325,618,324,617,325"/>
+<image x="622" y="338" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="547" y="280" textLength="76" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Rendre compte</text>
+<text x="546" y="293" textLength="77.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">de l'avancee de</text>
+<text x="559" y="306" textLength="52" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">la mission</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9D075DA440C3" ObjId="204512104" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Designer l&apos;objectif" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="789" y="382" width="90" height="60" rx="10" ry="10"/>
+<polyline stroke="#ffffff" fill="none" points="867,429,867,431"/>
+<polyline stroke="#ffffff" fill="none" points="867,432,863,434"/>
+<rect stroke="#ffffff" fill="#ffffff" x="864" y="425" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="869" y="434" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="860" y="434" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="872,434,868,432"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="866,432,867,433,869,432,867,431,866,432"/>
+<image x="871" y="444" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="812" y="401" textLength="44" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Designer</text>
+<text x="812" y="414" textLength="42.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">l'objectif</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9CFF5DA44084" ObjId="204517108" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Constater visuellement les dommages" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="789" y="488" width="90" height="75" rx="12" ry="12"/>
+<polyline stroke="#ffffff" fill="none" points="867,548,867,550"/>
+<polyline stroke="#ffffff" fill="none" points="867,552,863,554"/>
+<rect stroke="#ffffff" fill="#ffffff" x="864" y="545" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="869" y="554" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="860" y="554" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="872,554,868,552"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="866,551,867,553,869,551,867,550,866,551"/>
+<image x="871" y="565" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="809" y="506" textLength="49.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Constater</text>
+<text x="792" y="519" textLength="82.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">visuellement les</text>
+<text x="806" y="533" textLength="56" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">dommages</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="126F13004803003A" OccId="771C9D015DA44099" ObjId="204538324" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Se diriger vers l&apos;objectif" MetaClassName="Task"><rect stroke="#ffffff" fill="#a6d9c4" x="971" y="277" width="90" height="60" rx="10" ry="10"/>
+<polyline stroke="#ffffff" fill="none" points="1049,323,1049,325"/>
+<polyline stroke="#ffffff" fill="none" points="1049,327,1045,329"/>
+<rect stroke="#ffffff" fill="#ffffff" x="1046" y="320" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="1051" y="329" width="6" height="3"/>
+<rect stroke="#ffffff" fill="#ffffff" x="1042" y="329" width="6" height="3"/>
+<polyline stroke="#ffffff" fill="none" points="1054,329,1050,327"/>
+<polygon stroke="#ffffff" fill="#ffffff" points="1048,326,1049,327,1050,326,1049,325,1048,326"/>
+<image x="1053" y="338" width="8" height="8" xlink:href="CASimage/status0.png"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="979" y="295" textLength="73.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Se diriger vers</text>
+<text x="994" y="308" textLength="42.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">l'objectif</text>
+</g>
+</g>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M623.73 196.27L623.73 196.27L437.87 196.27L437.87 196.27"/><ellipse stroke="#000000" fill="none" cx="629.07" cy="196.27" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="438,196,438,191,427,196,438,202,438,196"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="514" y="157" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="527" y="170" textLength="57.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Engregistre</text>
+<text x="513" y="183" textLength="70.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">ment video de</text>
+<text x="523" y="196" textLength="52" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">la menace</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M390.13 422.13L390.13 422.13L390.13 436.00C390.13 450.13 390.13 450.13 427.47 450.13L612.80 450.13L612.80 450.13"/><ellipse stroke="#000000" fill="none" cx="390.13" cy="416.8" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="613,450,613,455,623,450,613,445,613,450"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="396" y="418" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="410" y="432" textLength="77.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Ordre de depart</text>
+<text x="406" y="445" textLength="70.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">de la munition</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M437.60 359.20L437.60 359.20L440.27 359.20C442.93 359.20 442.93 359.20 442.93 323.47L442.93 314.40C442.93 287.73 442.93 287.73 480.27 287.73L529.33 287.73L529.33 287.73"/><ellipse stroke="#000000" fill="none" cx="432.27" cy="359.2" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="529,288,529,293,540,288,529,282,529,288"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="432" y="243" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="445" y="256" textLength="65.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Identification</text>
+<text x="441" y="269" textLength="61.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">initiale de la</text>
+<text x="459" y="282" textLength="24" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">cible</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M548.27 345.60L548.27 345.60L548.27 360.00C548.27 374.40 548.27 374.40 510.93 374.40L437.87 374.40L437.87 374.40"/><ellipse stroke="#000000" fill="none" cx="548.27" cy="340.27" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="438,374,438,369,427,374,438,380,438,374"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="466" y="330" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="479" y="344" textLength="53.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Identificati</text>
+<text x="467" y="357" textLength="65.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">on confirmee</text>
+<text x="474" y="370" textLength="50.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">de la cible</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M640.27 321.60L640.27 321.60L652.80 321.60C665.33 321.60 665.33 321.60 665.33 353.60L665.33 361.60C665.33 385.60 665.33 385.60 628.00 385.60L437.87 385.60L437.87 385.60"/><ellipse stroke="#000000" fill="none" cx="634.93" cy="321.6" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="438,386,438,380,427,386,438,391,438,386"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="597" y="341" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="610" y="354" textLength="38.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Compte</text>
+<text x="584" y="367" textLength="77.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">rendu de depart</text>
+<text x="587" y="380" textLength="70.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">de la munition</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M778.13 540.53L778.13 540.53L437.87 540.53L437.87 540.53"/><ellipse stroke="#000000" fill="none" cx="783.47" cy="540.53" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="438,541,438,535,427,541,438,546,438,541"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="596" y="545" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="610" y="558" textLength="120" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Description visuelle des</text>
+<text x="635" y="571" textLength="56" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">dommages</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M731.47 141.33L731.47 141.33L1050.40 141.33C1087.73 141.33 1087.73 141.33 1087.73 178.67L1087.73 537.33C1087.73 574.67 1087.73 574.67 1050.40 574.67L437.87 574.67L437.87 574.67"/><ellipse stroke="#000000" fill="none" cx="726.13" cy="141.33" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="438,575,438,569,427,575,438,580,438,575"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="506" y="578" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="519" y="591" textLength="106.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Enregistrement video</text>
+<text x="527" y="605" textLength="77.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">des dommages</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M889.60 411.73L889.60 411.73L962.93 411.73C1000.27 411.73 1000.27 411.73 1000.27 379.20L1000.27 346.93L1000.27 346.93"/><ellipse stroke="#000000" fill="none" cx="884.27" cy="411.73" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="1000,347,1006,347,1000,336,995,347,1000,347"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="939" y="378" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="952" y="391" textLength="42.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Donnees</text>
+<text x="940" y="404" textLength="53.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">de guidage</text>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M723.73 457.33L723.73 457.33L993.07 457.33C1030.40 457.33 1030.40 457.33 1030.40 420.00L1030.40 346.93L1030.40 346.93"/><ellipse stroke="#000000" fill="none" cx="718.4" cy="457.33" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="1030,347,1036,347,1030,336,1025,347,1030,347"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="932" y="431" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="946" y="444" textLength="77.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Position initiale</text>
+<text x="949" y="457" textLength="57.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">de l'objectif</text>
+</g><g>
+<g metaClassId="D448D923474201AB" OccId="771C9DA05DA44333" ObjId="709593080" OccName="MEGA::BPMN::None::Debut" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#ffffff" cx="95.87" cy="135.07" rx="10" ry="10"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="47" y="142" textLength="29.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Debut</text>
+</g>
+</g>
+</g><path stroke="#000000" fill="none" d="M96.00 145.07L96.00 145.07L96.00 159.73L96.00 159.73"/><polygon stroke="#000000" fill="#000000" points="96,160,91,160,96,170,101,160,96,160"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C9E265DA44398" ObjId="408386652" OccName="MEGA::BPMN::None::Fin" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#000000" cx="95.87" cy="278.27" rx="10" ry="10"/>
+<ellipse stroke="#ffffff" stroke-width="1" fill="#ffffff" cx="95.73" cy="278.13" rx="7.47" ry="7.47"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="89" y="301" textLength="14.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Fin</text>
+</g>
+</g>
+</g><path stroke="#000000" fill="none" d="M96.00 230.13L96.00 230.13L95.73 257.60L95.73 257.60"/><polygon stroke="#000000" fill="#000000" points="96,258,90,258,96,268,101,258,96,258"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C9F155DA4445D" ObjId="486240344" OccName="MEGA::BPMN::Message::Debut" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#ffffff" cx="382.27" cy="140.4" rx="10" ry="10"/>
+<polygon stroke="#e5f822" fill="#000000" points="378,137,378,137,377,138,377,138,377,139,377,140,377,141,377,141,377,142,377,142,377,143,377,143,378,144,378,144,378,144,379,144,379,144,380,144,380,144,381,144,381,144,382,144,383,144,383,144,384,144,385,144,385,144,386,144,386,144,386,144,387,144,387,144,387,144,388,143,388,142,388,141,388,141,388,140,388,139,388,138,388,138,388,138,387,137,387,137,386,137,386,137,386,137,385,137,385,137,384,137,383,137,383,137,382,137,381,137,381,137,380,137,380,137,379,137,379,137,378,137,378,137,378,137"/>
+<polygon stroke="#000000" fill="#ffffff" points="382,141,381,141,377,143,378,143,378,143,387,143,387,143,387,143,383,141,382,141"/>
+<polygon stroke="#000000" fill="#ffffff" points="387,137,387,137,387,137,378,137,378,137,377,137,382,141,387,137"/>
+<polygon stroke="#000000" fill="#ffffff" points="377,138,377,143,381,141,377,138"/>
+<polygon stroke="#000000" fill="#ffffff" points="384,141,387,143,387,138,384,141"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="401" y="147" textLength="29.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Debut</text>
+</g>
+</g>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M151.73 200.27L151.73 200.27L205.60 200.27C242.93 200.27 242.93 200.27 242.93 170.40C242.93 140.53 242.93 140.53 280.27 140.53L361.60 140.53L361.60 140.53"/><ellipse stroke="#000000" fill="none" cx="146.4" cy="200.27" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="362,141,362,146,372,141,362,135,362,141"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="134" y="127" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="147" y="141" textLength="98.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Description visuelle</text>
+<text x="157" y="154" textLength="66.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">de la menace</text>
+</g><path stroke="#000000" fill="none" d="M382.40 150.40L382.40 150.40L382.40 159.73L382.40 159.73"/><polygon stroke="#000000" fill="#000000" points="382,160,377,160,382,170,388,160,382,160"/><path stroke="#000000" fill="none" d="M382.13 230.13L382.13 230.13L382.13 242.93L382.13 242.93"/><polygon stroke="#000000" fill="#000000" points="382,243,377,243,382,254,387,243,382,243"/><path stroke="#000000" fill="none" d="M382.13 328.80L382.13 328.80L382.13 341.07L382.13 341.07"/><polygon stroke="#000000" fill="#000000" points="382,341,377,341,382,352,387,341,382,341"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C834D5DA545EC" ObjId="551519664" OccName="MEGA::BPMN::None::Debut" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#ffffff" cx="590" cy="137.2" rx="10" ry="10"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="542" y="144" textLength="29.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Debut</text>
+</g>
+</g>
+</g><path stroke="#000000" fill="none" d="M600.00 135.73L600.00 135.73L620.80 135.73L620.80 135.73"/><polygon stroke="#000000" fill="#000000" points="621,136,621,141,631,136,621,130,621,136"/><path stroke="#000000" fill="none" d="M833.87 441.60L833.87 441.60L833.87 450.67C837.55 450.67 840.53 453.65 840.53 457.33C840.53 457.33 840.53 457.33 840.53 457.33L840.53 457.33C840.53 461.02 837.55 464.00 833.87 464.00L833.87 477.07L833.87 477.07"/><polygon stroke="#000000" fill="#000000" points="834,477,829,477,834,488,839,477,834,477"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C84D95DA546D1" ObjId="445871164" OccName="MEGA::BPMN::Message::Debut" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#ffffff" cx="833.2" cy="344.4" rx="10" ry="10"/>
+<polygon stroke="#e5f822" fill="#000000" points="829,341,829,341,828,342,828,342,828,343,828,344,828,345,828,345,828,346,828,346,828,347,828,347,829,348,829,348,829,348,830,348,830,348,831,348,831,348,832,348,832,348,833,348,834,348,834,348,835,348,835,348,836,348,837,348,837,348,837,348,838,348,838,348,838,348,839,347,839,346,839,345,839,345,839,344,839,343,839,342,839,342,839,342,838,341,838,341,837,341,837,341,837,341,836,341,835,341,835,341,834,341,834,341,833,341,832,341,832,341,831,341,831,341,830,341,830,341,829,341,829,341,829,341"/>
+<polygon stroke="#000000" fill="#ffffff" points="833,345,832,345,828,347,829,347,829,347,838,347,838,347,838,347,834,345,833,345"/>
+<polygon stroke="#000000" fill="#ffffff" points="838,341,838,341,838,341,829,341,829,341,828,341,833,345,838,341"/>
+<polygon stroke="#000000" fill="#ffffff" points="828,342,828,347,831,345,828,342"/>
+<polygon stroke="#000000" fill="#ffffff" points="835,345,838,347,838,342,835,345"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="852" y="351" textLength="29.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Debut</text>
+</g>
+</g>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M437.87 400.80L437.87 400.80L684.53 400.80C721.87 400.80 721.87 400.80 721.87 372.53L721.87 365.33C721.87 344.53 721.87 344.53 759.20 344.53L812.53 344.53L812.53 344.53"/><ellipse stroke="#000000" fill="none" cx="432.53" cy="400.8" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="813,345,813,350,823,345,813,339,813,345"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="765" y="306" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="778" y="320" textLength="85.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Compte-rendu de</text>
+<text x="761" y="333" textLength="105.87" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">depart de la munition</text>
+</g><path stroke="#000000" fill="none" d="M833.33 354.40L833.33 354.40L833.60 371.20L833.60 371.20"/><polygon stroke="#000000" fill="#000000" points="834,371,828,371,834,382,839,371,834,371"/><path stroke="#000000" fill="none" d="M382.13 411.47L382.13 411.47L382.13 514.13L382.13 514.13"/><polygon stroke="#000000" fill="#000000" points="382,514,377,514,382,525,387,514,382,514"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C89D75DA548E8" ObjId="407274112" OccName="MEGA::BPMN::None::Fin" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#000000" cx="301.47" cy="591.07" rx="10" ry="10"/>
+<ellipse stroke="#ffffff" stroke-width="1" fill="#ffffff" cx="301.33" cy="590.93" rx="7.47" ry="7.47"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="294" y="581" textLength="14.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Fin</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="D448D923474201AB" OccId="771C8A925DA54944" ObjId="407280228" OccName="MEGA::BPMN::Message::Debut" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#ffffff" cx="985.47" cy="245.47" rx="10" ry="10"/>
+<polygon stroke="#e5f822" fill="#000000" points="981,242,981,242,980,243,980,243,980,244,980,245,980,246,980,246,980,247,980,247,980,248,980,248,981,249,981,249,981,249,982,249,982,249,983,249,983,249,984,249,985,249,985,249,986,249,986,249,987,249,988,249,988,249,989,249,989,249,990,249,990,249,990,249,990,249,991,248,991,247,991,246,991,246,991,245,991,244,991,243,991,243,991,243,990,242,990,242,990,242,989,242,989,242,989,242,988,242,987,242,986,242,986,242,985,242,985,242,984,242,983,242,983,242,982,242,982,242,981,242,981,242,981,242"/>
+<polygon stroke="#000000" fill="#ffffff" points="986,246,984,246,981,248,981,248,981,249,990,249,990,249,990,248,987,246,986,246"/>
+<polygon stroke="#000000" fill="#ffffff" points="990,242,990,242,990,242,981,242,981,242,981,242,986,246,990,242"/>
+<polygon stroke="#000000" fill="#ffffff" points="980,243,980,248,984,246,980,243"/>
+<polygon stroke="#000000" fill="#ffffff" points="987,246,991,248,991,243,987,246"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="971" y="235" textLength="29.07" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Debut</text>
+</g>
+</g>
+</g><path stroke="#000000" stroke-dasharray="4,4" fill="none" d="M723.73 469.07L723.73 469.07L827.20 469.07C827.20 465.38 830.18 462.40 833.87 462.40L833.87 462.40C837.55 462.40 840.53 465.38 840.53 469.07C840.53 469.07 840.53 469.07 840.53 469.07L1031.73 469.07C1069.07 469.07 1069.07 469.07 1069.07 431.73L1069.07 286.67C1069.07 249.33 1069.07 249.33 1037.33 249.33L1005.60 249.33L1005.60 249.33"/><ellipse stroke="#000000" fill="none" cx="718.4" cy="469.07" rx="5.33" ry="5.33"/><polyline stroke="#000000" fill="none" points="1006,249,1006,244,995,249,1006,255,1006,249"/><g font-family="Roboto" font-size="11" font-weight="bold"><image x="1025" y="207" width="13" height="13" xlink:href="CASimage/icona60087.png"/>
+<text x="1038" y="220" textLength="42.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">Ordre de</text>
+<text x="1023" y="233" textLength="58.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">depart de la</text>
+<text x="1031" y="246" textLength="44" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" font-weight="bold" transform="translate(0,-4)">munition</text>
+</g><path stroke="#000000" fill="none" d="M985.60 255.47L985.60 255.47L985.60 265.87L985.60 265.87"/><polygon stroke="#000000" fill="#000000" points="986,266,980,266,986,277,991,266,986,266"/><path stroke="#000000" fill="none" d="M382.13 584.53L382.13 584.53L382.13 589.07C382.13 593.60 382.13 593.60 352.00 593.60L321.87 593.60L321.87 593.60"/><polygon stroke="#000000" fill="#000000" points="322,594,322,588,311,594,322,599,322,594"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C8C225DA54A28" ObjId="736075308" OccName="MEGA::BPMN::None::Fin" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#000000" cx="1043.33" cy="520.4" rx="10" ry="10"/>
+<ellipse stroke="#ffffff" stroke-width="1" fill="#ffffff" cx="1043.2" cy="520.27" rx="7.47" ry="7.47"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="1002" y="527" textLength="14.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Fin</text>
+</g>
+</g>
+</g><g>
+<g metaClassId="D1A4D360492E00F1" OccId="771C8D085DA54A61" ObjId="736085316" OccName="&lt;unnamed>" MetaClassName="Gateway"><polygon stroke="#000000" stroke-width="1" fill="#ffffff" points="677,224,661,239,677,254,691,239,677,224"/>
+<polyline stroke="#000000" stroke-width="3" fill="none" points="669,239,684,239"/>
+<polyline stroke="#000000" stroke-width="3" fill="none" points="676,231,676,246"/>
+</g>
+</g><path stroke="#000000" fill="none" d="M676.00 200.27L676.00 200.27L676.27 213.33L676.27 213.33"/><polygon stroke="#000000" fill="#000000" points="676,213,671,213,676,224,682,213,676,213"/><path stroke="#000000" fill="none" d="M661.33 238.93L661.33 238.93L619.47 238.93C582.13 238.93 582.13 238.93 582.13 244.53L582.13 250.40L582.13 250.40"/><polygon stroke="#000000" fill="#000000" points="582,250,577,250,582,261,587,250,582,250"/><path stroke="#000000" fill="none" d="M676.53 254.13L676.53 254.13L676.53 408.80L676.53 408.80"/><polygon stroke="#000000" fill="#000000" points="677,409,671,409,677,419,682,409,677,409"/><g>
+<g metaClassId="D1A4D360492E00F1" OccId="771C8D3C5DA54B0E" ObjId="739498412" OccName="Referentiel SCORPION::Fonctions systemes internes du CAS::Gateway-2" MetaClassName="Gateway"><polygon stroke="#000000" stroke-width="1" fill="#ffffff" points="0,1,1,0,3,1,1,3,0,1"/>
+<polyline stroke="#000000" stroke-width="3" fill="none" points="1,1,1,2"/>
+<polyline stroke="#000000" stroke-width="3" fill="none" points="1,1,2,1"/>
+</g>
+</g><g>
+<g metaClassId="D1A4D360492E00F1" OccId="771C8D8B5DA54B7D" ObjId="740135220" OccName="&lt;unnamed>" MetaClassName="Gateway"><polygon stroke="#000000" stroke-width="1" fill="#ffffff" points="563,473,548,488,563,503,578,488,563,473"/>
+<polyline stroke="#000000" stroke-width="3" fill="none" points="556,488,570,488"/>
+<polyline stroke="#000000" stroke-width="3" fill="none" points="563,480,563,495"/>
+</g>
+</g><path stroke="#000000" fill="none" d="M668.27 479.20L668.27 479.20L668.27 483.47C668.27 487.73 668.27 487.73 630.93 487.73L588.80 487.73L588.80 487.73"/><polygon stroke="#000000" fill="#000000" points="589,488,589,482,578,488,589,493,589,488"/><path stroke="#000000" fill="none" d="M563.47 335.73L563.47 335.73L563.20 378.93C566.88 378.93 569.87 381.92 569.87 385.60C569.87 385.60 569.87 385.60 569.87 385.60L569.87 385.60C569.87 389.28 566.88 392.27 563.20 392.27L562.93 394.13C566.62 394.13 569.60 397.12 569.60 400.80C569.60 400.80 569.60 400.80 569.60 400.80L569.60 400.80C569.60 404.48 566.62 407.47 562.93 407.47L562.93 443.47C566.62 443.47 569.60 446.45 569.60 450.13C569.60 450.13 569.60 450.13 569.60 450.13L569.60 450.13C569.60 453.82 566.62 456.80 562.93 456.80L562.93 462.13L562.93 462.13"/><polygon stroke="#000000" fill="#000000" points="563,462,558,462,563,473,568,462,563,462"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C8E495DA54C08" ObjId="742182948" OccName="MEGA::BPMN::None::Fin" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#000000" cx="592.67" cy="518" rx="10" ry="10"/>
+<ellipse stroke="#ffffff" stroke-width="1" fill="#ffffff" cx="592.53" cy="517.87" rx="7.47" ry="7.47"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="619" y="525" textLength="14.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Fin</text>
+</g>
+</g>
+</g><path stroke="#000000" fill="none" d="M563.20 502.93L563.20 502.93L563.20 510.40C563.20 517.87 563.20 517.87 567.47 517.87L572.00 517.87L572.00 517.87"/><polygon stroke="#000000" fill="#000000" points="572,518,572,523,583,518,572,513,572,518"/><path stroke="#000000" fill="none" d="M1046.40 336.27L1046.40 336.27L1046.40 462.40C1050.08 462.40 1053.07 465.38 1053.07 469.07C1053.07 469.07 1053.07 469.07 1053.07 469.07L1053.07 469.07C1053.07 472.75 1050.08 475.73 1046.40 475.73L1046.40 500.27L1046.40 500.27"/><polygon stroke="#000000" fill="#000000" points="1046,500,1041,500,1046,511,1052,500,1046,500"/><g>
+<g metaClassId="D448D923474201AB" OccId="771C8EF15DA54CA7" ObjId="743659172" OccName="MEGA::BPMN::None::Fin" MetaClassName="Event (MEGA)"><ellipse stroke="#000000" stroke-width="1" fill="#000000" cx="836.13" cy="601.2" rx="10" ry="10"/>
+<ellipse stroke="#ffffff" stroke-width="1" fill="#ffffff" cx="836" cy="601.07" rx="7.47" ry="7.47"/>
+<g font-family="Roboto" font-size="11" font-weight="bold"><text x="795" y="608" textLength="14.93" lengthAdjust="spacingAndGlyphs" class="diagedit2_svg_text" transform="translate(0,-4)">Fin</text>
+</g>
+</g>
+</g><path stroke="#000000" fill="none" d="M834.93 562.40L834.93 562.40L834.93 580.80L834.93 580.80"/><polygon stroke="#000000" fill="#000000" points="835,581,830,581,835,591,840,581,835,581"/></svg>

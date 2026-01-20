@@ -1,1 +1,4 @@
 rootProject.name = 'obp2-bpmn2-semantics'
+
+include 'bpmn2-semantics'
+include 'obp2-runtime-bpmn2'
